@@ -690,60 +690,64 @@
       line-height: 1.6;
     }
 
-    /* ── PRODUCTS BENTO ── */
-    .products-bento {
+    /* ── PRODUCTS GRID ── */
+    .products-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 24px;
     }
 
     .product-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 20px;
+      background: linear-gradient(145deg, #ffffff, #fcfdfe);
+      border: 1px solid rgba(26, 115, 232, 0.08);
+      border-radius: 20px;
+      padding: 24px;
       display: flex;
       flex-direction: column;
       text-decoration: none;
       color: inherit;
-      transition: box-shadow 0.25s, transform 0.2s;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       cursor: pointer;
       overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+      position: relative;
+    }
+
+    .product-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      padding: 1px;
+      background: linear-gradient(180deg, rgba(26, 115, 232, 0.15) 0%, transparent 100%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
     }
 
     .product-card:hover {
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.09);
-      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(26, 115, 232, 0.06);
+      transform: translateY(-6px);
+      border-color: rgba(26, 115, 232, 0.2);
     }
 
-    .product-card.featured {
-      grid-column: span 2;
-      background: #e8f0fe;
-      border-color: #c5cae9;
-      flex-direction: row;
-      align-items: center;
-      gap: 24px;
+    .product-card:hover::before {
+      opacity: 1;
     }
 
     .product-icon {
       width: 100%;
-      height: 180px;
-      border-radius: 16px;
+      height: 190px;
+      border-radius: 14px;
       overflow: hidden;
-      background: white;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
+      background: #f8f9fa;
+      margin-bottom: 20px;
       flex-shrink: 0;
       position: relative;
-    }
-
-    .product-card.featured .product-icon {
-      width: 280px;
-      height: 200px;
-      margin-bottom: 0;
+      border: 1px solid rgba(0, 0, 0, 0.03);
     }
 
     .product-icon img {
@@ -751,35 +755,98 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.4s ease;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .product-card:hover .product-icon img {
       transform: scale(1.05);
     }
 
-    .product-name {
-      font-family: 'Google Sans', sans-serif;
-      font-size: 19px;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: 6px;
+    .product-content {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-header {
+      margin-bottom: 12px;
     }
 
     .product-tag {
-      font-size: 12px;
-      font-weight: 500;
-      background: white;
-      color: var(--blue);
-      padding: 3px 10px;
-      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 30px;
       display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Category Specific Tags */
+    .product-tag.pos {
+      background: #fef7e0;
+      color: #b06000;
+    }
+    .product-tag.management {
+      background: #e8f0fe;
+      color: #1a73e8;
+    }
+    .product-tag.hospitality {
+      background: #f3e8fd;
+      color: #9c27b0;
+    }
+    .product-tag.publishing {
+      background: #e4f7fb;
+      color: #007a87;
+    }
+    .product-tag.ai {
+      background: #e6f4ea;
+      color: #137333;
+    }
+
+    .product-name {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      line-height: 1.3;
+      transition: color 0.3s ease;
+    }
+
+    .product-card:hover .product-name {
+      color: var(--blue);
     }
 
     .product-desc {
       font-size: 14px;
       color: var(--text-secondary);
-      line-height: 1.5;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .product-footer {
+      border-top: 1px solid rgba(0, 0, 0, 0.04);
+      padding-top: 16px;
+      margin-top: auto;
+    }
+
+    .product-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .product-link .arrow {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .product-card:hover .product-link .arrow {
+      transform: translateX(5px);
     }
 
     /* ── VENTURES ── */
@@ -1064,21 +1131,8 @@
         font-size: 15px;
       }
 
-      .products-bento {
-        grid-template-columns: 1fr;
-      }
-
-      .product-card.featured {
-        flex-direction: column;
-        grid-column: span 1;
-        align-items: stretch;
-        gap: 16px;
-      }
-
-      .product-card.featured .product-icon {
-        width: 100% !important;
-        height: 180px;
-        margin-bottom: 0;
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .footer-grid {
@@ -1141,6 +1195,10 @@
 
       .section-sub {
         font-size: 16px;
+      }
+
+      .products-grid {
+        grid-template-columns: 1fr;
       }
 
       .footer-grid {
@@ -1312,72 +1370,106 @@
       <p class="section-sub">Polished, industry-specific apps and tools — built by JSN Creative and ready for your team.
       </p>
 
-      <div class="products-bento">
-        <a class="product-card featured" href="bakery-pos.html">
-          <div class="product-icon"><img
-              src="https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&w=600&q=80"
-              alt="Bakery POS" width="600" height="400" loading="lazy" decoding="async"></div>
-          <div>
-            <div class="product-name">Bakery POS App</div>
-            <div class="product-desc">Complete point-of-sale system designed specifically for bakeries — inventory,
-              orders, and daily sales in one place.</div>
-            <div class="product-tag" style="margin-top:12px;">Point of Sale</div>
+      <div class="products-grid">
+        <a class="product-card" href="bakery-pos.html">
+          <div class="product-icon">
+            <img src="https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&w=600&q=80"
+              alt="Bakery POS" width="600" height="400" loading="lazy" decoding="async">
+          </div>
+          <div class="product-content">
+            <div class="product-header">
+              <span class="product-tag pos">Point of Sale</span>
+            </div>
+            <h3 class="product-name">Bakery POS App</h3>
+            <p class="product-desc">Complete point-of-sale system designed specifically for bakeries — inventory, orders, and daily sales in one place.</p>
+            <div class="product-footer">
+              <span class="product-link">Explore Product <span class="arrow">→</span></span>
+            </div>
           </div>
         </a>
 
         <a class="product-card" href="gym-management.html">
-          <div class="product-icon"><img
-              src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=600&q=80"
-              alt="Gym management" width="600" height="400" loading="lazy" decoding="async"></div>
-          <div>
-            <div class="product-name">Gym Management App</div>
-            <div class="product-desc">Memberships, attendance, and trainer scheduling — streamlined.</div>
-            <div class="product-tag" style="margin-top:10px;">Management</div>
+          <div class="product-icon">
+            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=600&q=80"
+              alt="Gym management" width="600" height="400" loading="lazy" decoding="async">
+          </div>
+          <div class="product-content">
+            <div class="product-header">
+              <span class="product-tag management">Management</span>
+            </div>
+            <h3 class="product-name">Gym Management App</h3>
+            <p class="product-desc">Memberships, attendance, and trainer scheduling — streamlined.</p>
+            <div class="product-footer">
+              <span class="product-link">Explore Product <span class="arrow">→</span></span>
+            </div>
           </div>
         </a>
 
-        <a class="product-card featured" style="background:#fce8e6; border-color:#f5c6c3;" href="restaurant-pos.html">
-          <div class="product-icon"><img
-              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80"
-              alt="Restaurant POS" width="600" height="400" loading="lazy" decoding="async"></div>
-          <div>
-            <div class="product-name">Restaurant POS App</div>
-            <div class="product-desc">Table management, kitchen display, and billing — everything a modern restaurant
-              needs to run smoothly.</div>
-            <div class="product-tag" style="margin-top:12px; color:#ea4335;">Point of Sale</div>
+        <a class="product-card" href="restaurant-pos.html">
+          <div class="product-icon">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80"
+              alt="Restaurant POS" width="600" height="400" loading="lazy" decoding="async">
+          </div>
+          <div class="product-content">
+            <div class="product-header">
+              <span class="product-tag pos">Point of Sale</span>
+            </div>
+            <h3 class="product-name">Restaurant POS App</h3>
+            <p class="product-desc">Table management, kitchen display, and billing — everything a modern restaurant needs to run smoothly.</p>
+            <div class="product-footer">
+              <span class="product-link">Explore Product <span class="arrow">→</span></span>
+            </div>
           </div>
         </a>
 
         <a class="product-card" href="hotel-management.html">
-          <div class="product-icon"><img
-              src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80"
-              alt="Hotel management" width="600" height="400" loading="lazy" decoding="async"></div>
-          <div>
-            <div class="product-name">Hotel Management App</div>
-            <div class="product-desc">Bookings, housekeeping, and front desk — all unified.</div>
-            <div class="product-tag" style="margin-top:10px;">Hospitality</div>
+          <div class="product-icon">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80"
+              alt="Hotel management" width="600" height="400" loading="lazy" decoding="async">
+          </div>
+          <div class="product-content">
+            <div class="product-header">
+              <span class="product-tag hospitality">Hospitality</span>
+            </div>
+            <h3 class="product-name">Hotel Management App</h3>
+            <p class="product-desc">Bookings, housekeeping, and front desk — all unified.</p>
+            <div class="product-footer">
+              <span class="product-link">Explore Product <span class="arrow">→</span></span>
+            </div>
           </div>
         </a>
 
         <a class="product-card" href="ebooks.html">
-          <div class="product-icon"><img
-              src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80"
-              alt="E-Books" width="600" height="400" loading="lazy" decoding="async"></div>
-          <div>
-            <div class="product-name">E-Books</div>
-            <div class="product-desc">Curated digital publications on tech, business, and education.</div>
-            <div class="product-tag" style="margin-top:10px;">Publishing</div>
+          <div class="product-icon">
+            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80"
+              alt="E-Books" width="600" height="400" loading="lazy" decoding="async">
+          </div>
+          <div class="product-content">
+            <div class="product-header">
+              <span class="product-tag publishing">Publishing</span>
+            </div>
+            <h3 class="product-name">E-Books</h3>
+            <p class="product-desc">Curated digital publications on tech, business, and education.</p>
+            <div class="product-footer">
+              <span class="product-link">Explore Product <span class="arrow">→</span></span>
+            </div>
           </div>
         </a>
 
-        <a class="product-card" style="background:#e6f4ea; border-color:#b7dfbf;" href="ai-chatbot.html">
-          <div class="product-icon"><img
-              src="https://images.unsplash.com/photo-1535303311164-664fc9ec6532?auto=format&fit=crop&w=600&q=80"
-              alt="AI Chatbot" width="600" height="400" loading="lazy" decoding="async"></div>
-          <div>
-            <div class="product-name">AI Chatbot</div>
-            <div class="product-desc">Intelligent chatbot platform deployable on your website or app.</div>
-            <div class="product-tag" style="margin-top:10px; color:#34a853;">AI Powered</div>
+        <a class="product-card" href="ai-chatbot.html">
+          <div class="product-icon">
+            <img src="https://images.unsplash.com/photo-1535303311164-664fc9ec6532?auto=format&fit=crop&w=600&q=80"
+              alt="AI Chatbot" width="600" height="400" loading="lazy" decoding="async">
+          </div>
+          <div class="product-content">
+            <div class="product-header">
+              <span class="product-tag ai">AI Powered</span>
+            </div>
+            <h3 class="product-name">AI Chatbot</h3>
+            <p class="product-desc">Intelligent chatbot platform deployable on your website or app.</p>
+            <div class="product-footer">
+              <span class="product-link">Explore Product <span class="arrow">→</span></span>
+            </div>
           </div>
         </a>
       </div>
