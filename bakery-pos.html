@@ -4,8 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bakery POS App | JSN CREATIVE</title>
+<meta name="description" content="Bakery POS App with lifetime access, billing, inventory, and sales tracking for bakeries.">
+<link rel="canonical" href="https://creative.vercel.app/bakery-pos.html">
+<!-- Open Graph -->
+<meta property="og:type" content="product">
+<meta property="og:title" content="Bakery POS App | JSN CREATIVE">
+<meta property="og:description" content="Bakery POS App with lifetime access, billing, inventory, and sales tracking for bakeries.">
+<meta property="og:url" content="https://creative.vercel.app/bakery-pos.html">
+<meta property="og:image" content="https://creative.vercel.app/social-preview.svg">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bakery POS App | JSN CREATIVE">
+<meta name="twitter:description" content="Bakery POS App with lifetime access, billing, inventory, and sales tracking for bakeries.">
+<meta name="twitter:image" content="https://creative.vercel.app/social-preview.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
 <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Display:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site-pages.css">
 </head>
@@ -63,7 +77,7 @@
       </div>
     </div>
     <figure class="hero-art">
-      <img src="https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&w=1200&q=80" alt="Bakery display with fresh bread and pastries">
+      <img src="https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&w=1200&q=80" alt="Bakery display with fresh bread and pastries" loading="eager" fetchpriority="high" decoding="async">
       <div class="hero-card">
         <strong>Clean daily workflow</strong>
         <span>Orders, billing, stock, and sales reports in one simple dashboard.</span>
@@ -117,7 +131,15 @@
     </div>
   </section>
 
-  <section class="footer">Jsn Creative builds practical software products for real businesses.</section>
+  <footer class="footer">
+    <p>© 2025 JSN CREATIVE. All rights reserved.</p>
+    <div style="margin-top: 10px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+      <a href="index.html" style="text-decoration: none; color: var(--page-muted);">Home</a>
+      <a href="privacy.html" style="text-decoration: none; color: var(--page-muted);">Privacy</a>
+      <a href="terms.html" style="text-decoration: none; color: var(--page-muted);">Terms</a>
+      <a href="contact.html" style="text-decoration: none; color: var(--page-muted);">Contact</a>
+    </div>
+  </footer>
 </main>
 
 <script src="site-pages.js"></script>

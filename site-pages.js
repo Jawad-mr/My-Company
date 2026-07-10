@@ -82,7 +82,6 @@
       '@type': 'WebSite',
       name: 'JSN Creative',
       url: siteBase,
-      potentialAction: { '@type': 'SearchAction', target: `${siteBase}/?q={search_term_string}`, 'query-input': 'required name=search_term_string' },
     });
   } else if (pageConfig.schemaType === 'ContactPage') {
     schemaGraphs.push({

@@ -4,8 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact JSN Creative</title>
+<meta name="description" content="Contact JSN Creative by form, email, WhatsApp, or call for project and product enquiries.">
+<link rel="canonical" href="https://creative.vercel.app/contact.html">
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Contact JSN Creative">
+<meta property="og:description" content="Contact JSN Creative by form, email, WhatsApp, or call for project and product enquiries.">
+<meta property="og:url" content="https://creative.vercel.app/contact.html">
+<meta property="og:image" content="https://creative.vercel.app/social-preview.svg">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact JSN Creative">
+<meta name="twitter:description" content="Contact JSN Creative by form, email, WhatsApp, or call for project and product enquiries.">
+<meta name="twitter:image" content="https://creative.vercel.app/social-preview.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
 <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Display:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site-pages.css">
 </head>
@@ -52,7 +66,7 @@
       </div>
     </div>
     <figure class="hero-art">
-      <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80" alt="Team meeting around a laptop discussing a project">
+      <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80" alt="Team meeting around a laptop discussing a project" loading="eager" fetchpriority="high" decoding="async">
       <div class="hero-card">
         <strong>Fast response channels</strong>
         <span>Email, WhatsApp, and direct call options are all available here.</span>
@@ -66,12 +80,13 @@
     <div class="grid-2">
       <div class="form-card">
         <form action="https://formspree.io/f/mzdlnylp" method="post">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
           <div class="field-row">
-            <input type="text" name="name" placeholder="Your name" required>
-            <input type="email" name="email" placeholder="Your email" required>
+            <input type="text" name="name" placeholder="Your name" aria-label="Your name" required>
+            <input type="email" name="email" placeholder="Your email" aria-label="Your email" required>
           </div>
-          <input type="text" name="subject" placeholder="Subject" required>
-          <textarea name="message" placeholder="Tell us about your project, product interest, or support need" required></textarea>
+          <input type="text" name="subject" placeholder="Subject" aria-label="Subject" required>
+          <textarea name="message" placeholder="Tell us about your project, product interest, or support need" aria-label="Tell us about your project, product interest, or support need" required></textarea>
           <div class="contact-actions">
             <button class="btn primary" type="submit">Send message</button>
             <a class="btn secondary" href="https://wa.me/917204351696?text=Hello%20JSN%20Creative%2C%20I%20filled%20the%20contact%20form">Open WhatsApp</a>
@@ -91,7 +106,15 @@
     </div>
   </section>
 
-  <section class="footer">Jsn Creative contact page. We prefer simple, direct conversations.</section>
+  <footer class="footer">
+    <p>© 2025 JSN CREATIVE. All rights reserved.</p>
+    <div style="margin-top: 10px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+      <a href="index.html" style="text-decoration: none; color: var(--page-muted);">Home</a>
+      <a href="privacy.html" style="text-decoration: none; color: var(--page-muted);">Privacy</a>
+      <a href="terms.html" style="text-decoration: none; color: var(--page-muted);">Terms</a>
+      <a href="contact.html" style="text-decoration: none; color: var(--page-muted);">Contact</a>
+    </div>
+  </footer>
 </main>
 
 <script src="site-pages.js"></script>
