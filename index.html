@@ -592,84 +592,54 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    nav { padding: 0 18px; }
+    nav { padding: 0 16px; }
     .nav-links { display: none; }
 
-    .icon-scroll { padding: 12px 18px; }
+    .icon-scroll { padding: 12px 16px; }
+    .section-tabs { padding: 0 16px; }
+    .section { padding: 44px 16px; }
 
     .hero {
       grid-template-columns: 1fr;
-      padding: 40px 18px 32px;
-      gap: 24px;
-      text-align: center;
+      padding: 32px 16px 24px;
+      gap: 20px;
     }
     .hero-visual { display: none; }
+
+    /* key alignment fix */
+    .hero-content {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
 
     .hero h1 {
       font-size: clamp(30px, 8vw, 42px);
       line-height: 1.15;
-      letter-spacing: -0.8px;
+      letter-spacing: -0.7px;
       margin-bottom: 14px;
     }
 
     .hero-sub {
       font-size: 16px;
       line-height: 1.6;
-      margin: 0 auto 24px;
-      max-width: 620px;
+      margin: 0 auto 20px;
+      max-width: 36ch;
     }
 
     .hero-buttons {
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .btn-primary,
-    .btn-outline {
-      padding: 11px 22px;
-      font-size: 14px;
-    }
-
-    .section-tabs {
-      padding: 0 18px;
-    }
-
-    .section {
-      padding: 44px 18px;
-    }
-
-    .products-bento { grid-template-columns: 1fr; }
-    .product-card.featured { flex-direction: column; grid-column: span 1; }
-
-    .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
-  }
-
-  @media (max-width: 600px) {
-    .hero {
-      padding: 32px 14px 26px;
-    }
-
-    .hero-eyebrow {
-      font-size: 11px;
-      margin-bottom: 10px;
-    }
-
-    .hero h1 {
-      font-size: clamp(26px, 9vw, 34px);
-      line-height: 1.2;
-      letter-spacing: -0.5px;
-    }
-
-    .hero-sub {
-      font-size: 15px;
-      margin-bottom: 20px;
-    }
-
-    .hero-buttons {
+      display: flex;
       flex-direction: column;
-      align-items: stretch;
+      align-items: center;
+      gap: 12px;
       width: 100%;
-      max-width: 320px;
+      max-width: 420px;
       margin: 0 auto;
     }
 
@@ -678,6 +648,43 @@
       width: 100%;
       text-align: center;
       padding: 12px 18px;
+      font-size: 15px;
+    }
+
+    .products-bento { grid-template-columns: 1fr; }
+    .product-card.featured { flex-direction: column; grid-column: span 1; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  }
+
+  @media (max-width: 600px) {
+    nav { padding: 0 14px; }
+
+    .icon-scroll { padding: 10px 14px; }
+    .section-tabs { padding: 0 14px; }
+    .section { padding: 40px 14px; }
+
+    .hero {
+      padding: 28px 14px 20px;
+    }
+
+    .hero-content {
+      max-width: 100%;
+    }
+
+    .hero h1 {
+      font-size: clamp(26px, 9vw, 34px);
+      line-height: 1.2;
+      letter-spacing: -0.4px;
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      max-width: 34ch;
+      margin-bottom: 18px;
+    }
+
+    .hero-buttons {
+      max-width: 100%;
     }
 
     .section-title { font-size: 28px; }
@@ -776,7 +783,6 @@
     <p class="section-sub">From concept to launch — we cover every layer of your digital presence with precision and creativity.</p>
 
     <div class="services-grid">
-
       <a class="service-card" href="#">
         <div class="service-icon-wrap" style="background:#e8f0fe;">💻</div>
         <div class="service-name">Web Development</div>
@@ -836,7 +842,6 @@
         <div class="service-name">Educational Consultancy</div>
         <div class="service-desc">Guidance and resources to help students and institutions thrive.</div>
       </a>
-
     </div>
   </div>
 </section>
@@ -854,7 +859,6 @@
     <p class="section-sub">Polished, industry-specific apps and tools — built by JSN Creative and ready for your team.</p>
 
     <div class="products-bento">
-
       <div class="product-card featured">
         <div class="product-icon">🥐</div>
         <div>
@@ -908,7 +912,6 @@
           <div class="product-tag" style="margin-top:10px; color:#34a853;">AI Powered</div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -926,7 +929,6 @@
     <p class="section-sub">JSN Creative incubates and runs a portfolio of ventures across education, tech, and design.</p>
 
     <div class="ventures-list">
-
       <a class="venture-card" href="#">
         <div class="venture-avatar" style="background: linear-gradient(135deg,#1a73e8,#4285f4);">SG</div>
         <div>
@@ -966,7 +968,6 @@
           <div class="venture-desc">Design & branding studio</div>
         </div>
       </a>
-
     </div>
   </div>
 </section>
