@@ -38,7 +38,7 @@
     --pill-text: #1a73e8;
   }
 
-  html { scroll-behavior: smooth; }
+  html, body { scroll-behavior: smooth !important; }
 
   body {
     font-family: 'Roboto', 'Google Sans', sans-serif;
@@ -524,78 +524,88 @@
   /* ── SERVICES GRID ── */
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
   }
 
   .service-card {
     background: var(--white);
     border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 28px;
+    border-radius: 20px;
+    padding: 20px;
     cursor: pointer;
     transition: box-shadow 0.25s, border-color 0.25s, transform 0.2s;
     text-decoration: none;
     color: inherit;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
   }
   .service-card:hover {
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
     border-color: #c5cae9;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
   }
 
   .service-icon-wrap {
-    width: 48px; height: 48px;
+    width: 100%;
+    height: 180px;
     border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 16px;
-    font-size: 22px;
     overflow: hidden;
+    margin-bottom: 16px;
+    background: var(--surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
   }
   .service-icon-wrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.4s ease;
+  }
+  .service-card:hover .service-icon-wrap img {
+    transform: scale(1.05);
   }
 
   .service-name {
     font-family: 'Google Sans', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 600;
     color: var(--text-primary);
-    margin-bottom: 6px;
+    margin-bottom: 8px;
   }
   .service-desc {
     font-size: 14px;
     color: var(--text-secondary);
-    line-height: 1.5;
+    line-height: 1.6;
   }
 
   /* ── PRODUCTS BENTO ── */
   .products-bento {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 20px;
   }
 
   .product-card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 28px;
+    border-radius: 24px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
     text-decoration: none;
     color: inherit;
     transition: box-shadow 0.25s, transform 0.2s;
     cursor: pointer;
+    overflow: hidden;
   }
   .product-card:hover {
-    box-shadow: 0 6px 24px rgba(0,0,0,0.09);
-    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.09);
+    transform: translateY(-4px);
   }
   .product-card.featured {
     grid-column: span 2;
@@ -603,31 +613,45 @@
     border-color: #c5cae9;
     flex-direction: row;
     align-items: center;
-    gap: 28px;
+    gap: 24px;
   }
 
   .product-icon {
-    width: 56px; height: 56px;
-    border-radius: 14px;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
+    width: 100%;
+    height: 180px;
+    border-radius: 16px;
+    overflow: hidden;
     background: white;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .product-card.featured .product-icon {
+    width: 280px;
+    height: 200px;
+    margin-bottom: 0;
   }
   .product-icon img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.4s ease;
+  }
+  .product-card:hover .product-icon img {
+    transform: scale(1.05);
   }
 
   .product-name {
     font-family: 'Google Sans', sans-serif;
-    font-size: 17px;
+    font-size: 19px;
     font-weight: 600;
     color: var(--text-primary);
-    margin-bottom: 4px;
+    margin-bottom: 6px;
   }
   .product-tag {
     font-size: 12px;
@@ -849,7 +873,8 @@
     }
 
     .products-bento { grid-template-columns: 1fr; }
-    .product-card.featured { flex-direction: column; grid-column: span 1; }
+    .product-card.featured { flex-direction: column; grid-column: span 1; align-items: stretch; gap: 16px; }
+    .product-card.featured .product-icon { width: 100% !important; height: 180px; margin-bottom: 0; }
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
   }
 
@@ -902,10 +927,19 @@
 </style>
 </head>
 <body>
+<!-- Site Loader -->
+<div class="site-loader">
+  <div class="site-loader-inner">
+    <div class="site-loader-mark">JSN CREATIVE</div>
+    <div class="site-loader-sub">Loading creative experience</div>
+  </div>
+</div>
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">JSN <span>CREATIVE</span></a>
+  <a href="#" class="nav-logo">
+    <img src="logo.jpg" alt="JSN Creative Logo" style="height: 36px; display: block;">
+  </a>
   <ul class="nav-links">
     <li><a href="#services" class="active">Services</a></li>
     <li><a href="#products">Products</a></li>
@@ -925,7 +959,9 @@
 <div class="mobile-backdrop" id="mobileBackdrop"></div>
 <aside class="mobile-sidebar" id="mobileSidebar" aria-hidden="true">
   <div class="sidebar-head">
-    <div class="sidebar-title">JSN <span>CREATIVE</span></div>
+    <div class="sidebar-title">
+      <img src="logo.jpg" alt="JSN Creative Logo" style="height: 30px; display: block;">
+    </div>
     <button class="sidebar-close" type="button" aria-label="Close menu">×</button>
   </div>
   <nav class="sidebar-nav" aria-label="Mobile navigation">
@@ -1007,82 +1043,6 @@
   <a class="tab-link" href="#ventures">Ventures</a>
 </div>
 
-<!-- ══ SERVICES SECTION ══ -->
-<section id="services">
-  <div class="section">
-    <div class="section-eyebrow">
-      <div class="eyebrow-icon" style="background:#e8f0fe;">🛠️</div>
-      <span class="eyebrow-label">What we do</span>
-    </div>
-    <h2 class="section-title">Services built around your goals</h2>
-    <p class="section-sub">From concept to launch — we cover every layer of your digital presence with precision and creativity.</p>
-
-    <div class="services-grid">
-      <a class="service-card" href="web-development.html">
-        <div class="service-icon-wrap" style="background:#e8f0fe;"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=300&q=80" alt="Web development" width="300" height="300" loading="lazy" decoding="async"></div>
-        <div class="service-name">Web Development</div>
-        <div class="service-desc">Fast, modern websites and web applications built with the latest technologies.</div>
-      </a>
-
-      <a class="service-card" href="app-development.html">
-        <div class="service-icon-wrap" style="background:#e6f4ea;"><img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=300&q=80" alt="App development" width="300" height="300" loading="lazy" decoding="async"></div>
-        <div class="service-name">App Development</div>
-        <div class="service-desc">Native and cross-platform mobile apps for iOS and Android.</div>
-      </a>
-
-      <a class="service-card" href="custom-software.html">
-        <div class="service-icon-wrap" style="background:#fce8e6;"><img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=300&q=80" alt="Custom software" width="300" height="300" loading="lazy" decoding="async"></div>
-        <div class="service-name">Custom Software</div>
-        <div class="service-desc">Tailor-made software solutions for complex business workflows.</div>
-      </a>
-
-      <a class="service-card" href="graphic-designing.html">
-        <div class="service-icon-wrap" style="background:#fef7e0;"><img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=300&q=80" alt="Graphic designing" width="300" height="300" loading="lazy" decoding="async"></div>
-        <div class="service-name">Graphic Designing</div>
-        <div class="service-desc">Logos, branding, and visual identities that make a lasting impression.</div>
-      </a>
-
-      <a class="service-card" href="video-editing.html">
-        <div class="service-icon-wrap" style="background:#f3e8fd;"><img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=300&q=80" alt="Video editing" width="300" height="300" loading="lazy" decoding="async"></div>
-        <div class="service-name">Video Editing</div>
-        <div class="service-desc">Professional video production and editing for brands and creators.</div>
-      </a>
-
-      <a class="service-card" href="ui-ux-design.html">
-        <div class="service-icon-wrap" style="background:#e8f0fe;"><img src="https://images.unsplash.com/photo-1512713882289-4b6f7f7f7b7f?auto=format&fit=crop&w=300&q=80" alt="UI UX design" width="300" height="300" loading="lazy" decoding="async"></div>
-        <div class="service-name">UI/UX Design</div>
-        <div class="service-desc">User-centred interfaces that convert visitors into loyal customers.</div>
-      </a>
-
-      <a class="service-card" href="seo-services.html">
-        <div class="service-icon-wrap" style="background:#e6f4ea;"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=300&q=80" alt="SEO services" width="300" height="300" loading="lazy" decoding="async"></div>
-        <div class="service-name">SEO Services</div>
-        <div class="service-desc">Search engine strategies that drive organic growth and visibility.</div>
-      </a>
-
-      <a class="service-card" href="ai-solutions.html">
-        <div class="service-icon-wrap" style="background:#fce8e6;"><img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=300&q=80" alt="AI solutions" width="300" height="300" loading="lazy" decoding="async"></div>
-        <div class="service-name">AI Solutions & Integration</div>
-        <div class="service-desc">Custom AI models, chatbots, and intelligent automation for your business.</div>
-      </a>
-
-      <a class="service-card" href="digital-marketing.html">
-        <div class="service-icon-wrap" style="background:#fef7e0;"><img src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?auto=format&fit=crop&w=300&q=80" alt="Digital marketing" width="300" height="300" loading="lazy" decoding="async"></div>
-        <div class="service-name">Digital Marketing</div>
-        <div class="service-desc">Data-driven campaigns across social, email, and paid channels.</div>
-      </a>
-
-      <a class="service-card" href="educational-consultancy.html">
-        <div class="service-icon-wrap" style="background:#f3e8fd;"><img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=300&q=80" alt="Educational consultancy" width="300" height="300" loading="lazy" decoding="async"></div>
-        <div class="service-name">Educational Consultancy</div>
-        <div class="service-desc">Guidance and resources to help students and institutions thrive.</div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
 <!-- ══ PRODUCTS SECTION ══ -->
 <section id="products">
   <div class="section">
@@ -1095,7 +1055,7 @@
 
     <div class="products-bento">
       <a class="product-card featured" href="bakery-pos.html">
-        <div class="product-icon"><img src="https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&w=300&q=80" alt="Bakery POS" width="300" height="300" loading="lazy" decoding="async"></div>
+        <div class="product-icon"><img src="https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&w=600&q=80" alt="Bakery POS" width="600" height="400" loading="lazy" decoding="async"></div>
         <div>
           <div class="product-name">Bakery POS App</div>
           <div class="product-desc">Complete point-of-sale system designed specifically for bakeries — inventory, orders, and daily sales in one place.</div>
@@ -1104,7 +1064,7 @@
       </a>
 
       <a class="product-card" href="gym-management.html">
-        <div class="product-icon"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=300&q=80" alt="Gym management" width="300" height="300" loading="lazy" decoding="async"></div>
+        <div class="product-icon"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=600&q=80" alt="Gym management" width="600" height="400" loading="lazy" decoding="async"></div>
         <div>
           <div class="product-name">Gym Management App</div>
           <div class="product-desc">Memberships, attendance, and trainer scheduling — streamlined.</div>
@@ -1113,7 +1073,7 @@
       </a>
 
       <a class="product-card featured" style="background:#fce8e6; border-color:#f5c6c3;" href="restaurant-pos.html">
-        <div class="product-icon"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=300&q=80" alt="Restaurant POS" width="300" height="300" loading="lazy" decoding="async"></div>
+        <div class="product-icon"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80" alt="Restaurant POS" width="600" height="400" loading="lazy" decoding="async"></div>
         <div>
           <div class="product-name">Restaurant POS App</div>
           <div class="product-desc">Table management, kitchen display, and billing — everything a modern restaurant needs to run smoothly.</div>
@@ -1122,7 +1082,7 @@
       </a>
 
       <a class="product-card" href="hotel-management.html">
-        <div class="product-icon"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=300&q=80" alt="Hotel management" width="300" height="300" loading="lazy" decoding="async"></div>
+        <div class="product-icon"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" alt="Hotel management" width="600" height="400" loading="lazy" decoding="async"></div>
         <div>
           <div class="product-name">Hotel Management App</div>
           <div class="product-desc">Bookings, housekeeping, and front desk — all unified.</div>
@@ -1131,7 +1091,7 @@
       </a>
 
       <a class="product-card" href="ebooks.html">
-        <div class="product-icon"><img src="https://images.unsplash.com/photo-1455885666463-2e78f3cc9f9f?auto=format&fit=crop&w=300&q=80" alt="E-Books" width="300" height="300" loading="lazy" decoding="async"></div>
+        <div class="product-icon"><img src="https://images.unsplash.com/photo-1455885666463-2e78f3cc9f9f?auto=format&fit=crop&w=600&q=80" alt="E-Books" width="600" height="400" loading="lazy" decoding="async"></div>
         <div>
           <div class="product-name">E-Books</div>
           <div class="product-desc">Curated digital publications on tech, business, and education.</div>
@@ -1140,12 +1100,88 @@
       </a>
 
       <a class="product-card" style="background:#e6f4ea; border-color:#b7dfbf;" href="ai-chatbot.html">
-        <div class="product-icon"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=300&q=80" alt="AI Chatbot" width="300" height="300" loading="lazy" decoding="async"></div>
+        <div class="product-icon"><img src="https://images.unsplash.com/photo-1527474305487-b87b222841cc?auto=format&fit=crop&w=600&q=80" alt="AI Chatbot" width="600" height="400" loading="lazy" decoding="async"></div>
         <div>
           <div class="product-name">AI Chatbot</div>
           <div class="product-desc">Intelligent chatbot platform deployable on your website or app.</div>
           <div class="product-tag" style="margin-top:10px; color:#34a853;">AI Powered</div>
         </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══ SERVICES SECTION ══ -->
+<section id="services">
+  <div class="section">
+    <div class="section-eyebrow">
+      <div class="eyebrow-icon" style="background:#e8f0fe;">🛠️</div>
+      <span class="eyebrow-label">What we do</span>
+    </div>
+    <h2 class="section-title">Services built around your goals</h2>
+    <p class="section-sub">From concept to launch — we cover every layer of your digital presence with precision and creativity.</p>
+
+    <div class="services-grid">
+      <a class="service-card" href="web-development.html">
+        <div class="service-icon-wrap" style="background:#e8f0fe;"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80" alt="Web development" width="600" height="400" loading="lazy" decoding="async"></div>
+        <div class="service-name">Web Development</div>
+        <div class="service-desc">Fast, modern websites and web applications built with the latest technologies.</div>
+      </a>
+
+      <a class="service-card" href="app-development.html">
+        <div class="service-icon-wrap" style="background:#e6f4ea;"><img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=600&q=80" alt="App development" width="600" height="400" loading="lazy" decoding="async"></div>
+        <div class="service-name">App Development</div>
+        <div class="service-desc">Native and cross-platform mobile apps for iOS and Android.</div>
+      </a>
+
+      <a class="service-card" href="custom-software.html">
+        <div class="service-icon-wrap" style="background:#fce8e6;"><img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80" alt="Custom software" width="600" height="400" loading="lazy" decoding="async"></div>
+        <div class="service-name">Custom Software</div>
+        <div class="service-desc">Tailor-made software solutions for complex business workflows.</div>
+      </a>
+
+      <a class="service-card" href="graphic-designing.html">
+        <div class="service-icon-wrap" style="background:#fef7e0;"><img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=600&q=80" alt="Graphic designing" width="600" height="400" loading="lazy" decoding="async"></div>
+        <div class="service-name">Graphic Designing</div>
+        <div class="service-desc">Logos, branding, and visual identities that make a lasting impression.</div>
+      </a>
+
+      <a class="service-card" href="video-editing.html">
+        <div class="service-icon-wrap" style="background:#f3e8fd;"><img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=600&q=80" alt="Video editing" width="600" height="400" loading="lazy" decoding="async"></div>
+        <div class="service-name">Video Editing</div>
+        <div class="service-desc">Professional video production and editing for brands and creators.</div>
+      </a>
+
+      <a class="service-card" href="ui-ux-design.html">
+        <div class="service-icon-wrap" style="background:#e8f0fe;"><img src="https://images.unsplash.com/photo-1512713882289-4b6f7f7f7b7f?auto=format&fit=crop&w=600&q=80" alt="UI UX design" width="600" height="400" loading="lazy" decoding="async"></div>
+        <div class="service-name">UI/UX Design</div>
+        <div class="service-desc">User-centred interfaces that convert visitors into loyal customers.</div>
+      </a>
+
+      <a class="service-card" href="seo-services.html">
+        <div class="service-icon-wrap" style="background:#e6f4ea;"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="SEO services" width="600" height="400" loading="lazy" decoding="async"></div>
+        <div class="service-name">SEO Services</div>
+        <div class="service-desc">Search engine strategies that drive organic growth and visibility.</div>
+      </a>
+
+      <a class="service-card" href="ai-solutions.html">
+        <div class="service-icon-wrap" style="background:#fce8e6;"><img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=600&q=80" alt="AI solutions" width="600" height="400" loading="lazy" decoding="async"></div>
+        <div class="service-name">AI Solutions & Integration</div>
+        <div class="service-desc">Custom AI models, chatbots, and intelligent automation for your business.</div>
+      </a>
+
+      <a class="service-card" href="digital-marketing.html">
+        <div class="service-icon-wrap" style="background:#fef7e0;"><img src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?auto=format&fit=crop&w=600&q=80" alt="Digital marketing" width="600" height="400" loading="lazy" decoding="async"></div>
+        <div class="service-name">Digital Marketing</div>
+        <div class="service-desc">Data-driven campaigns across social, email, and paid channels.</div>
+      </a>
+
+      <a class="service-card" href="educational-consultancy.html">
+        <div class="service-icon-wrap" style="background:#f3e8fd;"><img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80" alt="Educational consultancy" width="600" height="400" loading="lazy" decoding="async"></div>
+        <div class="service-name">Educational Consultancy</div>
+        <div class="service-desc">Guidance and resources to help students and institutions thrive.</div>
       </a>
     </div>
   </div>
@@ -1219,7 +1255,9 @@
   <div class="footer-inner">
     <div class="footer-grid">
       <div>
-        <div class="footer-brand">JSN <span>CREATIVE</span></div>
+        <div class="footer-brand">
+          <img src="logo.jpg" alt="JSN Creative Logo" style="height: 40px; display: block;">
+        </div>
         <p class="footer-tagline">A full-service digital studio building services, products, and ventures that move businesses forward.</p>
       </div>
       <div class="footer-col">
@@ -1271,7 +1309,7 @@
   const productsSection = document.getElementById('products');
   const servicesSection = document.getElementById('services');
   const venturesSection = document.getElementById('ventures');
-  const desktopOrder = ['services', 'products', 'ventures'];
+  const desktopOrder = ['products', 'services', 'ventures'];
   const mobileOrder = ['products', 'services', 'ventures'];
   const mobileQuery = window.matchMedia('(max-width: 900px)');
 
@@ -1286,24 +1324,15 @@
 
   function reorderHomepageSections() {
     const isMobile = mobileQuery.matches;
-    const order = isMobile ? mobileOrder : desktopOrder;
     const sectionTabs = document.getElementById('tabs');
 
     if (sectionTabs) {
       sectionTabs.style.display = isMobile ? 'none' : 'flex';
     }
-
-    if (!productsSection || !servicesSection || !venturesSection) return;
-
-    if (order[0] === 'products') {
-      servicesSection.parentNode.insertBefore(productsSection, servicesSection);
-    } else {
-      venturesSection.parentNode.insertBefore(productsSection, venturesSection);
-    }
   }
 
   function getActiveSections() {
-    return mobileQuery.matches ? mobileOrder : desktopOrder;
+    return ['products', 'services', 'ventures'];
   }
 
   function updateActiveState() {

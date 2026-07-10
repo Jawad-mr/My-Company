@@ -63,8 +63,8 @@
   upsertMeta('meta[name="twitter:description"]', { name: 'twitter:description', content: pageConfig.description });
   upsertMeta('meta[name="twitter:image"]', { name: 'twitter:image', content: pageConfig.ogImage });
   upsertLink('link[rel="canonical"]', { rel: 'canonical', href: currentUrl });
-  upsertLink('link[rel="icon"]', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' });
-  upsertLink('link[rel="apple-touch-icon"]', { rel: 'apple-touch-icon', href: '/apple-touch-icon.svg' });
+  upsertLink('link[rel="icon"]', { rel: 'icon', href: 'favicon.svg', type: 'image/svg+xml' });
+  upsertLink('link[rel="apple-touch-icon"]', { rel: 'apple-touch-icon', href: 'apple-touch-icon.svg' });
 
   const schemaGraphs = [];
   if (pageConfig.schemaType === 'WebSite') {
@@ -143,22 +143,27 @@
     }
   });
 
-  const loader = document.createElement('div');
-  loader.className = 'site-loader';
-  loader.innerHTML = `
-    <div class="site-loader-inner">
-      <div class="site-loader-mark">JSN CREATIVE</div>
-      <div class="site-loader-sub">Loading creative experience</div>
-    </div>
-  `;
-  document.body.prepend(loader);
+  let loader = document.querySelector('.site-loader');
+  if (!loader) {
+    loader = document.createElement('div');
+    loader.className = 'site-loader';
+    loader.innerHTML = `
+      <div class="site-loader-inner">
+        <div class="site-loader-mark">JSN CREATIVE</div>
+        <div class="site-loader-sub">Loading creative experience</div>
+      </div>
+    `;
+    document.body.prepend(loader);
+  }
 
   const hideLoader = () => {
-    loader.classList.add('hidden');
-    window.setTimeout(() => loader.remove(), 450);
+    if (loader) {
+      loader.classList.add('hidden');
+      window.setTimeout(() => loader.remove(), 450);
+    }
   };
 
-  if (document.readyState === 'complete') {
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
     window.setTimeout(hideLoader, 900);
   } else {
     window.addEventListener('load', () => window.setTimeout(hideLoader, 900), { once: true });

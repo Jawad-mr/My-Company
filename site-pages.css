@@ -10,7 +10,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html, body { scroll-behavior: smooth !important; }
 body {
   margin: 0;
   font-family: 'Roboto', 'Google Sans', sans-serif;
