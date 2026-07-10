@@ -257,7 +257,6 @@
       background: var(--pill-bg);
     }
 
-    /*
     .site-loader {
       position: fixed;
       inset: 0;
@@ -269,11 +268,7 @@
         linear-gradient(180deg, #ffffff 0%, #f3f8ff 100%);
       transition: opacity 0.45s ease, visibility 0.45s ease;
     }
-    */
-    .site-loader {
-      display: none;
-    }
-    /*
+
     .site-loader.hidden {
       opacity: 0;
       visibility: hidden;
@@ -286,40 +281,50 @@
     }
 
     .site-loader-mark {
+      position: relative;
       font-family: 'Google Sans Display', sans-serif;
-      font-size: clamp(30px, 7vw, 56px);
-      font-weight: 700;
+      font-size: clamp(32px, 8vw, 64px);
+      font-weight: 800;
       letter-spacing: -1.8px;
+      text-align: center;
       color: transparent;
-      background: linear-gradient(180deg, #0f4bb8 0%, #33b5ff 35%, #d9f2ff 55%, #1a73e8 75%, #0b3f95 100%);
-      background-size: 100% 220%;
+      background: 
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0 C150,90 350,10 500,60 C650,110 850,20 1000,70 C1150,120 1200,10 1200,10 L1200,120 L0,120 Z' fill='%231a73e8'/%3E%3C/svg%3E") repeat-x,
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0 C150,60 350,100 500,40 C650,0 850,80 1000,30 C1150,-20 1200,40 1200,40 L1200,120 L0,120 Z' fill='%2333b5ff' opacity='0.6'/%3E%3C/svg%3E") repeat-x;
+      background-size: 600px 100px;
+      background-position: 0 100px, 0 100px;
       -webkit-background-clip: text;
       background-clip: text;
-      animation: waterFill 2.2s ease-in-out infinite;
+      -webkit-text-stroke: 1.5px rgba(26, 115, 232, 0.4);
+      animation: waveMove 3s linear infinite, waveRise 6s ease-in-out infinite;
     }
 
     .site-loader-sub {
-      margin-top: 10px;
+      margin-top: 15px;
       color: var(--text-secondary);
       font-size: 14px;
-      letter-spacing: 0.4px;
+      letter-spacing: 1px;
       text-transform: uppercase;
+      font-weight: 500;
     }
 
-    @keyframes waterFill {
+    @keyframes waveMove {
       0% {
-        background-position: 0 100%;
+        background-position-x: 0px, 0px;
       }
-
-      50% {
-        background-position: 0 35%;
-      }
-
       100% {
-        background-position: 0 0%;
+        background-position-x: -600px, 300px;
       }
     }
-    */
+
+    @keyframes waveRise {
+      0%, 100% {
+        background-position-y: 80px, 80px;
+      }
+      50% {
+        background-position-y: -10px, -15px;
+      }
+    }
 
     /* ── ICON SCROLL ROW ── */
     .icon-scroll {

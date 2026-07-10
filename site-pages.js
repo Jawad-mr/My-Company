@@ -143,7 +143,6 @@
     }
   });
 
-  /*
   let loader = document.querySelector('.site-loader');
   if (!loader) {
     loader = document.createElement('div');
@@ -165,11 +164,10 @@
   };
 
   if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    window.setTimeout(hideLoader, 900);
+    window.setTimeout(hideLoader, 2000);
   } else {
-    window.addEventListener('load', () => window.setTimeout(hideLoader, 900), { once: true });
+    window.addEventListener('load', () => window.setTimeout(hideLoader, 2000), { once: true });
   }
-  */
 
   const toggle = document.querySelector('[data-menu-toggle]');
   const drawer = document.querySelector('[data-mobile-drawer]');
