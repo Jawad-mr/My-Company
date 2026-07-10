@@ -33,6 +33,10 @@
     overflow-x: hidden;
   }
 
+  body.sidebar-open {
+    overflow: hidden;
+  }
+
   /* ── NAV ── */
   nav {
     position: sticky;
@@ -86,6 +90,120 @@
     transition: background 0.2s !important;
   }
   .nav-cta:hover { background: var(--blue-dark) !important; color: white !important; }
+
+  .nav-actions {
+    display: none;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--white);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+  }
+  .menu-toggle span {
+    width: 18px;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--text-primary);
+    display: block;
+  }
+
+  .mobile-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(16, 24, 40, 0.45);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    z-index: 140;
+  }
+  .mobile-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(86vw, 340px);
+    height: 100vh;
+    background: var(--white);
+    box-shadow: -20px 0 60px rgba(0,0,0,0.16);
+    transform: translateX(100%);
+    transition: transform 0.28s ease;
+    z-index: 150;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+  }
+  .mobile-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .sidebar-title {
+    font-family: 'Google Sans Display', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+  }
+  .sidebar-title span { color: var(--blue); }
+  .sidebar-close {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .sidebar-nav {
+    display: grid;
+    gap: 10px;
+  }
+  .sidebar-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 10px 0 2px;
+  }
+  .sidebar-nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-family: 'Google Sans', sans-serif;
+    font-weight: 500;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: var(--surface);
+    border: 1px solid transparent;
+  }
+  .sidebar-nav a:hover {
+    border-color: #d2e3fc;
+    color: var(--blue);
+    background: var(--pill-bg);
+  }
 
   /* ── ICON SCROLL ROW ── */
   .icon-scroll {
@@ -594,16 +712,20 @@
   @media (max-width: 900px) {
     nav { padding: 0 16px; }
     .nav-links { display: none; }
+    .nav-actions { display: flex; }
+    .menu-toggle { display: inline-flex; }
 
     .icon-scroll { padding: 12px 16px; }
-    .section-tabs { padding: 0 16px; }
     .section { padding: 44px 16px; }
+    .section-tabs { display: none; }
+    .section-divider { display: none; }
 
     .hero {
       grid-template-columns: 1fr;
       width: 100%;
       max-width: none;
-      padding: 32px 16px 24px;
+      min-height: calc(100svh - 64px);
+      padding: 28px 16px 56px;
       gap: 20px;
     }
     .hero-visual { display: none; }
@@ -662,16 +784,13 @@
     nav { padding: 0 14px; }
 
     .icon-scroll { padding: 10px 14px; }
-    .section-tabs {
-      display: none;
-    }
     .section { padding: 40px 14px; }
 
     .hero {
       width: 100%;
       max-width: none;
-      min-height: calc(100svh - 64px - 60px);
-      padding: 28px 14px 44px;
+      min-height: calc(100svh - 64px);
+      padding: 24px 14px 56px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -719,9 +838,38 @@
     <li><a href="#products">Products</a></li>
     <li><a href="#ventures">Ventures</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+    <li><a href="contact.html" class="nav-cta">Get in touch</a></li>
   </ul>
+  <div class="nav-actions">
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileSidebar">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
 </nav>
+
+<div class="mobile-backdrop" id="mobileBackdrop"></div>
+<aside class="mobile-sidebar" id="mobileSidebar" aria-hidden="true">
+  <div class="sidebar-head">
+    <div class="sidebar-title">JSN <span>CREATIVE</span></div>
+    <button class="sidebar-close" type="button" aria-label="Close menu">×</button>
+  </div>
+  <nav class="sidebar-nav" aria-label="Mobile navigation">
+    <a href="#hero">Home</a>
+    <a href="#products">Products</a>
+    <a href="#services">Services</a>
+    <a href="#ventures">Ventures</a>
+    <a href="contact.html">Contact</a>
+    <div class="sidebar-label">Products</div>
+    <a href="bakery-pos.html">Bakery POS App</a>
+    <a href="gym-management.html">Gym Management App</a>
+    <a href="restaurant-pos.html">Restaurant POS App</a>
+    <a href="hotel-management.html">Hotel Management App</a>
+    <a href="ebooks.html">E-Books</a>
+    <a href="ai-chatbot.html">AI Chatbot</a>
+  </nav>
+</aside>
 
 <!-- ICON SCROLL -->
 <div class="icon-scroll">
@@ -749,14 +897,14 @@
 </div>
 
 <!-- HERO -->
-<div class="hero">
+<div class="hero" id="hero">
   <div class="hero-content">
     <p class="hero-eyebrow">Digital Innovation Studio</p>
     <h1>Creative work, <span class="accent">built for results</span></h1>
     <p class="hero-sub">From web apps to AI solutions — Jsn creative delivers end-to-end digital services, products, and ventures that grow your business.</p>
     <div class="hero-buttons">
       <a href="#services" class="btn-primary">Explore services</a>
-      <a href="#contact" class="btn-outline">Talk to us</a>
+      <a href="contact.html" class="btn-outline">Talk to us</a>
     </div>
   </div>
   <div class="hero-visual">
@@ -874,59 +1022,59 @@
     <p class="section-sub">Polished, industry-specific apps and tools — built by JSN Creative and ready for your team.</p>
 
     <div class="products-bento">
-      <div class="product-card featured">
+      <a class="product-card featured" href="bakery-pos.html">
         <div class="product-icon">🥐</div>
         <div>
           <div class="product-name">Bakery POS App</div>
           <div class="product-desc">Complete point-of-sale system designed specifically for bakeries — inventory, orders, and daily sales in one place.</div>
           <div class="product-tag" style="margin-top:12px;">Point of Sale</div>
         </div>
-      </div>
+      </a>
 
-      <div class="product-card">
+      <a class="product-card" href="gym-management.html">
         <div class="product-icon">🏋️</div>
         <div>
           <div class="product-name">Gym Management App</div>
           <div class="product-desc">Memberships, attendance, and trainer scheduling — streamlined.</div>
           <div class="product-tag" style="margin-top:10px;">Management</div>
         </div>
-      </div>
+      </a>
 
-      <div class="product-card featured" style="background:#fce8e6; border-color:#f5c6c3;">
+      <a class="product-card featured" style="background:#fce8e6; border-color:#f5c6c3;" href="restaurant-pos.html">
         <div class="product-icon">🍽️</div>
         <div>
           <div class="product-name">Restaurant POS App</div>
           <div class="product-desc">Table management, kitchen display, and billing — everything a modern restaurant needs to run smoothly.</div>
           <div class="product-tag" style="margin-top:12px; color:#ea4335;">Point of Sale</div>
         </div>
-      </div>
+      </a>
 
-      <div class="product-card">
+      <a class="product-card" href="hotel-management.html">
         <div class="product-icon">🏨</div>
         <div>
           <div class="product-name">Hotel Management App</div>
           <div class="product-desc">Bookings, housekeeping, and front desk — all unified.</div>
           <div class="product-tag" style="margin-top:10px;">Hospitality</div>
         </div>
-      </div>
+      </a>
 
-      <div class="product-card">
+      <a class="product-card" href="ebooks.html">
         <div class="product-icon">📚</div>
         <div>
           <div class="product-name">E-Books</div>
           <div class="product-desc">Curated digital publications on tech, business, and education.</div>
           <div class="product-tag" style="margin-top:10px;">Publishing</div>
         </div>
-      </div>
+      </a>
 
-      <div class="product-card" style="background:#e6f4ea; border-color:#b7dfbf;">
+      <a class="product-card" style="background:#e6f4ea; border-color:#b7dfbf;" href="ai-chatbot.html">
         <div class="product-icon">🤖</div>
         <div>
           <div class="product-name">AI Chatbot</div>
           <div class="product-desc">Intelligent chatbot platform deployable on your website or app.</div>
           <div class="product-tag" style="margin-top:10px; color:#34a853;">AI Powered</div>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -991,7 +1139,7 @@
 <div class="strip-banner" id="contact">
   <h2>Ready to build something great?</h2>
   <p>Let's talk about your next project — no strings attached.</p>
-  <a href="mailto:jsn.creators@google.com" class="btn-white">Get in touch →</a>
+  <a href="contact.html" class="btn-white">Get in touch →</a>
 </div>
 
 <!-- FOOTER -->
@@ -1012,11 +1160,12 @@
       </div>
       <div class="footer-col">
         <h4>Products</h4>
-        <a href="#">Bakery POS</a>
-        <a href="#">Gym Management</a>
-        <a href="#">Restaurant POS</a>
-        <a href="#">Hotel Management</a>
-        <a href="#">AI Chatbot</a>
+        <a href="bakery-pos.html">Bakery POS</a>
+        <a href="gym-management.html">Gym Management</a>
+        <a href="restaurant-pos.html">Restaurant POS</a>
+        <a href="hotel-management.html">Hotel Management</a>
+        <a href="ebooks.html">E-Books</a>
+        <a href="ai-chatbot.html">AI Chatbot</a>
       </div>
       <div class="footer-col">
         <h4>Ventures</h4>
@@ -1032,7 +1181,7 @@
       <div class="footer-bottom-links">
         <a href="#">Privacy</a>
         <a href="#">Terms</a>
-        <a href="#">Contact</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
   </div>
@@ -1040,31 +1189,97 @@
 
 <script>
   const tabs = document.querySelectorAll('.tab-link');
-  const sections = ['services','products','ventures'];
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const sidebar = document.getElementById('mobileSidebar');
+  const backdrop = document.getElementById('mobileBackdrop');
+  const sidebarClose = document.querySelector('.sidebar-close');
+  const productsSection = document.getElementById('products');
+  const servicesSection = document.getElementById('services');
+  const venturesSection = document.getElementById('ventures');
+  const desktopOrder = ['services', 'products', 'ventures'];
+  const mobileOrder = ['products', 'services', 'ventures'];
+  const mobileQuery = window.matchMedia('(max-width: 900px)');
 
-  window.addEventListener('scroll', () => {
+  function setSidebar(open) {
+    if (!sidebar || !backdrop || !menuToggle) return;
+    sidebar.classList.toggle('open', open);
+    backdrop.classList.toggle('open', open);
+    document.body.classList.toggle('sidebar-open', open);
+    menuToggle.setAttribute('aria-expanded', String(open));
+    sidebar.setAttribute('aria-hidden', String(!open));
+  }
+
+  function reorderHomepageSections() {
+    const isMobile = mobileQuery.matches;
+    const order = isMobile ? mobileOrder : desktopOrder;
+    const sectionTabs = document.getElementById('tabs');
+
+    if (sectionTabs) {
+      sectionTabs.style.display = isMobile ? 'none' : 'flex';
+    }
+
+    if (!productsSection || !servicesSection || !venturesSection) return;
+
+    if (order[0] === 'products') {
+      servicesSection.parentNode.insertBefore(productsSection, servicesSection);
+    } else {
+      venturesSection.parentNode.insertBefore(productsSection, venturesSection);
+    }
+  }
+
+  function getActiveSections() {
+    return mobileQuery.matches ? mobileOrder : desktopOrder;
+  }
+
+  function updateActiveState() {
+    const sections = getActiveSections();
     let current = '';
+
     sections.forEach(id => {
       const el = document.getElementById(id);
       if (el && window.scrollY >= el.offsetTop - 120) current = id;
     });
+
     tabs.forEach(t => {
       t.classList.toggle('active', t.getAttribute('href') === '#' + current);
     });
 
-    const navLinks = document.querySelectorAll('.nav-links a');
     navLinks.forEach(a => {
       const href = a.getAttribute('href').replace('#','');
       a.classList.toggle('active', href === current);
     });
+  }
+
+  reorderHomepageSections();
+  updateActiveState();
+
+  window.addEventListener('scroll', updateActiveState);
+  mobileQuery.addEventListener('change', () => {
+    reorderHomepageSections();
+    updateActiveState();
+    setSidebar(false);
   });
 
   tabs.forEach(t => {
-    t.addEventListener('click', e => {
+    t.addEventListener('click', () => {
       tabs.forEach(x => x.classList.remove('active'));
       t.classList.add('active');
     });
   });
+
+  if (menuToggle) {
+    menuToggle.addEventListener('click', () => setSidebar(!sidebar.classList.contains('open')));
+  }
+  if (sidebarClose) {
+    sidebarClose.addEventListener('click', () => setSidebar(false));
+  }
+  if (backdrop) {
+    backdrop.addEventListener('click', () => setSidebar(false));
+  }
+  if (sidebar) {
+    sidebar.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setSidebar(false)));
+  }
 </script>
 
 </body>
