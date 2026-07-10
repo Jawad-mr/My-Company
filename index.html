@@ -592,23 +592,98 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; padding: 48px 24px; }
+    nav { padding: 0 18px; }
+    .nav-links { display: none; }
+
+    .icon-scroll { padding: 12px 18px; }
+
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 40px 18px 32px;
+      gap: 24px;
+      text-align: center;
+    }
     .hero-visual { display: none; }
-    .hero h1 { font-size: 38px; }
-    .section { padding: 48px 24px; }
+
+    .hero h1 {
+      font-size: clamp(30px, 8vw, 42px);
+      line-height: 1.15;
+      letter-spacing: -0.8px;
+      margin-bottom: 14px;
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0 auto 24px;
+      max-width: 620px;
+    }
+
+    .hero-buttons {
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn-primary,
+    .btn-outline {
+      padding: 11px 22px;
+      font-size: 14px;
+    }
+
+    .section-tabs {
+      padding: 0 18px;
+    }
+
+    .section {
+      padding: 44px 18px;
+    }
+
     .products-bento { grid-template-columns: 1fr; }
     .product-card.featured { flex-direction: column; grid-column: span 1; }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-    nav { padding: 0 24px; }
-    .nav-links { display: none; }
-    .section-tabs { padding: 0 24px; }
-    .icon-scroll { padding: 12px 24px; }
+
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
   }
 
   @media (max-width: 600px) {
-    .footer-grid { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 32px; }
+    .hero {
+      padding: 32px 14px 26px;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 {
+      font-size: clamp(26px, 9vw, 34px);
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .hero-buttons {
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    .btn-primary,
+    .btn-outline {
+      width: 100%;
+      text-align: center;
+      padding: 12px 18px;
+    }
+
     .section-title { font-size: 28px; }
+    .section-sub { font-size: 16px; }
+
+    .footer-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
