@@ -24,6 +24,7 @@ body {
 body.sidebar-open { overflow: hidden; }
 a { color: inherit; }
 
+/*
 .site-loader {
   position: fixed;
   inset: 0;
@@ -35,6 +36,11 @@ a { color: inherit; }
     linear-gradient(180deg, #ffffff 0%, #f3f8ff 100%);
   transition: opacity 0.45s ease, visibility 0.45s ease;
 }
+*/
+.site-loader {
+  display: none;
+}
+/*
 .site-loader.hidden {
   opacity: 0;
   visibility: hidden;
@@ -86,6 +92,7 @@ a { color: inherit; }
     background-position-y: -10px, -15px;
   }
 }
+*/
 
 .page-nav {
   position: sticky;
