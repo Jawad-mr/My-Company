@@ -92,13 +92,26 @@
     background: var(--white);
     padding: 16px 40px;
     border-bottom: 1px solid var(--border);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .icon-track {
     display: flex;
     align-items: center;
     gap: 20px;
-    overflow-x: auto;
-    scrollbar-width: none;
+    width: max-content;
+    animation: marquee 28s linear infinite;
   }
-  .icon-scroll::-webkit-scrollbar { display: none; }
+
+  .icon-scroll:hover .icon-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
 
   .icon-chip {
     display: flex;
@@ -615,15 +628,27 @@
 
 <!-- ICON SCROLL -->
 <div class="icon-scroll">
-  <div class="icon-chip"><div class="icon-dot" style="background:#1a73e8;">W</div> Web Dev</div>
-  <div class="icon-chip"><div class="icon-dot" style="background:#34a853;">A</div> App Dev</div>
-  <div class="icon-chip"><div class="icon-dot" style="background:#ea4335;">G</div> Graphic Design</div>
-  <div class="icon-chip"><div class="icon-dot" style="background:#fbbc04; color:#333;">V</div> Video Editing</div>
-  <div class="icon-chip"><div class="icon-dot" style="background:#9c27b0;">U</div> UI/UX</div>
-  <div class="icon-chip"><div class="icon-dot" style="background:#00897b;">S</div> SEO</div>
-  <div class="icon-chip"><div class="icon-dot" style="background:#0288d1;">AI</div> AI Solutions</div>
-  <div class="icon-chip"><div class="icon-dot" style="background:#f4511e;">D</div> Digital Marketing</div>
-  <div class="icon-chip"><div class="icon-dot" style="background:#43a047;">E</div> Education</div>
+  <div class="icon-track">
+    <div class="icon-chip"><div class="icon-dot" style="background:#1a73e8;">W</div> Web Dev</div>
+    <div class="icon-chip"><div class="icon-dot" style="background:#34a853;">A</div> App Dev</div>
+    <div class="icon-chip"><div class="icon-dot" style="background:#ea4335;">G</div> Graphic Design</div>
+    <div class="icon-chip"><div class="icon-dot" style="background:#fbbc04; color:#333;">V</div> Video Editing</div>
+    <div class="icon-chip"><div class="icon-dot" style="background:#9c27b0;">U</div> UI/UX</div>
+    <div class="icon-chip"><div class="icon-dot" style="background:#00897b;">S</div> SEO</div>
+    <div class="icon-chip"><div class="icon-dot" style="background:#0288d1;">AI</div> AI Solutions</div>
+    <div class="icon-chip"><div class="icon-dot" style="background:#f4511e;">D</div> Digital Marketing</div>
+    <div class="icon-chip"><div class="icon-dot" style="background:#43a047;">E</div> Education</div>
+
+    <div class="icon-chip"><div class="icon-dot" style="background:#1a73e8;">W</div> Web Dev</div>
+    <div class="icon-chip"><div class="icon-dot" style="background:#34a853;">A</div> App Dev</div>
+    <div class="icon-chip"><div class="icon-dot" style="background:#ea4335;">G</div> Graphic Design</div>
+    <div class="icon-chip"><div class="icon-dot" style="background:#fbbc04; color:#333;">V</div> Video Editing</div>
+    <div class="icon-chip"><div class="icon-dot" style="background:#9c27b0;">U</div> UI/UX</div>
+    <div class="icon-chip"><div class="icon-dot" style="background:#00897b;">S</div> SEO</div>
+    <div class="icon-chip"><div class="icon-dot" style="background:#0288d1;">AI</div> AI Solutions</div>
+    <div class="icon-chip"><div class="icon-dot" style="background:#f4511e;">D</div> Digital Marketing</div>
+    <div class="icon-chip"><div class="icon-dot" style="background:#43a047;">E</div> Education</div>
+  </div>
 </div>
 
 <!-- HERO -->
