@@ -164,9 +164,9 @@
   };
 
   if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    window.setTimeout(hideLoader, 5000);
+    window.setTimeout(hideLoader, 2000);
   } else {
-    window.addEventListener('load', () => window.setTimeout(hideLoader, 5000), { once: true });
+    window.addEventListener('load', () => window.setTimeout(hideLoader, 2000), { once: true });
   }
 
   const toggle = document.querySelector('[data-menu-toggle]');
@@ -193,7 +193,7 @@
   const tabs = document.querySelectorAll('.tab-link');
   const navLinks = document.querySelectorAll('.nav-links a');
   const sidebar = document.getElementById('mobileSidebar');
-  const backdrop = document.getElementById('mobileBackdrop');
+  const mobileBackdrop = document.getElementById('mobileBackdrop');
   const sidebarClose = document.querySelector('.sidebar-close');
   const productsSection = document.getElementById('products');
   const servicesSection = document.getElementById('services');
