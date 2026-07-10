@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="JSN Creative social preview">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#eef5ff"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f4bb8"/>
+      <stop offset="50%" stop-color="#1a73e8"/>
+      <stop offset="100%" stop-color="#33b5ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="980" cy="120" r="170" fill="#dfeeff" opacity="0.85"/>
+  <circle cx="1060" cy="510" r="220" fill="#e8f7ff" opacity="0.7"/>
+  <rect x="88" y="88" width="1024" height="454" rx="40" fill="#ffffff" stroke="#d9e6fb"/>
+  <rect x="128" y="128" width="118" height="118" rx="28" fill="url(#wave)"/>
+  <path d="M160 200c22 16 54 16 76 0" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round"/>
+  <path d="M160 154h76" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="198" cy="176" r="8" fill="#fff"/>
+  <text x="128" y="332" fill="#172033" font-family="Arial, Helvetica, sans-serif" font-size="70" font-weight="700">JSN CREATIVE</text>
+  <text x="128" y="404" fill="#5f6368" font-family="Arial, Helvetica, sans-serif" font-size="30">Digital Innovation Studio</text>
+  <text x="128" y="470" fill="#1a73e8" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">Web Development  •  Mobile Apps  •  SEO  •  AI Solutions</text>
+</svg>

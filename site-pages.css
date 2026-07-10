@@ -24,6 +24,51 @@ body {
 body.sidebar-open { overflow: hidden; }
 a { color: inherit; }
 
+.site-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 220;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at top, rgba(26,115,232,0.12), transparent 30%),
+    linear-gradient(180deg, #ffffff 0%, #f3f8ff 100%);
+  transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+.site-loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.site-loader-inner {
+  text-align: center;
+  padding: 24px 28px;
+}
+.site-loader-mark {
+  font-family: 'Google Sans Display', sans-serif;
+  font-size: clamp(30px, 7vw, 56px);
+  font-weight: 700;
+  letter-spacing: -1.8px;
+  color: transparent;
+  background: linear-gradient(180deg, #0f4bb8 0%, #33b5ff 35%, #d9f2ff 55%, #1a73e8 75%, #0b3f95 100%);
+  background-size: 100% 220%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: waterFill 2.2s ease-in-out infinite;
+}
+.site-loader-sub {
+  margin-top: 10px;
+  color: var(--page-muted);
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+@keyframes waterFill {
+  0% { background-position: 0 100%; }
+  50% { background-position: 0 35%; }
+  100% { background-position: 0 0%; }
+}
+
 .page-nav {
   position: sticky;
   top: 0;

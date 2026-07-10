@@ -1,0 +1,16 @@
+{
+  "name": "JSN Creative",
+  "short_name": "JSN Creative",
+  "description": "JSN Creative digital studio website.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a73e8",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
