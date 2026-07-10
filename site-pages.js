@@ -143,6 +143,7 @@
     }
   });
 
+  /*
   let loader = document.querySelector('.site-loader');
   if (!loader) {
     loader = document.createElement('div');
@@ -168,6 +169,7 @@
   } else {
     window.addEventListener('load', () => window.setTimeout(hideLoader, 900), { once: true });
   }
+  */
 
   const toggle = document.querySelector('[data-menu-toggle]');
   const drawer = document.querySelector('[data-mobile-drawer]');
