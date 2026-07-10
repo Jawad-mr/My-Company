@@ -164,9 +164,9 @@
   };
 
   if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    window.setTimeout(hideLoader, 2000);
+    window.setTimeout(hideLoader, 5000);
   } else {
-    window.addEventListener('load', () => window.setTimeout(hideLoader, 2000), { once: true });
+    window.addEventListener('load', () => window.setTimeout(hideLoader, 5000), { once: true });
   }
 
   const toggle = document.querySelector('[data-menu-toggle]');
