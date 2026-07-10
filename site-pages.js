@@ -143,33 +143,7 @@
     }
   });
 
-  /*
-  let loader = document.querySelector('.site-loader');
-  if (!loader) {
-    loader = document.createElement('div');
-    loader.className = 'site-loader';
-    loader.innerHTML = `
-      <div class="site-loader-inner">
-        <div class="site-loader-mark">JSN CREATIVE</div>
-        <div class="site-loader-sub">Loading creative experience</div>
-      </div>
-    `;
-    document.body.prepend(loader);
-  }
 
-  const hideLoader = () => {
-    if (loader) {
-      loader.classList.add('hidden');
-      window.setTimeout(() => loader.remove(), 450);
-    }
-  };
-
-  if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    window.setTimeout(hideLoader, 2000);
-  } else {
-    window.addEventListener('load', () => window.setTimeout(hideLoader, 2000), { once: true });
-  }
-  */
 
   const toggle = document.querySelector('[data-menu-toggle]');
   const drawer = document.querySelector('[data-mobile-drawer]');
