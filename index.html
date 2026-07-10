@@ -662,20 +662,26 @@
     nav { padding: 0 14px; }
 
     .icon-scroll { padding: 10px 14px; }
-    .section-tabs { padding: 0 14px; }
+    .section-tabs {
+      display: none;
+    }
     .section { padding: 40px 14px; }
 
     .hero {
       width: 100%;
       max-width: none;
-      padding: 28px 14px 20px;
+      min-height: calc(100svh - 64px - 60px);
+      padding: 28px 14px 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .hero-content {
       width: 100%;
       max-width: none;
-      margin: 0;
-      text-align: left;
+      margin: 0 auto;
+      text-align: center;
     }
 
     .hero h1 {
@@ -686,13 +692,14 @@
 
     .hero-sub {
       font-size: 15px;
-      max-width: 34ch;
+      max-width: 36ch;
+      margin: 0 auto 18px;
       margin-bottom: 18px;
     }
 
     .hero-buttons {
       max-width: 100%;
-      align-items: stretch;
+      align-items: center;
     }
 
     .section-title { font-size: 28px; }
