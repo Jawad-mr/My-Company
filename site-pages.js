@@ -11,10 +11,10 @@
   const pageKey = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
   const pageConfigs = {
     'index.html': {
-      description: 'JSN Creative builds business websites, web apps, mobile apps, custom software, AI solutions, SEO services, and design-led digital products.',
+      description: 'Jsn Creative builds business websites, web apps, mobile apps, custom software, AI solutions, SEO services, and design-led digital products.',
       schemaType: 'WebSite',
       ogImage: `${siteBase}/social-preview.svg`,
-      keywords: 'Web Development, Website Development, Mobile App Development, Software Development, Custom Software, React Development, MERN Stack Development, UI/UX Design, AI Solutions, SEO Services, Business Websites, Digital Solutions, JSN Creative',
+      keywords: 'Web Development, Website Development, Mobile App Development, Software Development, Custom Software, React Development, MERN Stack Development, UI/UX Design, AI Solutions, SEO Services, Business Websites, Digital Solutions, Jsn Creative',
     },
     'bakery-pos.html': { description: 'Bakery POS App with lifetime access, billing, inventory, and sales tracking for bakeries.', schemaType: 'Product', ogImage: `${siteBase}/social-preview.svg` },
     'gym-management.html': { description: 'Gym Management App with memberships, attendance, trainer scheduling, and lifetime access.', schemaType: 'Product', ogImage: `${siteBase}/social-preview.svg` },
@@ -32,9 +32,9 @@
     'ai-solutions.html': { description: 'AI Solutions page for automation, chatbots, and intelligent business integrations.', schemaType: 'Service', ogImage: `${siteBase}/social-preview.svg` },
     'digital-marketing.html': { description: 'Digital Marketing service page for campaigns, content, and audience growth.', schemaType: 'Service', ogImage: `${siteBase}/social-preview.svg` },
     'educational-consultancy.html': { description: 'Educational Consultancy page for guidance, planning, and academic support.', schemaType: 'Service', ogImage: `${siteBase}/social-preview.svg` },
-    'contact.html': { description: 'Contact JSN Creative by form, email, WhatsApp, or call for project and product enquiries.', schemaType: 'ContactPage', ogImage: `${siteBase}/social-preview.svg` },
-    'privacy.html': { description: 'Privacy policy for JSN Creative website visitors and form submissions.', schemaType: 'WebPage', ogImage: `${siteBase}/social-preview.svg` },
-    'terms.html': { description: 'Terms and conditions for using JSN Creative website, products, and services.', schemaType: 'WebPage', ogImage: `${siteBase}/social-preview.svg` },
+    'contact.html': { description: 'Contact Jsn Creative by form, email, WhatsApp, or call for project and product enquiries.', schemaType: 'ContactPage', ogImage: `${siteBase}/social-preview.svg` },
+    'privacy.html': { description: 'Privacy policy for Jsn Creative website visitors and form submissions.', schemaType: 'WebPage', ogImage: `${siteBase}/social-preview.svg` },
+    'terms.html': { description: 'Terms and conditions for using Jsn Creative website, products, and services.', schemaType: 'WebPage', ogImage: `${siteBase}/social-preview.svg` },
   };
 
   const pageConfig = pageConfigs[pageKey] || pageConfigs['index.html'];
@@ -79,11 +79,11 @@
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': `${siteBase}/#organization`,
-    name: 'JSN Creative',
+    name: 'Jsn Creative',
     url: siteBase,
     logo: `${siteBase}/favicon.svg`,
     image: `${siteBase}/social-preview.svg`,
-    description: 'JSN Creative is a digital innovation studio building business websites, web apps, mobile apps, custom software, AI solutions, SEO services, and design-led digital products.',
+    description: 'Jsn Creative is a digital innovation studio building business websites, web apps, mobile apps, custom software, AI solutions, SEO services, and design-led digital products.',
     founder: {
       '@type': 'Person',
       name: 'Muhammad Jawad M R',
@@ -102,7 +102,7 @@
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       '@id': `${siteBase}/#website`,
-      name: 'JSN Creative',
+      name: 'Jsn Creative',
       url: siteBase,
       description: pageConfig.description,
       publisher: { '@id': `${siteBase}/#organization` },
@@ -123,34 +123,34 @@
       'mainEntity': [
         {
           '@type': 'Question',
-          'name': 'What services does JSN Creative offer?',
+          'name': 'What services does Jsn Creative offer?',
           'acceptedAnswer': {
             '@type': 'Answer',
-            'text': 'JSN Creative offers a full suite of digital innovation services including custom Web Development, iOS & Android App Development, Custom Enterprise Software, AI Solutions & Integration, UI/UX Design, SEO Services, Video Editing, Digital Marketing, and Educational Consultancy.'
+            'text': 'Jsn Creative offers a full suite of digital innovation services including custom Web Development, iOS & Android App Development, Custom Enterprise Software, AI Solutions & Integration, UI/UX Design, SEO Services, Video Editing, Digital Marketing, and Educational Consultancy.'
           }
         },
         {
           '@type': 'Question',
-          'name': 'Does JSN Creative offer lifetime access for products?',
+          'name': 'Does Jsn Creative offer lifetime access for products?',
           'acceptedAnswer': {
             '@type': 'Answer',
-            'text': 'Yes! JSN Creative is known for its custom pricing model offering lifetime access to our industry-specific products (such as Bakery POS, Gym Management, and Restaurant POS) with a single one-time payment and no recurring subscriptions.'
+            'text': 'Yes! Jsn Creative is known for its custom pricing model offering lifetime access to our industry-specific products (such as Bakery POS, Gym Management, and Restaurant POS) with a single one-time payment and no recurring subscriptions.'
           }
         },
         {
           '@type': 'Question',
-          'name': 'Who is the founder of JSN Creative?',
+          'name': 'Who is the founder of Jsn Creative?',
           'acceptedAnswer': {
             '@type': 'Answer',
-            'text': 'JSN Creative was founded by Muhammad Jawad M R, who serves as the Founder & CEO. You can learn more about his work on his official website at https://muhammadjawadmr.framer.website/.'
+            'text': 'Jsn Creative was founded by Muhammad Jawad M R, who serves as the Founder & CEO. You can learn more about his work on his official website at https://muhammadjawadmr.framer.website/.'
           }
         },
         {
           '@type': 'Question',
-          'name': 'How can I get in touch with JSN Creative?',
+          'name': 'How can I get in touch with Jsn Creative?',
           'acceptedAnswer': {
             '@type': 'Answer',
-            'text': 'You can contact JSN Creative via our contact page form, directly email us at jsn.creators@gmail.com, or message/call us on WhatsApp at +91-72043-51696.'
+            'text': 'You can contact Jsn Creative via our contact page form, directly email us at jsn.creators@gmail.com, or message/call us on WhatsApp at +91-72043-51696.'
           }
         }
       ]
@@ -169,10 +169,10 @@
     schemaGraphs.push({
       '@context': 'https://schema.org',
       '@type': 'Product',
-      name: document.title.replace(' | JSN Creative', '').replace(' | JSN CREATIVE', ''),
+      name: document.title.replace(' | Jsn Creative', '').replace(' | JSN CREATIVE', ''),
       description: pageConfig.description,
       image: `${siteBase}/social-preview.svg`,
-      brand: { '@type': 'Brand', name: 'JSN Creative' },
+      brand: { '@type': 'Brand', name: 'Jsn Creative' },
       offers: {
         '@type': 'Offer',
         priceCurrency: 'INR',
@@ -180,14 +180,14 @@
         priceValidUntil: '2027-12-31',
         availability: 'https://schema.org/InStock',
         url: currentUrl,
-        seller: { '@type': 'Organization', name: 'JSN Creative' }
+        seller: { '@type': 'Organization', name: 'Jsn Creative' }
       }
     });
   } else if (pageConfig.schemaType === 'Service') {
     schemaGraphs.push({
       '@context': 'https://schema.org',
       '@type': 'Service',
-      name: document.title.replace(' | JSN Creative', '').replace(' | JSN CREATIVE', ''),
+      name: document.title.replace(' | Jsn Creative', '').replace(' | JSN CREATIVE', ''),
       description: pageConfig.description,
       provider: { '@id': `${siteBase}/#organization` },
       areaServed: {
@@ -201,7 +201,7 @@
     { name: 'Home', url: siteBase },
   ];
   if (pageKey !== 'index.html') {
-    breadcrumbItems.push({ name: document.title.replace(' | JSN Creative', '').replace(' | JSN CREATIVE', ''), url: currentUrl });
+    breadcrumbItems.push({ name: document.title.replace(' | Jsn Creative', '').replace(' | JSN CREATIVE', ''), url: currentUrl });
     schemaGraphs.push({
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',

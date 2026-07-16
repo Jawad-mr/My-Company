@@ -1,7 +1,7 @@
 {
-  "name": "JSN Creative",
-  "short_name": "JSN Creative",
-  "description": "JSN Creative digital studio website.",
+  "name": "Jsn Creative",
+  "short_name": "Jsn Creative",
+  "description": "Jsn Creative digital studio website.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
