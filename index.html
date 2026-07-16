@@ -481,8 +481,9 @@
       font-size: 13px;
       font-family: 'Google Sans', sans-serif;
       color: var(--text-secondary);
-      cursor: default;
-      transition: background 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
       white-space: nowrap;
     }
 
@@ -1265,6 +1266,34 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* Footer Social Icons */
+    .footer-socials {
+      display: flex;
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .footer-socials a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--border);
+      color: var(--text-secondary);
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+    .footer-socials a:hover {
+      background: var(--blue);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+    .footer-socials svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+    }
   </style>
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -1326,61 +1355,61 @@
   <!-- ICON SCROLL -->
   <div class="icon-scroll">
     <div class="icon-track">
-      <div class="icon-chip">
+      <a class="icon-chip" href="web-development.html">
         <div class="icon-dot" style="background:#1a73e8;">W</div> Web Dev
-      </div>
-      <div class="icon-chip">
+      </a>
+      <a class="icon-chip" href="app-development.html">
         <div class="icon-dot" style="background:#34a853;">A</div> App Dev
-      </div>
-      <div class="icon-chip">
+      </a>
+      <a class="icon-chip" href="graphic-designing.html">
         <div class="icon-dot" style="background:#ea4335;">G</div> Graphic Design
-      </div>
-      <div class="icon-chip">
+      </a>
+      <a class="icon-chip" href="video-editing.html">
         <div class="icon-dot" style="background:#fbbc04; color:#333;">V</div> Video Editing
-      </div>
-      <div class="icon-chip">
+      </a>
+      <a class="icon-chip" href="ui-ux-design.html">
         <div class="icon-dot" style="background:#9c27b0;">U</div> UI/UX
-      </div>
-      <div class="icon-chip">
+      </a>
+      <a class="icon-chip" href="seo-services.html">
         <div class="icon-dot" style="background:#00897b;">S</div> SEO
-      </div>
-      <div class="icon-chip">
+      </a>
+      <a class="icon-chip" href="ai-solutions.html">
         <div class="icon-dot" style="background:#0288d1;">AI</div> AI Solutions
-      </div>
-      <div class="icon-chip">
+      </a>
+      <a class="icon-chip" href="digital-marketing.html">
         <div class="icon-dot" style="background:#f4511e;">D</div> Digital Marketing
-      </div>
-      <div class="icon-chip">
+      </a>
+      <a class="icon-chip" href="educational-consultancy.html">
         <div class="icon-dot" style="background:#43a047;">E</div> Education
-      </div>
+      </a>
 
-      <div class="icon-chip">
+      <a class="icon-chip" href="web-development.html">
         <div class="icon-dot" style="background:#1a73e8;">W</div> Web Dev
-      </div>
-      <div class="icon-chip">
+      </a>
+      <a class="icon-chip" href="app-development.html">
         <div class="icon-dot" style="background:#34a853;">A</div> App Dev
-      </div>
-      <div class="icon-chip">
+      </a>
+      <a class="icon-chip" href="graphic-designing.html">
         <div class="icon-dot" style="background:#ea4335;">G</div> Graphic Design
-      </div>
-      <div class="icon-chip">
+      </a>
+      <a class="icon-chip" href="video-editing.html">
         <div class="icon-dot" style="background:#fbbc04; color:#333;">V</div> Video Editing
-      </div>
-      <div class="icon-chip">
+      </a>
+      <a class="icon-chip" href="ui-ux-design.html">
         <div class="icon-dot" style="background:#9c27b0;">U</div> UI/UX
-      </div>
-      <div class="icon-chip">
+      </a>
+      <a class="icon-chip" href="seo-services.html">
         <div class="icon-dot" style="background:#00897b;">S</div> SEO
-      </div>
-      <div class="icon-chip">
+      </a>
+      <a class="icon-chip" href="ai-solutions.html">
         <div class="icon-dot" style="background:#0288d1;">AI</div> AI Solutions
-      </div>
-      <div class="icon-chip">
+      </a>
+      <a class="icon-chip" href="digital-marketing.html">
         <div class="icon-dot" style="background:#f4511e;">D</div> Digital Marketing
-      </div>
-      <div class="icon-chip">
+      </a>
+      <a class="icon-chip" href="educational-consultancy.html">
         <div class="icon-dot" style="background:#43a047;">E</div> Education
-      </div>
+      </a>
     </div>
   </div>
 
@@ -1734,6 +1763,17 @@
           <div class="footer-brand">JSN <span>CREATIVE</span></div>
           <p class="footer-tagline">A full-service digital studio building services, products, and ventures that move
             businesses forward.</p>
+          <div class="footer-socials">
+            <a href="https://instagram.com/jsn_creative" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/jsncreative" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="mailto:jsn.creators@gmail.com" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </a>
+          </div>
         </div>
         <div class="footer-col">
           <h4>Services</h4>
