@@ -73,7 +73,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.95);
+      background: var(--nav-bg);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border);
       padding: 0 40px;
@@ -133,7 +133,7 @@
     }
 
     .nav-actions {
-      display: none;
+      display: flex;
       align-items: center;
       gap: 12px;
     }
@@ -263,12 +263,17 @@
 
     /* ── ICON SCROLL ROW ── */
     .icon-scroll {
-      background: var(--white);
+      background: var(--icon-scroll-bg);
       padding: 16px 40px;
       border-bottom: 1px solid var(--border);
       overflow: hidden;
       position: relative;
     }
+
+    /* Dark mode overrides for hero visualization cards */
+    :root:not(.light-mode) .hcard-1 { background: #1c2b46 !important; }
+    :root:not(.light-mode) .hcard-2 { background: #321c1b !important; }
+    :root:not(.light-mode) .hcard-3 { background: #1b2d1e !important; }
 
     .icon-track {
       display: flex;
@@ -572,7 +577,7 @@
     }
 
     .service-card {
-      background: var(--white);
+      background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 20px;
       padding: 20px;
@@ -587,7 +592,7 @@
 
     .service-card:hover {
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-      border-color: #c5cae9;
+      border-color: var(--blue);
       transform: translateY(-3px);
     }
 
@@ -658,8 +663,8 @@
 
     .product-card.featured {
       grid-column: span 2;
-      background: #e8f0fe;
-      border-color: #c5cae9;
+      background: var(--featured-product-bg);
+      border-color: var(--featured-product-border);
       flex-direction: row;
       align-items: center;
       gap: 24px;
@@ -670,7 +675,7 @@
       height: 180px;
       border-radius: 16px;
       overflow: hidden;
-      background: white;
+      background: var(--white);
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
       display: flex;
       align-items: center;
@@ -709,7 +714,7 @@
     .product-tag {
       font-size: 12px;
       font-weight: 500;
-      background: white;
+      background: var(--surface);
       color: var(--blue);
       padding: 3px 10px;
       border-radius: 12px;
@@ -730,7 +735,7 @@
     }
 
     .venture-card {
-      background: var(--white);
+      background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 24px 28px;
@@ -745,7 +750,7 @@
 
     .venture-card:hover {
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
-      border-color: #aecbfa;
+      border-color: var(--blue);
     }
 
     .venture-avatar {
@@ -1093,6 +1098,11 @@
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
+  <script>
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.add('light-mode');
+    }
+  </script>
 </head>
 
 <body>
@@ -1205,7 +1215,7 @@
     <div class="hero-content">
       <p class="hero-eyebrow">Digital Innovation Studio</p>
       <h1>Creative work, <span class="accent">built for results</span></h1>
-      <p class="hero-sub">From web apps to AI solutions — Jsn creative delivers end-to-end digital services, products,
+      <p class="hero-sub">From web apps to AI solutions — Jsn Creative delivers end-to-end digital services, products,
         and ventures that grow your business.</p>
       <div class="hero-buttons">
         <a href="#services" class="btn-primary">Explore services</a>
@@ -1255,7 +1265,7 @@
         <a class="product-card featured" href="bakery-pos.html">
           <div class="product-icon"><img
               src="https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&w=600&q=80"
-              alt="Bakery POS" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="Bakery POS dashboard displaying billing and inventory tools by JSN Creative" width="600" height="400" loading="lazy" decoding="async"></div>
           <div>
             <div class="product-name">Bakery POS App</div>
             <div class="product-desc">Complete point-of-sale system designed specifically for bakeries — inventory,
@@ -1267,7 +1277,7 @@
         <a class="product-card" href="gym-management.html">
           <div class="product-icon"><img
               src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=600&q=80"
-              alt="Gym management" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="Gym Management App billing system by JSN Creative" width="600" height="400" loading="lazy" decoding="async"></div>
           <div>
             <div class="product-name">Gym Management App</div>
             <div class="product-desc">Memberships, attendance, and trainer scheduling — streamlined.</div>
@@ -1278,7 +1288,7 @@
         <a class="product-card featured" style="background:#fce8e6; border-color:#f5c6c3;" href="restaurant-pos.html">
           <div class="product-icon"><img
               src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80"
-              alt="Restaurant POS" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="Restaurant POS billing and table management system by JSN Creative" width="600" height="400" loading="lazy" decoding="async"></div>
           <div>
             <div class="product-name">Restaurant POS App</div>
             <div class="product-desc">Table management, kitchen display, and billing — everything a modern restaurant
@@ -1290,7 +1300,7 @@
         <a class="product-card" href="hotel-management.html">
           <div class="product-icon"><img
               src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80"
-              alt="Hotel management" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="Hotel Management guest bookings and housekeeping panel by JSN Creative" width="600" height="400" loading="lazy" decoding="async"></div>
           <div>
             <div class="product-name">Hotel Management App</div>
             <div class="product-desc">Bookings, housekeeping, and front desk — all unified.</div>
@@ -1301,7 +1311,7 @@
         <a class="product-card" href="ebooks.html">
           <div class="product-icon"><img
               src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80"
-              alt="E-Books" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="E-Books digital content delivery interface by JSN Creative" width="600" height="400" loading="lazy" decoding="async"></div>
           <div>
             <div class="product-name">E-Books</div>
             <div class="product-desc">Curated digital publications on tech, business, and education.</div>
@@ -1312,7 +1322,7 @@
         <a class="product-card" style="background:#e6f4ea; border-color:#b7dfbf;" href="ai-chatbot.html">
           <div class="product-icon"><img
               src="https://images.unsplash.com/photo-1535303311164-664fc9ec6532?auto=format&fit=crop&w=600&q=80"
-              alt="AI Chatbot" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="AI Chatbot conversational interface for websites by JSN Creative" width="600" height="400" loading="lazy" decoding="async"></div>
           <div>
             <div class="product-name">AI Chatbot</div>
             <div class="product-desc">Intelligent chatbot platform deployable on your website or app.</div>
@@ -1340,7 +1350,7 @@
         <a class="service-card" href="web-development.html">
           <div class="service-icon-wrap" style="background:#e8f0fe;"><img
               src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80"
-              alt="Web development" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="Modern web development dashboard clean layouts by JSN Creative" width="600" height="400" loading="lazy" decoding="async"></div>
           <div class="service-name">Web Development</div>
           <div class="service-desc">Fast, modern websites and web applications built with the latest technologies.</div>
         </a>
@@ -1348,7 +1358,7 @@
         <a class="service-card" href="app-development.html">
           <div class="service-icon-wrap" style="background:#e6f4ea;"><img
               src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=600&q=80"
-              alt="App development" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="iOS and Android mobile app mockups on phone screens by JSN Creative" width="600" height="400" loading="lazy" decoding="async"></div>
           <div class="service-name">App Development</div>
           <div class="service-desc">Native and cross-platform mobile apps for iOS and Android.</div>
         </a>
@@ -1356,7 +1366,7 @@
         <a class="service-card" href="custom-software.html">
           <div class="service-icon-wrap" style="background:#fce8e6;"><img
               src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80"
-              alt="Custom software" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="Custom software application code workflow on monitors by JSN Creative" width="600" height="400" loading="lazy" decoding="async"></div>
           <div class="service-name">Custom Software</div>
           <div class="service-desc">Tailor-made software solutions for complex business workflows.</div>
         </a>
@@ -1364,7 +1374,7 @@
         <a class="service-card" href="graphic-designing.html">
           <div class="service-icon-wrap" style="background:#fef7e0;"><img
               src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=600&q=80"
-              alt="Graphic designing" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="Graphic design visual branding asset creative process by JSN Creative" width="600" height="400" loading="lazy" decoding="async"></div>
           <div class="service-name">Graphic Designing</div>
           <div class="service-desc">Logos, branding, and visual identities that make a lasting impression.</div>
         </a>
@@ -1372,7 +1382,7 @@
         <a class="service-card" href="video-editing.html">
           <div class="service-icon-wrap" style="background:#f3e8fd;"><img
               src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=600&q=80"
-              alt="Video editing" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="Video editing software timeline layout workspace by JSN Creative" width="600" height="400" loading="lazy" decoding="async"></div>
           <div class="service-name">Video Editing</div>
           <div class="service-desc">Professional video production and editing for brands and creators.</div>
         </a>
@@ -1380,7 +1390,7 @@
         <a class="service-card" href="ui-ux-design.html">
           <div class="service-icon-wrap" style="background:#e8f0fe;"><img
               src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=600&q=80"
-              alt="UI UX design" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="UI/UX design wireframes and user journey maps on table by JSN Creative" width="600" height="400" loading="lazy" decoding="async"></div>
           <div class="service-name">UI/UX Design</div>
           <div class="service-desc">User-centred interfaces that convert visitors into loyal customers.</div>
         </a>
@@ -1388,7 +1398,7 @@
         <a class="service-card" href="seo-services.html">
           <div class="service-icon-wrap" style="background:#e6f4ea;"><img
               src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80"
-              alt="SEO services" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="SEO analytics reports and search ranking graph charts by JSN Creative" width="600" height="400" loading="lazy" decoding="async"></div>
           <div class="service-name">SEO Services</div>
           <div class="service-desc">Search engine strategies that drive organic growth and visibility.</div>
         </a>
@@ -1396,7 +1406,7 @@
         <a class="service-card" href="ai-solutions.html">
           <div class="service-icon-wrap" style="background:#fce8e6;"><img
               src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=600&q=80"
-              alt="AI solutions" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="AI solution chatbot interface integration mockup by JSN Creative" width="600" height="400" loading="lazy" decoding="async"></div>
           <div class="service-name">AI Solutions & Integration</div>
           <div class="service-desc">Custom AI models, chatbots, and intelligent automation for your business.</div>
         </a>
@@ -1404,7 +1414,7 @@
         <a class="service-card" href="digital-marketing.html">
           <div class="service-icon-wrap" style="background:#fef7e0;"><img
               src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?auto=format&fit=crop&w=600&q=80"
-              alt="Digital marketing" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="Digital marketing social campaign analytics dashboards by JSN Creative" width="600" height="400" loading="lazy" decoding="async"></div>
           <div class="service-name">Digital Marketing</div>
           <div class="service-desc">Data-driven campaigns across social, email, and paid channels.</div>
         </a>
@@ -1412,7 +1422,7 @@
         <a class="service-card" href="educational-consultancy.html">
           <div class="service-icon-wrap" style="background:#f3e8fd;"><img
               src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80"
-              alt="Educational consultancy" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="Educational consultancy academic advising session workspace by JSN Creative" width="600" height="400" loading="lazy" decoding="async"></div>
           <div class="service-name">Educational Consultancy</div>
           <div class="service-desc">Guidance and resources to help students and institutions thrive.</div>
         </a>
@@ -1475,6 +1485,56 @@
         </a>
       </div>
     </div>
+  <div class="section-divider"></div>
+
+  <!-- ══ FAQ SECTION ══ -->
+  <section id="faq">
+    <div class="section">
+      <div class="section-eyebrow">
+        <div class="eyebrow-icon" style="background:#e8f0fe;">❓</div>
+        <span class="eyebrow-label">Common Questions</span>
+      </div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-sub">Quick answers to common questions about JSN Creative, our products, and how we work.</p>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <details>
+            <summary>What services does JSN Creative offer?</summary>
+            <div class="faq-content">
+              JSN Creative offers a full suite of digital innovation services including custom Web Development, iOS & Android App Development, Custom Enterprise Software, AI Solutions & Integration, UI/UX Design, SEO Services, Video Editing, Digital Marketing, and Educational Consultancy.
+            </div>
+          </details>
+        </div>
+
+        <div class="faq-item">
+          <details>
+            <summary>Does JSN Creative offer lifetime access for products?</summary>
+            <div class="faq-content">
+              Yes! JSN Creative is known for its custom pricing model offering lifetime access to our industry-specific products (such as Bakery POS, Gym Management, and Restaurant POS) with a single one-time payment and no recurring subscriptions.
+            </div>
+          </details>
+        </div>
+
+        <div class="faq-item">
+          <details>
+            <summary>Who is the founder of JSN Creative?</summary>
+            <div class="faq-content">
+              JSN Creative was founded by Muhammad Jawad M R, who serves as the Founder & CEO. You can learn more about his work on his official website at <a href="https://muhammadjawadmr.framer.website/" target="_blank" rel="noopener">https://muhammadjawadmr.framer.website/</a>.
+            </div>
+          </details>
+        </div>
+
+        <div class="faq-item">
+          <details>
+            <summary>How can I get in touch with JSN Creative?</summary>
+            <div class="faq-content">
+              You can contact JSN Creative via our contact page form, directly email us at jsn.creators@gmail.com, or message/call us on WhatsApp at +91-72043-51696.
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- CTA STRIP -->
@@ -1520,7 +1580,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2025 JSN CREATIVE All rights reserved.</p>
+        <p>© 2025 JSN CREATIVE All rights reserved. <span class="footer-highlight">Founder & CEO — <a href="https://muhammadjawadmr.framer.website/" target="_blank" rel="noopener">Muhammad Jawad M R</a></span></p>
         <div class="footer-bottom-links">
           <a href="privacy.html">Privacy</a>
           <a href="terms.html">Terms</a>

@@ -1,4 +1,21 @@
 :root {
+  --page-blue: #8ab4f8;
+  --page-blue-dark: #669df6;
+  --page-ink: #f1f3f4;
+  --page-muted: #9aa0a6;
+  --page-surface: #202124;
+  --page-border: #3c4043;
+  --page-white: #121212;
+  --page-shadow: 0 18px 50px rgba(0, 0, 0, 0.5);
+
+  --nav-bg: rgba(23, 23, 23, 0.9);
+  --section-bg: rgba(30, 30, 30, 0.85);
+  --hero-card-bg: rgba(30, 30, 30, 0.9);
+  --hero-art-bg: linear-gradient(135deg, #1c2a45, #121212);
+  --theme-glow: rgba(138, 180, 248, 0.08);
+}
+
+:root.light-mode {
   --page-blue: #1a73e8;
   --page-blue-dark: #1557b0;
   --page-ink: #172033;
@@ -7,6 +24,69 @@
   --page-border: #e6eaf2;
   --page-white: #ffffff;
   --page-shadow: 0 18px 50px rgba(17, 24, 39, 0.08);
+
+  --nav-bg: rgba(255, 255, 255, 0.9);
+  --section-bg: rgba(255, 255, 255, 0.88);
+  --hero-card-bg: rgba(255, 255, 255, 0.92);
+  --hero-art-bg: linear-gradient(135deg, #eef4ff, #f7fbff);
+  --theme-glow: rgba(26, 115, 232, 0.08);
+}
+
+/* Smooth theme transitions */
+body, .page-nav, .section, .info-card, .check-card, .contact-card, .form-card, .list li, .pricing-band, input, textarea, .theme-toggle-btn {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--page-ink);
+  width: 40px;
+  height: 40px;
+}
+.theme-toggle-btn:hover {
+  background: var(--theme-glow);
+  color: var(--page-blue);
+}
+.theme-toggle-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+}
+.theme-toggle-btn .sun-icon {
+  display: block;
+}
+.theme-toggle-btn .moon-icon {
+  display: none;
+}
+.light-mode .theme-toggle-btn .sun-icon {
+  display: none;
+}
+.light-mode .theme-toggle-btn .moon-icon {
+  display: block;
+}
+
+/* Footer Attribution Highlight */
+.footer-highlight {
+  display: inline-block;
+  margin-left: 12px;
+  font-weight: 500;
+}
+.footer-highlight a {
+  color: var(--page-blue);
+  text-decoration: none;
+  font-weight: 700;
+  border-bottom: 2px solid var(--page-blue);
+}
+.footer-highlight a:hover {
+  opacity: 0.85;
 }
 
 * { box-sizing: border-box; }
@@ -39,7 +119,7 @@ a { color: inherit; }
   padding: 0 40px;
   height: 72px;
   backdrop-filter: blur(16px);
-  background: rgba(255,255,255,0.9);
+  background: var(--nav-bg);
   border-bottom: 1px solid var(--page-border);
 }
 .page-logo {
@@ -70,7 +150,7 @@ a { color: inherit; }
 .page-links .cta-link { background: var(--page-blue); color: #fff; }
 .page-links .cta-link:hover { background: var(--page-blue-dark); color: #fff; }
 
-.page-actions { display: none; align-items: center; gap: 12px; }
+.page-actions { display: flex; align-items: center; gap: 12px; }
 .menu-toggle {
   display: none;
   width: 44px;
@@ -223,8 +303,8 @@ a { color: inherit; }
   border-radius: 28px;
   overflow: hidden;
   box-shadow: var(--page-shadow);
-  border: 1px solid rgba(255,255,255,0.8);
-  background: linear-gradient(135deg, #eef4ff, #f7fbff);
+  border: 1px solid var(--page-border);
+  background: var(--hero-art-bg);
 }
 .hero-art img {
   width: 100%;
@@ -239,9 +319,9 @@ a { color: inherit; }
   bottom: 20px;
   padding: 18px;
   border-radius: 18px;
-  background: rgba(255,255,255,0.92);
+  background: var(--hero-card-bg);
   backdrop-filter: blur(14px);
-  border: 1px solid rgba(255,255,255,0.7);
+  border: 1px solid var(--page-border);
   display: grid;
   gap: 8px;
 }
@@ -272,7 +352,7 @@ a { color: inherit; }
   padding: 28px;
   border: 1px solid var(--page-border);
   border-radius: 28px;
-  background: rgba(255,255,255,0.88);
+  background: var(--section-bg);
   box-shadow: var(--page-shadow);
 }
 .section h2 {

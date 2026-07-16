@@ -1,4 +1,12 @@
 (() => {
+  // Theme initialization
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    document.documentElement.classList.add('light-mode');
+  } else {
+    document.documentElement.classList.remove('light-mode');
+  }
+
   const siteBase = 'https://creative.vercel.app';
   const pageKey = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
   const pageConfigs = {
@@ -67,47 +75,125 @@
   upsertLink('link[rel="apple-touch-icon"]', { rel: 'apple-touch-icon', href: 'apple-touch-icon.svg' });
 
   const schemaGraphs = [];
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${siteBase}/#organization`,
+    name: 'JSN Creative',
+    url: siteBase,
+    logo: `${siteBase}/favicon.svg`,
+    image: `${siteBase}/social-preview.svg`,
+    description: 'JSN Creative is a digital innovation studio building business websites, web apps, mobile apps, custom software, AI solutions, SEO services, and design-led digital products.',
+    founder: {
+      '@type': 'Person',
+      name: 'Muhammad Jawad M R',
+      jobTitle: 'Founder & CEO',
+      url: 'https://muhammadjawadmr.framer.website/',
+      sameAs: ['https://muhammadjawadmr.framer.website/']
+    },
+    sameAs: ['https://muhammadjawadmr.framer.website/'],
+    contactPoint: [{ '@type': 'ContactPoint', telephone: '+91-72043-51696', contactType: 'sales', availableLanguage: ['English'] }],
+    knowsAbout: ['Web Development', 'App Development', 'Custom Software', 'Artificial Intelligence Integration', 'Search Engine Optimization', 'UI/UX Design', 'Digital Marketing']
+  };
+
   if (pageConfig.schemaType === 'WebSite') {
-    schemaGraphs.push({
-      '@context': 'https://schema.org',
-      '@type': 'Organization',
-      name: 'JSN Creative',
-      url: siteBase,
-      logo: `${siteBase}/favicon.svg`,
-      sameAs: [],
-      contactPoint: [{ '@type': 'ContactPoint', telephone: '+91-72043-51696', contactType: 'sales', availableLanguage: ['English'] }],
-    });
+    schemaGraphs.push(organizationSchema);
     schemaGraphs.push({
       '@context': 'https://schema.org',
       '@type': 'WebSite',
+      '@id': `${siteBase}/#website`,
       name: 'JSN Creative',
       url: siteBase,
+      description: pageConfig.description,
+      publisher: { '@id': `${siteBase}/#organization` },
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: {
+          '@type': 'EntryPoint',
+          urlTemplate: `${siteBase}/contact.html?query={search_term_string}`
+        },
+        'query-input': 'required name=search_term_string'
+      }
+    });
+
+    // Dynamic FAQ Page Schema for GEO optimization
+    schemaGraphs.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      'mainEntity': [
+        {
+          '@type': 'Question',
+          'name': 'What services does JSN Creative offer?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'JSN Creative offers a full suite of digital innovation services including custom Web Development, iOS & Android App Development, Custom Enterprise Software, AI Solutions & Integration, UI/UX Design, SEO Services, Video Editing, Digital Marketing, and Educational Consultancy.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': 'Does JSN Creative offer lifetime access for products?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Yes! JSN Creative is known for its custom pricing model offering lifetime access to our industry-specific products (such as Bakery POS, Gym Management, and Restaurant POS) with a single one-time payment and no recurring subscriptions.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': 'Who is the founder of JSN Creative?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'JSN Creative was founded by Muhammad Jawad M R, who serves as the Founder & CEO. You can learn more about his work on his official website at https://muhammadjawadmr.framer.website/.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': 'How can I get in touch with JSN Creative?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'You can contact JSN Creative via our contact page form, directly email us at jsn.creators@gmail.com, or message/call us on WhatsApp at +91-72043-51696.'
+          }
+        }
+      ]
     });
   } else if (pageConfig.schemaType === 'ContactPage') {
     schemaGraphs.push({
       '@context': 'https://schema.org',
       '@type': 'ContactPage',
+      '@id': `${currentUrl}/#webpage`,
       name: document.title,
       url: currentUrl,
-      mainEntity: { '@type': 'Organization', name: 'JSN Creative' },
+      description: pageConfig.description,
+      mainEntity: { '@id': `${siteBase}/#organization` }
     });
   } else if (pageConfig.schemaType === 'Product') {
     schemaGraphs.push({
       '@context': 'https://schema.org',
       '@type': 'Product',
-      name: document.title.replace(' | JSN Creative', ''),
+      name: document.title.replace(' | JSN Creative', '').replace(' | JSN CREATIVE', ''),
       description: pageConfig.description,
+      image: `${siteBase}/social-preview.svg`,
       brand: { '@type': 'Brand', name: 'JSN Creative' },
-      offers: { '@type': 'Offer', priceCurrency: 'INR', price: '0', availability: 'https://schema.org/InStock', url: currentUrl },
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'INR',
+        price: '0',
+        priceValidUntil: '2027-12-31',
+        availability: 'https://schema.org/InStock',
+        url: currentUrl,
+        seller: { '@type': 'Organization', name: 'JSN Creative' }
+      }
     });
   } else if (pageConfig.schemaType === 'Service') {
     schemaGraphs.push({
       '@context': 'https://schema.org',
       '@type': 'Service',
-      name: document.title.replace(' | JSN Creative', ''),
+      name: document.title.replace(' | JSN Creative', '').replace(' | JSN CREATIVE', ''),
       description: pageConfig.description,
-      provider: { '@type': 'Organization', name: 'JSN Creative', url: siteBase },
-      areaServed: 'IN',
+      provider: { '@id': `${siteBase}/#organization` },
+      areaServed: {
+        '@type': 'Country',
+        name: 'India'
+      }
     });
   }
 
@@ -115,11 +201,17 @@
     { name: 'Home', url: siteBase },
   ];
   if (pageKey !== 'index.html') {
-    breadcrumbItems.push({ name: document.title.replace(' | JSN Creative', ''), url: currentUrl });
+    breadcrumbItems.push({ name: document.title.replace(' | JSN Creative', '').replace(' | JSN CREATIVE', ''), url: currentUrl });
     schemaGraphs.push({
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
-      itemListElement: breadcrumbItems.map((item, index) => ({ '@type': 'ListItem', position: index + 1, name: item.name, item: item.url })),
+      '@id': `${currentUrl}/#breadcrumb`,
+      itemListElement: breadcrumbItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        item: item.url
+      })),
     });
   }
 
@@ -129,6 +221,37 @@
   schemaScript.type = 'application/ld+json';
   schemaScript.textContent = JSON.stringify(schemaGraphs.length === 1 ? schemaGraphs[0] : schemaGraphs, null, 2);
   document.head.appendChild(schemaScript);
+
+  // Inject theme toggle button
+  const toggleTheme = () => {
+    const isLight = document.documentElement.classList.toggle('light-mode');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  };
+
+  const navActions = document.querySelector('.nav-actions, .page-actions');
+  if (navActions && !navActions.querySelector('.theme-toggle-btn')) {
+    const btn = document.createElement('button');
+    btn.className = 'theme-toggle-btn';
+    btn.type = 'button';
+    btn.setAttribute('aria-label', 'Toggle light/dark mode');
+    btn.innerHTML = `
+      <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    `;
+    btn.addEventListener('click', toggleTheme);
+    navActions.insertBefore(btn, navActions.firstChild);
+  }
+
+  // Inject footer branding
+  if (pageKey !== 'index.html') {
+    const footerP = document.querySelector('footer.footer p, footer p');
+    if (footerP && !footerP.querySelector('.footer-highlight')) {
+      const highlightSpan = document.createElement('span');
+      highlightSpan.className = 'footer-highlight';
+      highlightSpan.innerHTML = `Founder & CEO — <a href="https://muhammadjawadmr.framer.website/" target="_blank" rel="noopener">Muhammad Jawad M R</a>`;
+      footerP.appendChild(highlightSpan);
+    }
+  }
 
   const images = document.querySelectorAll('img');
   images.forEach((image) => {
