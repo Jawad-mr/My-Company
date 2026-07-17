@@ -1349,6 +1349,223 @@
       height: 20px;
       stroke: currentColor;
     }
+
+    /* ── ADDED CUSTOM STYLES FOR BUTTONS & NAVIGATION ── */
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .eyebrow-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--pill-bg);
+      color: var(--pill-text);
+    }
+    .eyebrow-icon svg {
+      width: 16px;
+      height: 16px;
+      stroke-width: 2.2px;
+    }
+    .eyebrow-label {
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.25px;
+      color: var(--pill-text);
+      text-transform: uppercase;
+    }
+
+    /* Card Buttons Styling */
+    .card-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    
+    /* Buy Button (Products) */
+    .buy-btn {
+      background: var(--blue);
+      color: #121212 !important;
+    }
+    .buy-btn:hover {
+      background: var(--blue-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(138, 180, 248, 0.3);
+    }
+    .light-mode .buy-btn {
+      background: #1a73e8;
+      color: #ffffff !important;
+    }
+    .light-mode .buy-btn:hover {
+      background: #1557b0;
+      box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
+    }
+
+    /* Hire Button (Services) */
+    .hire-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-primary) !important;
+    }
+    .hire-btn:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--blue);
+      color: var(--blue) !important;
+      transform: translateY(-2px);
+    }
+    .light-mode .hire-btn {
+      border-color: #dadce0;
+      color: #3c4043 !important;
+    }
+    .light-mode .hire-btn:hover {
+      background: rgba(26, 115, 232, 0.04);
+      border-color: #1a73e8;
+      color: #1a73e8 !important;
+    }
+
+    /* Card Hover micro-interaction */
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .product-card > div:last-child {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .product-card:hover .buy-btn {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(138, 180, 248, 0.3);
+    }
+    .light-mode .product-card:hover .buy-btn {
+      box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
+    }
+    
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .service-card:hover .hire-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--blue);
+      color: var(--blue) !important;
+      transform: translateY(-2px);
+    }
+    .light-mode .service-card:hover .hire-btn {
+      background: rgba(26, 115, 232, 0.04);
+      border-color: #1a73e8;
+      color: #1a73e8 !important;
+    }
+
+    .card-btn svg {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.2s ease;
+    }
+    .card-btn:hover svg,
+    .product-card:hover .card-btn svg,
+    .service-card:hover .card-btn svg {
+      transform: translateX(4px);
+    }
+
+    /* ── BOTTOM NAVIGATION ── */
+    .bottom-nav {
+      position: fixed;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 32px);
+      max-width: 480px;
+      height: 64px;
+      background: rgba(30, 30, 30, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      display: none;
+      justify-content: space-around;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24);
+      padding: 0 10px;
+      transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .light-mode .bottom-nav {
+      background: rgba(255, 255, 255, 0.85);
+      border-color: rgba(0, 0, 0, 0.06);
+      box-shadow: 0 8px 32px rgba(17, 24, 39, 0.08);
+    }
+    @media (max-width: 900px) {
+      .bottom-nav {
+        display: flex;
+      }
+      body {
+        padding-bottom: 90px;
+      }
+    }
+    .bottom-nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 10px;
+      font-weight: 500;
+      font-family: 'Google Sans', sans-serif;
+      transition: color 0.2s, transform 0.2s;
+      width: 20%;
+      height: 100%;
+      position: relative;
+    }
+    .light-mode .bottom-nav-item {
+      color: var(--text-muted);
+    }
+    .bottom-nav-item svg {
+      width: 20px;
+      height: 20px;
+      margin-bottom: 2px;
+      stroke-width: 2px;
+      transition: transform 0.2s;
+    }
+    .bottom-nav-item:hover {
+      color: var(--text-primary);
+    }
+    .bottom-nav-item.active {
+      color: var(--blue);
+    }
+    .bottom-nav-item.active svg {
+      transform: translateY(-2px);
+    }
+    .bottom-nav-item.active::after {
+      content: '';
+      position: absolute;
+      bottom: 6px;
+      width: 4px;
+      height: 4px;
+      background: var(--blue);
+      border-radius: 50%;
+    }
   </style>
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
