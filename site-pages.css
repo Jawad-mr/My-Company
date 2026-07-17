@@ -94,6 +94,7 @@ body, .page-nav, .section, .info-card, .check-card, .contact-card, .form-card, .
   font-weight: 700;
   background: linear-gradient(135deg, var(--page-blue), #81c784);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   border-bottom: 1.5px solid var(--page-blue);
   padding-bottom: 1px;
