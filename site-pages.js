@@ -323,6 +323,54 @@
     servicesSection.parentNode.insertBefore(productsSection, servicesSection);
   }
 
+  // Inject bottom navigation bar dynamically
+  const injectBottomNav = () => {
+    if (document.querySelector('.bottom-nav')) return;
+
+    const nav = document.createElement('div');
+    nav.className = 'bottom-nav';
+
+    const path = window.location.pathname.split('/').pop() || 'index.html';
+    const isIndex = path === 'index.html' || path === '' || path === 'index';
+
+    const items = [
+      { name: 'Home', href: isIndex ? '#hero' : 'index.html', icon: 'home', key: 'home' },
+      { name: 'Products', href: isIndex ? '#products' : 'index.html#products', icon: 'package', key: 'products' },
+      { name: 'Services', href: isIndex ? '#services' : 'index.html#services', icon: 'briefcase', key: 'services' },
+      { name: 'Ventures', href: isIndex ? '#ventures' : 'index.html#ventures', icon: 'rocket', key: 'ventures' },
+      { name: 'Contact', href: 'contact.html', icon: 'phone', key: 'contact' }
+    ];
+
+    nav.innerHTML = items.map(item => {
+      let isActive = false;
+      if (item.key === 'contact' && path.includes('contact.html')) {
+        isActive = true;
+      } else if (item.key === 'products' && (path.includes('pos') || path.includes('gym') || path.includes('hotel') || path.includes('ebook') || path.includes('chatbot'))) {
+        isActive = true;
+      } else if (item.key === 'services' && !isIndex && !path.includes('contact.html') && !path.includes('privacy.html') && !path.includes('terms.html')) {
+        isActive = true;
+      } else if (item.key === 'home' && isIndex && window.scrollY < 200) {
+        isActive = true;
+      }
+
+      return `
+        <a href="${item.href}" class="bottom-nav-item ${isActive ? 'active' : ''}" data-section="${item.key}">
+          <i data-lucide="${item.icon}"></i>
+          <span>${item.name}</span>
+        </a>
+      `;
+    }).join('');
+
+    document.body.appendChild(nav);
+  };
+
+  injectBottomNav();
+
+  // Initialize Lucide Icons
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
+
   function updateActiveState() {
     let current = '';
     sectionsOrder.forEach((id) => {
@@ -337,6 +385,21 @@
     navLinks.forEach((link) => {
       const href = link.getAttribute('href').replace('#', '');
       link.classList.toggle('active', href === current);
+    });
+
+    // Update bottom nav active state
+    const bottomItems = document.querySelectorAll('.bottom-nav-item');
+    bottomItems.forEach((item) => {
+      const section = item.getAttribute('data-section');
+      if (section === 'contact') return;
+
+      let isActive = false;
+      if (section === 'home' && current === '') {
+        isActive = true;
+      } else if (section === current) {
+        isActive = true;
+      }
+      item.classList.toggle('active', isActive);
     });
   }
 

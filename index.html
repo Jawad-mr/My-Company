@@ -79,7 +79,16 @@
     }
 
     /* Smooth theme transitions */
-    body, nav, .icon-scroll, .service-card, .product-card, .venture-card, footer, input, textarea, .theme-toggle-btn {
+    body,
+    nav,
+    .icon-scroll,
+    .service-card,
+    .product-card,
+    .venture-card,
+    footer,
+    input,
+    textarea,
+    .theme-toggle-btn {
       transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -88,15 +97,31 @@
       background: #2b1b1a !important;
       border-color: #4f2b28 !important;
     }
+
     :root:not(.light-mode) .product-card[style*="background:#e6f4ea"] {
       background: #1b2b1e !important;
       border-color: #2e4f35 !important;
     }
-    :root:not(.light-mode) .service-icon-wrap[style*="background:#e8f0fe"] { background: #1a2a45 !important; }
-    :root:not(.light-mode) .service-icon-wrap[style*="background:#e6f4ea"] { background: #1b2d1e !important; }
-    :root:not(.light-mode) .service-icon-wrap[style*="background:#fce8e6"] { background: #321c1b !important; }
-    :root:not(.light-mode) .service-icon-wrap[style*="background:#fef7e0"] { background: #332b17 !important; }
-    :root:not(.light-mode) .service-icon-wrap[style*="background:#f3e8fd"] { background: #2b1c3d !important; }
+
+    :root:not(.light-mode) .service-icon-wrap[style*="background:#e8f0fe"] {
+      background: #1a2a45 !important;
+    }
+
+    :root:not(.light-mode) .service-icon-wrap[style*="background:#e6f4ea"] {
+      background: #1b2d1e !important;
+    }
+
+    :root:not(.light-mode) .service-icon-wrap[style*="background:#fce8e6"] {
+      background: #321c1b !important;
+    }
+
+    :root:not(.light-mode) .service-icon-wrap[style*="background:#fef7e0"] {
+      background: #332b17 !important;
+    }
+
+    :root:not(.light-mode) .service-icon-wrap[style*="background:#f3e8fd"] {
+      background: #2b1c3d !important;
+    }
 
     /* Theme Toggle Button */
     .theme-toggle-btn {
@@ -112,24 +137,30 @@
       width: 40px;
       height: 40px;
     }
+
     .theme-toggle-btn:hover {
       background: var(--pill-bg);
       color: var(--blue);
     }
+
     .theme-toggle-btn svg {
       width: 20px;
       height: 20px;
       stroke: currentColor;
     }
+
     .theme-toggle-btn .sun-icon {
       display: block;
     }
+
     .theme-toggle-btn .moon-icon {
       display: none;
     }
+
     .light-mode .theme-toggle-btn .sun-icon {
       display: none;
     }
+
     .light-mode .theme-toggle-btn .moon-icon {
       display: block;
     }
@@ -145,10 +176,12 @@
       font-size: 13px;
       font-weight: 500;
     }
+
     .light-mode .footer-highlight {
       background: rgba(26, 115, 232, 0.06);
       border-color: rgba(26, 115, 232, 0.12);
     }
+
     .footer-highlight a {
       color: var(--blue);
       text-decoration: none;
@@ -161,6 +194,7 @@
       padding-bottom: 1px;
       transition: opacity 0.2s, border-color 0.2s;
     }
+
     .footer-highlight a:hover {
       opacity: 0.8;
       border-bottom-color: #81c784;
@@ -173,6 +207,7 @@
       display: grid;
       gap: 16px;
     }
+
     .faq-item {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -180,12 +215,15 @@
       overflow: hidden;
       transition: border-color 0.2s, box-shadow 0.2s;
     }
+
     .faq-item:hover {
       border-color: var(--blue);
     }
+
     .faq-item details {
       width: 100%;
     }
+
     .faq-item summary {
       padding: 20px 24px;
       font-family: 'Google Sans', sans-serif;
@@ -199,9 +237,11 @@
       justify-content: space-between;
       user-select: none;
     }
+
     .faq-item summary::-webkit-details-marker {
       display: none;
     }
+
     .faq-item summary::after {
       content: '+';
       font-size: 22px;
@@ -209,10 +249,12 @@
       color: var(--text-secondary);
       transition: transform 0.2s ease;
     }
+
     .faq-item details[open] summary::after {
       content: '−';
       transform: rotate(180deg);
     }
+
     .faq-content {
       padding: 0 24px 20px;
       font-size: 15px;
@@ -220,6 +262,7 @@
       line-height: 1.6;
       border-top: 1px solid transparent;
     }
+
     .faq-item details[open] .faq-content {
       border-top-color: var(--border);
       padding-top: 16px;
@@ -445,9 +488,17 @@
     }
 
     /* Dark mode overrides for hero visualization cards */
-    :root:not(.light-mode) .hcard-1 { background: #1c2b46 !important; }
-    :root:not(.light-mode) .hcard-2 { background: #321c1b !important; }
-    :root:not(.light-mode) .hcard-3 { background: #1b2d1e !important; }
+    :root:not(.light-mode) .hcard-1 {
+      background: #1c2b46 !important;
+    }
+
+    :root:not(.light-mode) .hcard-2 {
+      background: #321c1b !important;
+    }
+
+    :root:not(.light-mode) .hcard-3 {
+      background: #1b2d1e !important;
+    }
 
     .icon-track {
       display: flex;
@@ -1274,6 +1325,7 @@
       gap: 16px;
       margin-top: 20px;
     }
+
     .footer-socials a {
       display: flex;
       align-items: center;
@@ -1285,11 +1337,13 @@
       color: var(--text-secondary);
       transition: background 0.2s, color 0.2s, transform 0.2s;
     }
+
     .footer-socials a:hover {
       background: var(--blue);
       color: #ffffff;
       transform: translateY(-2px);
     }
+
     .footer-socials svg {
       width: 20px;
       height: 20px;
@@ -1458,7 +1512,7 @@
   <section id="products">
     <div class="section">
       <div class="section-eyebrow">
-        <div class="eyebrow-icon" style="background:#fce8e6;">📦</div>
+        <div class="eyebrow-icon product-eyebrow"><i data-lucide="package"></i></div>
         <span class="eyebrow-label">Our Products</span>
       </div>
       <h2 class="section-title">Software products, ready to deploy</h2>
@@ -1469,68 +1523,80 @@
         <a class="product-card featured" href="bakery-pos.html">
           <div class="product-icon"><img
               src="https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&w=600&q=80"
-              alt="Bakery POS dashboard displaying billing and inventory tools by Jsn Creative" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="Bakery POS dashboard displaying billing and inventory tools by Jsn Creative" width="600" height="400"
+              loading="lazy" decoding="async"></div>
           <div>
             <div class="product-name">Bakery POS App</div>
             <div class="product-desc">Complete point-of-sale system designed specifically for bakeries — inventory,
               orders, and daily sales in one place.</div>
             <div class="product-tag" style="margin-top:12px;">Point of Sale</div>
+            <div class="card-btn buy-btn">Buy Now <i data-lucide="arrow-right"></i></div>
           </div>
         </a>
 
         <a class="product-card" href="gym-management.html">
           <div class="product-icon"><img
               src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=600&q=80"
-              alt="Gym Management App billing system by Jsn Creative" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="Gym Management App billing system by Jsn Creative" width="600" height="400" loading="lazy"
+              decoding="async"></div>
           <div>
             <div class="product-name">Gym Management App</div>
             <div class="product-desc">Memberships, attendance, and trainer scheduling — streamlined.</div>
             <div class="product-tag" style="margin-top:10px;">Management</div>
+            <div class="card-btn buy-btn">Buy Now <i data-lucide="arrow-right"></i></div>
           </div>
         </a>
 
         <a class="product-card featured" style="background:#fce8e6; border-color:#f5c6c3;" href="restaurant-pos.html">
           <div class="product-icon"><img
               src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80"
-              alt="Restaurant POS billing and table management system by Jsn Creative" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="Restaurant POS billing and table management system by Jsn Creative" width="600" height="400"
+              loading="lazy" decoding="async"></div>
           <div>
             <div class="product-name">Restaurant POS App</div>
             <div class="product-desc">Table management, kitchen display, and billing — everything a modern restaurant
               needs to run smoothly.</div>
             <div class="product-tag" style="margin-top:12px; color:#ea4335;">Point of Sale</div>
+            <div class="card-btn buy-btn" style="background:#ea4335; color:#ffffff;">Buy Now <i data-lucide="arrow-right"></i></div>
           </div>
         </a>
 
         <a class="product-card" href="hotel-management.html">
           <div class="product-icon"><img
               src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80"
-              alt="Hotel Management guest bookings and housekeeping panel by Jsn Creative" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="Hotel Management guest bookings and housekeeping panel by Jsn Creative" width="600" height="400"
+              loading="lazy" decoding="async"></div>
           <div>
             <div class="product-name">Hotel Management App</div>
             <div class="product-desc">Bookings, housekeeping, and front desk — all unified.</div>
             <div class="product-tag" style="margin-top:10px;">Hospitality</div>
+            <div class="card-btn buy-btn">Buy Now <i data-lucide="arrow-right"></i></div>
           </div>
         </a>
 
         <a class="product-card" href="ebooks.html">
           <div class="product-icon"><img
               src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80"
-              alt="E-Books digital content delivery interface by Jsn Creative" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="E-Books digital content delivery interface by Jsn Creative" width="600" height="400" loading="lazy"
+              decoding="async"></div>
           <div>
             <div class="product-name">E-Books</div>
             <div class="product-desc">Curated digital publications on tech, business, and education.</div>
             <div class="product-tag" style="margin-top:10px;">Publishing</div>
+            <div class="card-btn buy-btn">Buy Now <i data-lucide="arrow-right"></i></div>
           </div>
         </a>
 
         <a class="product-card" style="background:#e6f4ea; border-color:#b7dfbf;" href="ai-chatbot.html">
           <div class="product-icon"><img
               src="https://images.unsplash.com/photo-1535303311164-664fc9ec6532?auto=format&fit=crop&w=600&q=80"
-              alt="AI Chatbot conversational interface for websites by Jsn Creative" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="AI Chatbot conversational interface for websites by Jsn Creative" width="600" height="400"
+              loading="lazy" decoding="async"></div>
           <div>
             <div class="product-name">AI Chatbot</div>
             <div class="product-desc">Intelligent chatbot platform deployable on your website or app.</div>
             <div class="product-tag" style="margin-top:10px; color:#34a853;">AI Powered</div>
+            <div class="card-btn buy-btn" style="background:#34a853; color:#ffffff;">Buy Now <i data-lucide="arrow-right"></i></div>
           </div>
         </a>
       </div>
@@ -1543,7 +1609,7 @@
   <section id="services">
     <div class="section">
       <div class="section-eyebrow">
-        <div class="eyebrow-icon" style="background:#e8f0fe;">🛠️</div>
+        <div class="eyebrow-icon service-eyebrow"><i data-lucide="briefcase"></i></div>
         <span class="eyebrow-label">What we do</span>
       </div>
       <h2 class="section-title">Services built around your goals</h2>
@@ -1554,81 +1620,101 @@
         <a class="service-card" href="web-development.html">
           <div class="service-icon-wrap" style="background:#e8f0fe;"><img
               src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80"
-              alt="Modern web development dashboard clean layouts by Jsn Creative" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="Modern web development dashboard clean layouts by Jsn Creative" width="600" height="400"
+              loading="lazy" decoding="async"></div>
           <div class="service-name">Web Development</div>
           <div class="service-desc">Fast, modern websites and web applications built with the latest technologies.</div>
+          <div class="card-btn hire-btn">Hire Us <i data-lucide="arrow-right"></i></div>
         </a>
 
         <a class="service-card" href="app-development.html">
           <div class="service-icon-wrap" style="background:#e6f4ea;"><img
               src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=600&q=80"
-              alt="iOS and Android mobile app mockups on phone screens by Jsn Creative" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="iOS and Android mobile app mockups on phone screens by Jsn Creative" width="600" height="400"
+              loading="lazy" decoding="async"></div>
           <div class="service-name">App Development</div>
           <div class="service-desc">Native and cross-platform mobile apps for iOS and Android.</div>
+          <div class="card-btn hire-btn">Hire Us <i data-lucide="arrow-right"></i></div>
         </a>
 
         <a class="service-card" href="custom-software.html">
           <div class="service-icon-wrap" style="background:#fce8e6;"><img
               src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80"
-              alt="Custom software application code workflow on monitors by Jsn Creative" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="Custom software application code workflow on monitors by Jsn Creative" width="600" height="400"
+              loading="lazy" decoding="async"></div>
           <div class="service-name">Custom Software</div>
           <div class="service-desc">Tailor-made software solutions for complex business workflows.</div>
+          <div class="card-btn hire-btn">Hire Us <i data-lucide="arrow-right"></i></div>
         </a>
 
         <a class="service-card" href="graphic-designing.html">
           <div class="service-icon-wrap" style="background:#fef7e0;"><img
               src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=600&q=80"
-              alt="Graphic design visual branding asset creative process by Jsn Creative" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="Graphic design visual branding asset creative process by Jsn Creative" width="600" height="400"
+              loading="lazy" decoding="async"></div>
           <div class="service-name">Graphic Designing</div>
           <div class="service-desc">Logos, branding, and visual identities that make a lasting impression.</div>
+          <div class="card-btn hire-btn">Hire Us <i data-lucide="arrow-right"></i></div>
         </a>
 
         <a class="service-card" href="video-editing.html">
           <div class="service-icon-wrap" style="background:#f3e8fd;"><img
               src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=600&q=80"
-              alt="Video editing software timeline layout workspace by Jsn Creative" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="Video editing software timeline layout workspace by Jsn Creative" width="600" height="400"
+              loading="lazy" decoding="async"></div>
           <div class="service-name">Video Editing</div>
           <div class="service-desc">Professional video production and editing for brands and creators.</div>
+          <div class="card-btn hire-btn">Hire Us <i data-lucide="arrow-right"></i></div>
         </a>
 
         <a class="service-card" href="ui-ux-design.html">
           <div class="service-icon-wrap" style="background:#e8f0fe;"><img
               src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=600&q=80"
-              alt="UI/UX design wireframes and user journey maps on table by Jsn Creative" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="UI/UX design wireframes and user journey maps on table by Jsn Creative" width="600" height="400"
+              loading="lazy" decoding="async"></div>
           <div class="service-name">UI/UX Design</div>
           <div class="service-desc">User-centred interfaces that convert visitors into loyal customers.</div>
+          <div class="card-btn hire-btn">Hire Us <i data-lucide="arrow-right"></i></div>
         </a>
 
         <a class="service-card" href="seo-services.html">
           <div class="service-icon-wrap" style="background:#e6f4ea;"><img
               src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80"
-              alt="SEO analytics reports and search ranking graph charts by Jsn Creative" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="SEO analytics reports and search ranking graph charts by Jsn Creative" width="600" height="400"
+              loading="lazy" decoding="async"></div>
           <div class="service-name">SEO Services</div>
           <div class="service-desc">Search engine strategies that drive organic growth and visibility.</div>
+          <div class="card-btn hire-btn">Hire Us <i data-lucide="arrow-right"></i></div>
         </a>
 
         <a class="service-card" href="ai-solutions.html">
           <div class="service-icon-wrap" style="background:#fce8e6;"><img
               src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=600&q=80"
-              alt="AI solution chatbot interface integration mockup by Jsn Creative" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="AI solution chatbot interface integration mockup by Jsn Creative" width="600" height="400"
+              loading="lazy" decoding="async"></div>
           <div class="service-name">AI Solutions & Integration</div>
           <div class="service-desc">Custom AI models, chatbots, and intelligent automation for your business.</div>
+          <div class="card-btn hire-btn">Hire Us <i data-lucide="arrow-right"></i></div>
         </a>
 
         <a class="service-card" href="digital-marketing.html">
           <div class="service-icon-wrap" style="background:#fef7e0;"><img
               src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?auto=format&fit=crop&w=600&q=80"
-              alt="Digital marketing social campaign analytics dashboards by Jsn Creative" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="Digital marketing social campaign analytics dashboards by Jsn Creative" width="600" height="400"
+              loading="lazy" decoding="async"></div>
           <div class="service-name">Digital Marketing</div>
           <div class="service-desc">Data-driven campaigns across social, email, and paid channels.</div>
+          <div class="card-btn hire-btn">Hire Us <i data-lucide="arrow-right"></i></div>
         </a>
 
         <a class="service-card" href="educational-consultancy.html">
           <div class="service-icon-wrap" style="background:#f3e8fd;"><img
               src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80"
-              alt="Educational consultancy academic advising session workspace by Jsn Creative" width="600" height="400" loading="lazy" decoding="async"></div>
+              alt="Educational consultancy academic advising session workspace by Jsn Creative" width="600" height="400"
+              loading="lazy" decoding="async"></div>
           <div class="service-name">Educational Consultancy</div>
           <div class="service-desc">Guidance and resources to help students and institutions thrive.</div>
+          <div class="card-btn hire-btn">Hire Us <i data-lucide="arrow-right"></i></div>
         </a>
       </div>
     </div>
@@ -1640,7 +1726,7 @@
   <section id="ventures">
     <div class="section">
       <div class="section-eyebrow">
-        <div class="eyebrow-icon" style="background:#e6f4ea;">🚀</div>
+        <div class="eyebrow-icon venture-eyebrow"><i data-lucide="rocket"></i></div>
         <span class="eyebrow-label">JSN Ventures</span>
       </div>
       <h2 class="section-title">Brands built from the ground up</h2>
@@ -1659,7 +1745,7 @@
         <a class="venture-card" href="#">
           <div class="venture-avatar" style="background: linear-gradient(135deg,#ea4335,#f4511e);">DB</div>
           <div>
-            <div class="venture-name">Dexterity Books</div>
+            <div class="venture-name">Dexterity Learn</div>
             <div class="venture-desc">Publishing & e-books</div>
           </div>
         </a>
@@ -1697,210 +1783,249 @@
         </a>
       </div>
     </div>
-  <div class="section-divider"></div>
+    <div class="section-divider"></div>
 
-  <!-- ══ FAQ SECTION ══ -->
-  <section id="faq">
-    <div class="section">
-      <div class="section-eyebrow">
-        <div class="eyebrow-icon" style="background:#e8f0fe;">❓</div>
-        <span class="eyebrow-label">Common Questions</span>
-      </div>
-      <h2 class="section-title">Frequently Asked Questions</h2>
-      <p class="section-sub">Quick answers to common questions about Jsn Creative, our products, and how we work.</p>
-
-      <div class="faq-container">
-        <div class="faq-item">
-          <details>
-            <summary>What services does Jsn Creative offer?</summary>
-            <div class="faq-content">
-              Jsn Creative offers a full suite of digital innovation services including custom Web Development, iOS & Android App Development, Custom Enterprise Software, AI Solutions & Integration, UI/UX Design, SEO Services, Video Editing, Digital Marketing, and Educational Consultancy.
-            </div>
-          </details>
+    <!-- ══ FAQ SECTION ══ -->
+    <section id="faq">
+      <div class="section">
+        <div class="section-eyebrow">
+          <div class="eyebrow-icon faq-eyebrow"><i data-lucide="help-circle"></i></div>
+          <span class="eyebrow-label">Common Questions</span>
         </div>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-sub">Quick answers to common questions about Jsn Creative, our products, and how we work.</p>
 
-        <div class="faq-item">
-          <details>
-            <summary>Does Jsn Creative offer lifetime access for products?</summary>
-            <div class="faq-content">
-              Yes! Jsn Creative is known for its custom pricing model offering lifetime access to our industry-specific products (such as Bakery POS, Gym Management, and Restaurant POS) with a single one-time payment and no recurring subscriptions.
-            </div>
-          </details>
-        </div>
+        <div class="faq-container">
+          <div class="faq-item">
+            <details>
+              <summary>What services does Jsn Creative offer?</summary>
+              <div class="faq-content">
+                Jsn Creative offers a full suite of digital innovation services including custom Web Development, iOS &
+                Android App Development, Custom Enterprise Software, AI Solutions & Integration, UI/UX Design, SEO
+                Services, Video Editing, Digital Marketing, and Educational Consultancy.
+              </div>
+            </details>
+          </div>
 
-        <div class="faq-item">
-          <details>
-            <summary>Who is the founder of Jsn Creative?</summary>
-            <div class="faq-content">
-              Jsn Creative was founded by Muhammad Jawad M R, who serves as the Founder & CEO. You can learn more about his work on his official website at <a href="https://muhammadjawadmr.framer.website/" target="_blank" rel="noopener">https://muhammadjawadmr.framer.website/</a>.
-            </div>
-          </details>
-        </div>
+          <div class="faq-item">
+            <details>
+              <summary>Does Jsn Creative offer lifetime access for products?</summary>
+              <div class="faq-content">
+                Yes! Jsn Creative is known for its custom pricing model offering lifetime access to our
+                industry-specific products (such as Bakery POS, Gym Management, and Restaurant POS) with a single
+                one-time payment and no recurring subscriptions.
+              </div>
+            </details>
+          </div>
 
-        <div class="faq-item">
-          <details>
-            <summary>How can I get in touch with Jsn Creative?</summary>
-            <div class="faq-content">
-              You can contact Jsn Creative via our contact page form, directly email us at jsn.creators@gmail.com, or message/call us on WhatsApp at +91-72043-51696.
-            </div>
-          </details>
-        </div>
-      </div>
-    </div>
-  </section>
+          <div class="faq-item">
+            <details>
+              <summary>Who is the founder of Jsn Creative?</summary>
+              <div class="faq-content">
+                Jsn Creative was founded by Muhammad Jawad M R, who serves as the Founder & CEO. You can learn more
+                about his work on his official website at <a href="https://muhammadjawadmr.framer.website/"
+                  target="_blank" rel="noopener">jawad.me</a>.
+              </div>
+            </details>
+          </div>
 
-  <!-- CTA STRIP -->
-  <div class="strip-banner" id="contact">
-    <h2>Ready to build something great?</h2>
-    <p>Let's talk about your next project — no strings attached.</p>
-    <a href="contact.html" class="btn-white">Get in touch →</a>
-  </div>
-
-  <!-- FOOTER -->
-  <footer id="about">
-    <div class="footer-inner">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-brand">JSN <span>CREATIVE</span></div>
-          <p class="footer-tagline">A full-service digital studio building services, products, and ventures that move
-            businesses forward.</p>
-          <div class="footer-socials">
-            <a href="https://instagram.com/jsn_creative" target="_blank" rel="noopener" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-            </a>
-            <a href="https://www.linkedin.com/company/jsncreative" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-            </a>
-            <a href="mailto:jsn.creators@gmail.com" aria-label="Email">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            </a>
+          <div class="faq-item">
+            <details>
+              <summary>How can I get in touch with Jsn Creative?</summary>
+              <div class="faq-content">
+                You can contact Jsn Creative via our contact page form, directly email us at jsn.creators@gmail.com, or
+                message/call us on WhatsApp at +91-72043-51696.
+              </div>
+            </details>
           </div>
         </div>
-        <div class="footer-col">
-          <h4>Services</h4>
-          <a href="web-development.html">Web Development</a>
-          <a href="app-development.html">App Development</a>
-          <a href="ui-ux-design.html">UI/UX Design</a>
-          <a href="ai-solutions.html">AI Integration</a>
-          <a href="seo-services.html">SEO Services</a>
-        </div>
-        <div class="footer-col">
-          <h4>Products</h4>
-          <a href="bakery-pos.html">Bakery POS</a>
-          <a href="gym-management.html">Gym Management</a>
-          <a href="restaurant-pos.html">Restaurant POS</a>
-          <a href="hotel-management.html">Hotel Management</a>
-          <a href="ebooks.html">E-Books</a>
-          <a href="ai-chatbot.html">AI Chatbot</a>
-        </div>
-        <div class="footer-col">
-          <h4>Ventures</h4>
-          <a href="#ventures">Scholars Guide</a>
-          <a href="#ventures">Dexterity Books</a>
-          <a href="#ventures">Work Mint</a>
-          <a href="#ventures">Nexio Tech</a>
-          <a href="#ventures">Livio Designs</a>
-          <a href="#ventures">Nexus Agents</a>
-        </div>
       </div>
-      <div class="footer-bottom">
-        <p>© 2025 JSN CREATIVE All rights reserved. <span class="footer-highlight">Founder & CEO — <a href="https://muhammadjawadmr.framer.website/" target="_blank" rel="noopener">Muhammad Jawad M R</a></span></p>
-        <div class="footer-bottom-links">
-          <a href="privacy.html">Privacy</a>
-          <a href="terms.html">Terms</a>
-          <a href="contact.html">Contact</a>
-        </div>
-      </div>
+    </section>
+
+    <!-- CTA STRIP -->
+    <div class="strip-banner" id="contact">
+      <h2>Ready to build something great?</h2>
+      <p>Let's talk about your next project — no strings attached.</p>
+      <a href="contact.html" class="btn-white">Get in touch →</a>
     </div>
-  </footer>
 
-  <script src="site-pages.js"></script>
+    <!-- FOOTER -->
+    <footer id="about">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-brand">JSN <span>CREATIVE</span></div>
+            <p class="footer-tagline">A full-service digital studio building services, products, and ventures that move
+              businesses forward.</p>
+            <div class="footer-socials">
+              <a href="https://instagram.com/jsn_creative" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/company/jsncreative" target="_blank" rel="noopener"
+                aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="mailto:jsn.creators@gmail.com" aria-label="Email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <a href="web-development.html">Web Development</a>
+            <a href="app-development.html">App Development</a>
+            <a href="ui-ux-design.html">UI/UX Design</a>
+            <a href="ai-solutions.html">AI Integration</a>
+            <a href="seo-services.html">SEO Services</a>
+          </div>
+          <div class="footer-col">
+            <h4>Products</h4>
+            <a href="bakery-pos.html">Bakery POS</a>
+            <a href="gym-management.html">Gym Management</a>
+            <a href="restaurant-pos.html">Restaurant POS</a>
+            <a href="hotel-management.html">Hotel Management</a>
+            <a href="ebooks.html">E-Books</a>
+            <a href="ai-chatbot.html">AI Chatbot</a>
+          </div>
+          <div class="footer-col">
+            <h4>Ventures</h4>
+            <a href="#ventures">Scholars Guide</a>
+            <a href="#ventures">Dexterity Books</a>
+            <a href="#ventures">Work Mint</a>
+            <a href="#ventures">Nexio Tech</a>
+            <a href="#ventures">Livio Designs</a>
+            <a href="#ventures">Nexus Agents</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2025 JSN CREATIVE All rights reserved. <span class="footer-highlight">Founder & CEO — <a
+                href="https://muhammadjawadmr.framer.website/" target="_blank" rel="noopener">Muhammad Jawad M
+                R</a></span></p>
+          <div class="footer-bottom-links">
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-  <script>
-    const tabs = document.querySelectorAll('.tab-link');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    const menuToggle = document.querySelector('.menu-toggle');
-    const sidebar = document.getElementById('mobileSidebar');
-    const backdrop = document.getElementById('mobileBackdrop');
-    const sidebarClose = document.querySelector('.sidebar-close');
-    const productsSection = document.getElementById('products');
-    const servicesSection = document.getElementById('services');
-    const venturesSection = document.getElementById('ventures');
-    const desktopOrder = ['products', 'services', 'ventures'];
-    const mobileOrder = ['products', 'services', 'ventures'];
-    const mobileQuery = window.matchMedia('(max-width: 900px)');
+    <script src="site-pages.js"></script>
 
-    function setSidebar(open) {
-      if (!sidebar || !backdrop || !menuToggle) return;
-      sidebar.classList.toggle('open', open);
-      backdrop.classList.toggle('open', open);
-      document.body.classList.toggle('sidebar-open', open);
-      menuToggle.setAttribute('aria-expanded', String(open));
-      sidebar.setAttribute('aria-hidden', String(!open));
-    }
+    <script>
+      const tabs = document.querySelectorAll('.tab-link');
+      const navLinks = document.querySelectorAll('.nav-links a');
+      const menuToggle = document.querySelector('.menu-toggle');
+      const sidebar = document.getElementById('mobileSidebar');
+      const backdrop = document.getElementById('mobileBackdrop');
+      const sidebarClose = document.querySelector('.sidebar-close');
+      const productsSection = document.getElementById('products');
+      const servicesSection = document.getElementById('services');
+      const venturesSection = document.getElementById('ventures');
+      const desktopOrder = ['products', 'services', 'ventures'];
+      const mobileOrder = ['products', 'services', 'ventures'];
+      const mobileQuery = window.matchMedia('(max-width: 900px)');
 
-    function reorderHomepageSections() {
-      const isMobile = mobileQuery.matches;
-      const sectionTabs = document.getElementById('tabs');
-
-      if (sectionTabs) {
-        sectionTabs.style.display = isMobile ? 'none' : 'flex';
+      function setSidebar(open) {
+        if (!sidebar || !backdrop || !menuToggle) return;
+        sidebar.classList.toggle('open', open);
+        backdrop.classList.toggle('open', open);
+        document.body.classList.toggle('sidebar-open', open);
+        menuToggle.setAttribute('aria-expanded', String(open));
+        sidebar.setAttribute('aria-hidden', String(!open));
       }
-    }
 
-    function getActiveSections() {
-      return ['products', 'services', 'ventures'];
-    }
+      function reorderHomepageSections() {
+        const isMobile = mobileQuery.matches;
+        const sectionTabs = document.getElementById('tabs');
 
-    function updateActiveState() {
-      const sections = getActiveSections();
-      let current = '';
+        if (sectionTabs) {
+          sectionTabs.style.display = isMobile ? 'none' : 'flex';
+        }
+      }
 
-      sections.forEach(id => {
-        const el = document.getElementById(id);
-        if (el && window.scrollY >= el.offsetTop - 120) current = id;
+      function getActiveSections() {
+        return ['products', 'services', 'ventures'];
+      }
+
+      function updateActiveState() {
+        const sections = getActiveSections();
+        let current = '';
+
+        sections.forEach(id => {
+          const el = document.getElementById(id);
+          if (el && window.scrollY >= el.offsetTop - 120) current = id;
+        });
+
+        tabs.forEach(t => {
+          t.classList.toggle('active', t.getAttribute('href') === '#' + current);
+        });
+
+        navLinks.forEach(a => {
+          const href = a.getAttribute('href').replace('#', '');
+          a.classList.toggle('active', href === current);
+        });
+
+        // Update active state in bottom nav
+        const bottomItems = document.querySelectorAll('.bottom-nav-item');
+        bottomItems.forEach(item => {
+          const section = item.getAttribute('data-section');
+          if (section === 'contact') return;
+
+          let isActive = false;
+          if (section === 'home' && current === '') {
+            isActive = true;
+          } else if (section === current) {
+            isActive = true;
+          }
+          item.classList.toggle('active', isActive);
+        });
+      }
+
+      reorderHomepageSections();
+      updateActiveState();
+
+      window.addEventListener('scroll', updateActiveState);
+      mobileQuery.addEventListener('change', () => {
+        reorderHomepageSections();
+        updateActiveState();
+        setSidebar(false);
       });
 
       tabs.forEach(t => {
-        t.classList.toggle('active', t.getAttribute('href') === '#' + current);
+        t.addEventListener('click', () => {
+          tabs.forEach(x => x.classList.remove('active'));
+          t.classList.add('active');
+        });
       });
 
-      navLinks.forEach(a => {
-        const href = a.getAttribute('href').replace('#', '');
-        a.classList.toggle('active', href === current);
-      });
-    }
-
-    reorderHomepageSections();
-    updateActiveState();
-
-    window.addEventListener('scroll', updateActiveState);
-    mobileQuery.addEventListener('change', () => {
-      reorderHomepageSections();
-      updateActiveState();
-      setSidebar(false);
-    });
-
-    tabs.forEach(t => {
-      t.addEventListener('click', () => {
-        tabs.forEach(x => x.classList.remove('active'));
-        t.classList.add('active');
-      });
-    });
-
-    if (menuToggle) {
-      menuToggle.addEventListener('click', () => setSidebar(!sidebar.classList.contains('open')));
-    }
-    if (sidebarClose) {
-      sidebarClose.addEventListener('click', () => setSidebar(false));
-    }
-    if (backdrop) {
-      backdrop.addEventListener('click', () => setSidebar(false));
-    }
-    if (sidebar) {
-      sidebar.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setSidebar(false)));
-    }
-  </script>
+      if (menuToggle) {
+        menuToggle.addEventListener('click', () => setSidebar(!sidebar.classList.contains('open')));
+      }
+      if (sidebarClose) {
+        sidebarClose.addEventListener('click', () => setSidebar(false));
+      }
+      if (backdrop) {
+        backdrop.addEventListener('click', () => setSidebar(false));
+      }
+      if (sidebar) {
+        sidebar.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setSidebar(false)));
+      }
+    </script>
 
 </body>
 
