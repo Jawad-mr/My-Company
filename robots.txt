@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jsncreative.studio/sitemap.xml
+Sitemap: https://www.jsncreative.studio/sitemap.xml
