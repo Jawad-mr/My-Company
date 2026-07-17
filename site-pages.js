@@ -7,7 +7,7 @@
     document.documentElement.classList.remove('light-mode');
   }
 
-  const siteBase = 'https://creative.vercel.app';
+  const siteBase = 'https://jsncreative.studio';
   const pageKey = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
   const pageConfigs = {
     'index.html': {
