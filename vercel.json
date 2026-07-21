@@ -4,14 +4,12 @@
     {
       "source": "/dexterity-learn",
       "destination": "https://dexterity-learn.vercel.app/",
-      "statusCode": 301,
-      "preserveQueryParams": true
+      "statusCode": 301
     },
     {
       "source": "/dexterity-learn/(.*)",
       "destination": "https://dexterity-learn.vercel.app/$1",
-      "statusCode": 301,
-      "preserveQueryParams": true
+      "statusCode": 301
     }
   ],
   "headers": [
