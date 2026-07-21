@@ -1,5 +1,19 @@
 {
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/dexterity-learn",
+      "destination": "https://dexterity-learn.vercel.app/",
+      "statusCode": 301,
+      "preserveQueryParams": true
+    },
+    {
+      "source": "/dexterity-learn/(.*)",
+      "destination": "https://dexterity-learn.vercel.app/$1",
+      "statusCode": 301,
+      "preserveQueryParams": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
