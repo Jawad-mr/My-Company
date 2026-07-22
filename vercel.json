@@ -10,6 +10,26 @@
       "source": "/dexterity-learn/(.*)",
       "destination": "https://dexterity-learn.vercel.app/$1",
       "statusCode": 301
+    },
+    {
+      "source": "/scholars-guide",
+      "destination": "https://scholars-guide.vercel.app/",
+      "statusCode": 301
+    },
+    {
+      "source": "/scholars-guide/(.*)",
+      "destination": "https://scholars-guide.vercel.app/$1",
+      "statusCode": 301
+    },
+    {
+      "source": "/nexio-tech",
+      "destination": "https://nexio-tech.vercel.app/",
+      "statusCode": 301
+    },
+    {
+      "source": "/nexio-tech/(.*)",
+      "destination": "https://nexio-tech.vercel.app/$1",
+      "statusCode": 301
     }
   ],
   "headers": [
