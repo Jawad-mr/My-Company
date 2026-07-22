@@ -14,7 +14,7 @@
       description: 'Jsn Creative builds business websites, web apps, mobile apps, custom software, AI solutions, SEO services, and design-led digital products.',
       schemaType: 'WebSite',
       ogImage: `${siteBase}/social-preview.svg`,
-      keywords: 'Web Development, Website Development, Mobile App Development, Software Development, Custom Software, React Development, MERN Stack Development, UI/UX Design, AI Solutions, SEO Services, Business Websites, Digital Solutions, Jsn Creative',
+      keywords: 'Web Development, Website Development, Mobile App Development, Software Development, Custom Software, React Development, MERN Stack Development, UI/UX Design, AI Solutions, SEO Services, Business Websites, Digital Solutions, JSN CREATIVE',
     },
     'bakery-pos.html': { description: 'Bakery POS App with lifetime access, billing, inventory, and sales tracking for bakeries.', schemaType: 'Product', ogImage: `${siteBase}/social-preview.svg` },
     'gym-management.html': { description: 'Gym Management App with memberships, attendance, trainer scheduling, and lifetime access.', schemaType: 'Product', ogImage: `${siteBase}/social-preview.svg` },
@@ -79,7 +79,7 @@
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': `${siteBase}/#organization`,
-    name: 'Jsn Creative',
+    name: 'JSN CREATIVE',
     url: siteBase,
     logo: `${siteBase}/favicon.svg`,
     image: `${siteBase}/social-preview.svg`,
@@ -102,7 +102,7 @@
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       '@id': `${siteBase}/#website`,
-      name: 'Jsn Creative',
+      name: 'JSN CREATIVE',
       url: siteBase,
       description: pageConfig.description,
       publisher: { '@id': `${siteBase}/#organization` },
@@ -172,7 +172,7 @@
       name: document.title.replace(' | Jsn Creative', '').replace(' | JSN CREATIVE', ''),
       description: pageConfig.description,
       image: `${siteBase}/social-preview.svg`,
-      brand: { '@type': 'Brand', name: 'Jsn Creative' },
+      brand: { '@type': 'Brand', name: 'JSN CREATIVE' },
       offers: {
         '@type': 'Offer',
         priceCurrency: 'INR',
@@ -180,7 +180,7 @@
         priceValidUntil: '2027-12-31',
         availability: 'https://schema.org/InStock',
         url: currentUrl,
-        seller: { '@type': 'Organization', name: 'Jsn Creative' }
+        seller: { '@type': 'Organization', name: 'JSN CREATIVE' }
       }
     });
   } else if (pageConfig.schemaType === 'Service') {
