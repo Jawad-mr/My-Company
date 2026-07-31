@@ -30,6 +30,36 @@
       "source": "/nexio-tech/(.*)",
       "destination": "https://nexio-tech.vercel.app/$1",
       "statusCode": 301
+    },
+    {
+      "source": "/work-mint",
+      "destination": "https://work-mint-one.vercel.app/",
+      "statusCode": 301
+    },
+    {
+      "source": "/work-mint/(.*)",
+      "destination": "https://work-mint-one.vercel.app/$1",
+      "statusCode": 301
+    },
+    {
+      "source": "/livio-designs",
+      "destination": "https://livio-designs.vercel.app/",
+      "statusCode": 301
+    },
+    {
+      "source": "/livio-designs/(.*)",
+      "destination": "https://livio-designs.vercel.app/$1",
+      "statusCode": 301
+    },
+    {
+      "source": "/nexus-agents",
+      "destination": "https://nexus-agents-ai.vercel.app/",
+      "statusCode": 301
+    },
+    {
+      "source": "/nexus-agents/(.*)",
+      "destination": "https://nexus-agents-ai.vercel.app/$1",
+      "statusCode": 301
     }
   ],
   "headers": [
