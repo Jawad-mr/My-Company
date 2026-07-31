@@ -80,18 +80,37 @@
     '@type': 'Organization',
     '@id': `${siteBase}/#organization`,
     name: 'JSN CREATIVE',
+    alternateName: ['Jsn Creative Studio', 'JSN Digital Innovation Studio'],
     url: siteBase,
     logo: `${siteBase}/favicon.svg`,
     image: `${siteBase}/social-preview.svg`,
-    description: 'Jsn Creative is a digital innovation studio building business websites, web apps, mobile apps, custom software, AI solutions, SEO services, and design-led digital products.',
+    description: 'JSN CREATIVE is a digital innovation studio founded by Muhammad Jawad M R, building business web applications, mobile apps, custom software, AI solutions, and incubating a portfolio of tech ventures.',
     founder: {
       '@type': 'Person',
+      '@id': `${siteBase}/#founder`,
       name: 'Muhammad Jawad M R',
+      givenName: 'Muhammad Jawad',
+      familyName: 'M R',
+      alternateName: ['Muhammad Jawad', 'Jawad M R', 'Jawad JSN Creative', 'Founder of JSN Creative'],
       jobTitle: 'Founder & CEO',
+      worksFor: { '@id': `${siteBase}/#organization` },
       url: 'https://muhammadjawadmr.framer.website/',
-      sameAs: ['https://muhammadjawadmr.framer.website/']
+      sameAs: [
+        'https://muhammadjawadmr.framer.website/',
+        'https://instagram.com/jsn_creative',
+        'https://www.linkedin.com/company/jsncreative'
+      ],
+      knowsAbout: ['Web Development', 'Software Engineering', 'AI Automation', 'Product Management', 'SaaS Innovation', 'Digital Ventures']
     },
-    sameAs: ['https://muhammadjawadmr.framer.website/'],
+    subOrganization: [
+      { '@type': 'Organization', name: 'Scholars Guide', url: 'https://scholars-guide.vercel.app/', description: 'Education & career guidance portal by JSN CREATIVE' },
+      { '@type': 'Organization', name: 'Dexterity Learn', url: 'https://dexterity-learn.vercel.app/', description: 'Digital publishing & e-book learning platform by JSN CREATIVE' },
+      { '@type': 'Organization', name: 'Work Mint', url: 'https://work-mint-one.vercel.app/', description: 'Freelance & recruitment workspace network by JSN CREATIVE' },
+      { '@type': 'Organization', name: 'NEXIO TECH', url: 'https://nexio-tech.vercel.app/', description: 'SaaS & modern software technology studio by JSN CREATIVE' },
+      { '@type': 'Organization', name: 'Livio Designs', url: 'https://livio-designs.vercel.app/', description: 'Design & branding studio venture by JSN CREATIVE' },
+      { '@type': 'Organization', name: 'Nexus Agents', url: 'https://nexus-agents-ai.vercel.app/', description: 'Autonomous AI agents & intelligent automation studio by JSN CREATIVE' }
+    ],
+    sameAs: ['https://instagram.com/jsn_creative', 'https://www.linkedin.com/company/jsncreative', 'https://muhammadjawadmr.framer.website/'],
     contactPoint: [{ '@type': 'ContactPoint', telephone: '+91-72043-51696', contactType: 'sales', availableLanguage: ['English'] }],
     knowsAbout: ['Web Development', 'App Development', 'Custom Software', 'Artificial Intelligence Integration', 'Search Engine Optimization', 'UI/UX Design', 'Digital Marketing']
   };
