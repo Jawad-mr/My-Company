@@ -820,7 +820,9 @@
 
     .chrome-lock {
       color: #34d399;
-      font-size: 10px;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
     }
 
     .chrome-domain {
@@ -1140,9 +1142,74 @@
       100% { opacity: 1;   transform: translate(-50%,-50%) scale(1.1); }
     }
 
-    /* Responsive: hide on smaller screens */
+    /* Responsive: show compact stats on mobile, hide full card */
     @media (max-width: 900px) {
       .hero-visual { display: none; }
+      .hero-mobile-stats {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-top: 28px;
+      }
+    }
+
+    .hero-mobile-stats {
+      display: none;
+    }
+
+    .hms-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .hms-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      background: var(--pill-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blue);
+      flex-shrink: 0;
+    }
+
+    .hms-icon svg {
+      width: 15px;
+      height: 15px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .hms-val {
+      font-family: 'Google Sans Display', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1;
+    }
+
+    .hms-val span {
+      font-size: 12px;
+      font-weight: 500;
+      color: #34d399;
+      margin-left: 1px;
+    }
+
+    .hms-label {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
     }
 
     .connection-svg {
@@ -2033,17 +2100,7 @@
       }
 
       .hero-visual {
-        display: flex;
-        width: 100%;
-        max-width: 520px;
-        height: 360px;
-        margin: 10px auto 0;
-        overflow: hidden;
-      }
-
-      .ecosystem-stage {
-        transform: scale(0.82);
-        transform-origin: center center;
+        display: none;
       }
 
       /* key alignment fix */
@@ -2731,6 +2788,31 @@
         <a href="#services" class="btn-primary">Explore services</a>
         <a href="contact.html" class="btn-outline">Talk to us</a>
       </div>
+
+      <!-- Mobile-only stats strip (visible <900px) -->
+      <div class="hero-mobile-stats">
+        <div class="hms-card">
+          <div class="hms-icon">
+            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div class="hms-val">120<span>+</span></div>
+          <div class="hms-label">Projects</div>
+        </div>
+        <div class="hms-card">
+          <div class="hms-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="hms-val">80<span>↑</span></div>
+          <div class="hms-label">Clients</div>
+        </div>
+        <div class="hms-card">
+          <div class="hms-icon">
+            <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div class="hms-val">6<span>live</span></div>
+          <div class="hms-label">Ventures</div>
+        </div>
+      </div>
     </div>
     <div class="hero-visual" id="heroVisual">
       <div class="dashboard-stage">
@@ -2745,7 +2827,7 @@
             <span class="chrome-dot" style="background:#febc2e;"></span>
             <span class="chrome-dot" style="background:#28c840;"></span>
             <div class="chrome-url">
-              <span class="chrome-lock">&#128274;</span>
+              <svg class="chrome-lock" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               <span class="chrome-domain">jsncreative.studio/dashboard</span>
             </div>
           </div>
@@ -2754,13 +2836,32 @@
           <div class="dash-body">
             <!-- Left sidebar -->
             <div class="dash-sidebar">
-              <div class="dsb-logo">JSN &#x2605;</div>
-              <div class="dsb-item active"><span class="dsb-dot"></span> Overview</div>
-              <div class="dsb-item">&#128202; Analytics</div>
-              <div class="dsb-item">&#128736; Projects</div>
-              <div class="dsb-item">&#127758; Ventures</div>
-              <div class="dsb-item">&#129302; AI Tools</div>
-              <div class="dsb-item">&#9881; Settings</div>
+              <div class="dsb-logo">JSN
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="var(--blue)" style="margin-left:3px;vertical-align:middle;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <div class="dsb-item active">
+                <span class="dsb-dot"></span> Overview
+              </div>
+              <div class="dsb-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="18" y="3" width="4" height="18"/><rect x="10" y="8" width="4" height="13"/><rect x="2" y="13" width="4" height="8"/></svg>
+                Analytics
+              </div>
+              <div class="dsb-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                Projects
+              </div>
+              <div class="dsb-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                Ventures
+              </div>
+              <div class="dsb-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10H12V2z"/><path d="M12 12 2.1 12"/><circle cx="12" cy="12" r="3"/></svg>
+                AI Tools
+              </div>
+              <div class="dsb-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>
+                Settings
+              </div>
             </div>
 
             <!-- Main area -->
@@ -2814,7 +2915,9 @@
 
         <!-- Floating achievement badges -->
         <div class="hero-badge badge-clients">
-          <div class="badge-icon" style="background:rgba(52,211,153,0.15);">&#127881;</div>
+          <div class="badge-icon" style="background:rgba(52,211,153,0.15);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
           <div class="badge-text">
             <span class="badge-title">80+ Happy Clients</span>
             <span class="badge-sub">Worldwide</span>
@@ -2822,7 +2925,9 @@
         </div>
 
         <div class="hero-badge badge-rating">
-          <div class="badge-icon" style="background:rgba(251,191,36,0.15);">&#11088;</div>
+          <div class="badge-icon" style="background:rgba(251,191,36,0.15);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#fbbc04" stroke="#fbbc04" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
           <div class="badge-text">
             <span class="badge-title">5.0 Star Rating</span>
             <span class="badge-sub">Avg. client score</span>
@@ -2830,7 +2935,9 @@
         </div>
 
         <div class="hero-badge badge-projects">
-          <div class="badge-icon" style="background:rgba(138,180,248,0.15);">&#128640;</div>
+          <div class="badge-icon" style="background:rgba(138,180,248,0.15);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
           <div class="badge-text">
             <span class="badge-title">120+ Projects</span>
             <span class="badge-sub">Delivered on time</span>
@@ -2838,7 +2945,9 @@
         </div>
 
         <div class="hero-badge badge-live">
-          <div class="badge-icon" style="background:rgba(167,139,250,0.15);">&#9889;</div>
+          <div class="badge-icon" style="background:rgba(167,139,250,0.15);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
           <div class="badge-text">
             <span class="badge-title">6 Live Ventures</span>
             <span class="badge-sub">Growing daily</span>
