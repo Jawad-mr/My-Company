@@ -732,24 +732,417 @@
       background: var(--pill-bg);
     }
 
-    /* ── CUSTOM EDITORIAL HERO ILLUSTRATION ── */
+    /* ── PREMIUM HERO DASHBOARD VISUAL ── */
     .hero-visual {
       position: relative;
       width: 100%;
-      height: 440px;
+      height: 460px;
       display: flex;
       align-items: center;
       justify-content: center;
-      perspective: 1000px;
       overflow: visible;
     }
 
-    .ecosystem-stage {
+    .dashboard-stage {
       position: relative;
-      width: 540px;
-      height: 420px;
-      transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1);
+      width: 500px;
+      height: 430px;
+      animation: stageFloat 7s ease-in-out infinite alternate;
       will-change: transform;
+    }
+
+    @keyframes stageFloat {
+      0%   { transform: translateY(0px) rotate3d(1,0,0,0deg); }
+      100% { transform: translateY(-10px) rotate3d(1,0,0,1.5deg); }
+    }
+
+    /* Main browser/dashboard card */
+    .dash-card {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 380px;
+      background: rgba(22, 24, 30, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(138, 180, 248, 0.18);
+      border-radius: 20px;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.04), inset 0 1px 0 rgba(255,255,255,0.07);
+      overflow: hidden;
+      z-index: 2;
+    }
+
+    .light-mode .dash-card {
+      background: rgba(248, 249, 252, 0.92);
+      border-color: rgba(37, 99, 235, 0.14);
+      box-shadow: 0 32px 80px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.04);
+    }
+
+    /* Browser chrome bar */
+    .dash-chrome {
+      height: 44px;
+      background: rgba(30, 33, 40, 0.9);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .light-mode .dash-chrome {
+      background: rgba(235, 238, 244, 0.95);
+      border-bottom-color: rgba(0,0,0,0.07);
+    }
+
+    .chrome-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .chrome-url {
+      flex: 1;
+      height: 24px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 6px;
+      margin: 0 8px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      gap: 6px;
+    }
+
+    .light-mode .chrome-url {
+      background: rgba(0,0,0,0.06);
+    }
+
+    .chrome-lock {
+      color: #34d399;
+      font-size: 10px;
+    }
+
+    .chrome-domain {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.2px;
+    }
+
+    /* Dashboard body */
+    .dash-body {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      height: calc(100% - 44px);
+    }
+
+    /* Left sidebar */
+    .dash-sidebar {
+      background: rgba(18, 20, 26, 0.7);
+      border-right: 1px solid rgba(255,255,255,0.05);
+      padding: 16px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .light-mode .dash-sidebar {
+      background: rgba(240, 243, 250, 0.7);
+      border-right-color: rgba(0,0,0,0.06);
+    }
+
+    .dsb-logo {
+      font-family: 'Google Sans Display', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--blue);
+      padding: 4px 8px 12px;
+      letter-spacing: -0.3px;
+    }
+
+    .dsb-item {
+      padding: 7px 8px;
+      border-radius: 8px;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      cursor: default;
+    }
+
+    .dsb-item.active {
+      background: rgba(138, 180, 248, 0.12);
+      color: var(--blue);
+    }
+
+    .light-mode .dsb-item.active {
+      background: rgba(26, 115, 232, 0.09);
+    }
+
+    .dsb-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--blue);
+      flex-shrink: 0;
+    }
+
+    /* Main content area */
+    .dash-main {
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      overflow: hidden;
+    }
+
+    /* Stat row */
+    .dash-stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .dash-stat {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 10px 12px;
+    }
+
+    .light-mode .dash-stat {
+      background: rgba(255,255,255,0.7);
+      border-color: rgba(0,0,0,0.07);
+    }
+
+    .dash-stat-label {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 9px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 4px;
+    }
+
+    .dash-stat-value {
+      font-family: 'Google Sans Display', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1;
+    }
+
+    .dash-stat-value span {
+      font-size: 11px;
+      font-weight: 500;
+      color: #34d399;
+      margin-left: 2px;
+    }
+
+    /* Code block area */
+    .dash-code {
+      flex: 1;
+      background: rgba(12, 14, 18, 0.7);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-family: 'Roboto Mono', 'Courier New', monospace;
+      font-size: 10.5px;
+      line-height: 1.7;
+      overflow: hidden;
+    }
+
+    .light-mode .dash-code {
+      background: rgba(22, 27, 40, 0.06);
+      border-color: rgba(0,0,0,0.07);
+    }
+
+    .code-line {
+      display: flex;
+      gap: 10px;
+      animation: codeReveal 0.5s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes codeReveal {
+      from { opacity: 0; transform: translateX(-6px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    .code-line:nth-child(1)  { animation-delay: 0.2s; }
+    .code-line:nth-child(2)  { animation-delay: 0.5s; }
+    .code-line:nth-child(3)  { animation-delay: 0.8s; }
+    .code-line:nth-child(4)  { animation-delay: 1.1s; }
+    .code-line:nth-child(5)  { animation-delay: 1.4s; }
+    .code-line:nth-child(6)  { animation-delay: 1.7s; }
+    .code-line:nth-child(7)  { animation-delay: 2.0s; }
+
+    .ln { color: #3a3f52; min-width: 14px; user-select: none; }
+    .kw { color: #c792ea; }
+    .fn { color: #82aaff; }
+    .str { color: #c3e88d; }
+    .cm { color: #546e7a; font-style: italic; }
+    .op { color: #89ddff; }
+    .nt { color: var(--text-secondary); }
+
+    /* Cursor blink */
+    .code-cursor {
+      display: inline-block;
+      width: 7px;
+      height: 12px;
+      background: var(--blue);
+      border-radius: 1px;
+      margin-left: 2px;
+      vertical-align: middle;
+      animation: blinkCursor 1.1s step-end infinite;
+    }
+
+    @keyframes blinkCursor {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
+
+    /* Bottom progress bar */
+    .dash-progress-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .progress-label {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .progress-bar-wrap {
+      flex: 1;
+      height: 5px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .light-mode .progress-bar-wrap {
+      background: rgba(0,0,0,0.08);
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--blue), #34d399);
+      animation: fillBar 2.5s cubic-bezier(0.4,0,0.2,1) forwards;
+      width: 0%;
+    }
+
+    .pf-92 { animation-delay: 0.5s; }
+    .pf-87 { animation-delay: 0.7s; }
+    .pf-95 { animation-delay: 0.9s; }
+
+    @keyframes fillBar {
+      to { width: var(--fill-w); }
+    }
+
+    .progress-pct {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--blue);
+    }
+
+    /* ── Floating badges around card ── */
+    .hero-badge {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px 9px 10px;
+      background: rgba(22, 25, 32, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(138, 180, 248, 0.2);
+      border-radius: 40px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.28);
+      z-index: 8;
+    }
+
+    .light-mode .hero-badge {
+      background: rgba(255,255,255,0.92);
+      border-color: rgba(37, 99, 235, 0.15);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+
+    .badge-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .badge-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .badge-title {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text-primary);
+      white-space: nowrap;
+      line-height: 1.2;
+    }
+
+    .badge-sub {
+      font-size: 10px;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .badge-clients  { top: -18px; left: -30px; animation: badgeFloat1 6s ease-in-out infinite alternate; }
+    .badge-rating   { top: 90px;  right: -38px; animation: badgeFloat2 5.5s ease-in-out infinite alternate; }
+    .badge-projects { bottom: 38px; left: -36px; animation: badgeFloat3 7s ease-in-out infinite alternate; }
+    .badge-live     { bottom: -18px; right: -10px; animation: badgeFloat4 6.5s ease-in-out infinite alternate; }
+
+    @keyframes badgeFloat1 { 0% { transform: translateY(0); } 100% { transform: translateY(-8px); } }
+    @keyframes badgeFloat2 { 0% { transform: translateY(0); } 100% { transform: translateY(7px); } }
+    @keyframes badgeFloat3 { 0% { transform: translateY(0); } 100% { transform: translateY(-6px); } }
+    @keyframes badgeFloat4 { 0% { transform: translateY(0); } 100% { transform: translateY(9px); } }
+
+    /* Background glow behind card */
+    .dash-glow {
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(59,130,246,0.22) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 0;
+      animation: glowPulse 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowPulse {
+      0%   { opacity: 0.6; transform: translate(-50%,-50%) scale(0.9); }
+      100% { opacity: 1;   transform: translate(-50%,-50%) scale(1.1); }
+    }
+
+    /* Responsive: hide on smaller screens */
+    @media (max-width: 900px) {
+      .hero-visual { display: none; }
     }
 
     .connection-svg {
@@ -2340,192 +2733,117 @@
       </div>
     </div>
     <div class="hero-visual" id="heroVisual">
-      <div class="ecosystem-stage" id="ecoStage">
-        <!-- SVG Curved Connection Lines Layer -->
-        <svg class="connection-svg" viewBox="0 0 540 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="lineGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#2563EB" stop-opacity="0.85" />
-              <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.35" />
-            </linearGradient>
-            <linearGradient id="lineGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.9" />
-              <stop offset="100%" stop-color="#60A5FA" stop-opacity="0.4" />
-            </linearGradient>
-            <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="3" result="blur" />
-              <feComposite in="SourceGraphic" in2="blur" operator="over" />
-            </filter>
-          </defs>
+      <div class="dashboard-stage">
+        <!-- Background ambient glow -->
+        <div class="dash-glow"></div>
 
-          <!-- Curved Connection Lines from Center (210, 200) to 6 Venture Nodes -->
-          <path id="path-sg" class="connection-line" d="M 210 200 C 170 120, 110 80, 85 80" stroke="url(#lineGrad1)"
-            stroke-width="2" stroke-dasharray="4 4" filter="url(#glow)" />
-          <path id="path-dl" class="connection-line" d="M 210 200 C 130 180, 70 200, 50 215" stroke="url(#lineGrad1)"
-            stroke-width="2" stroke-dasharray="4 4" filter="url(#glow)" />
-          <path id="path-wm" class="connection-line" d="M 210 200 C 160 270, 110 330, 85 340" stroke="url(#lineGrad1)"
-            stroke-width="2" stroke-dasharray="4 4" filter="url(#glow)" />
-          <path id="path-nt" class="connection-line" d="M 210 200 C 270 120, 340 70, 395 75" stroke="url(#lineGrad2)"
-            stroke-width="2" stroke-dasharray="4 4" filter="url(#glow)" />
-          <path id="path-ld" class="connection-line" d="M 210 200 C 310 230, 400 240, 450 250" stroke="url(#lineGrad2)"
-            stroke-width="2" stroke-dasharray="4 4" filter="url(#glow)" />
-          <path id="path-na" class="connection-line" d="M 210 200 C 280 290, 350 340, 405 345" stroke="url(#lineGrad2)"
-            stroke-width="2" stroke-dasharray="4 4" filter="url(#glow)" />
+        <!-- Main dashboard card -->
+        <div class="dash-card">
+          <!-- Browser chrome -->
+          <div class="dash-chrome">
+            <span class="chrome-dot" style="background:#ff5f57;"></span>
+            <span class="chrome-dot" style="background:#febc2e;"></span>
+            <span class="chrome-dot" style="background:#28c840;"></span>
+            <div class="chrome-url">
+              <span class="chrome-lock">&#128274;</span>
+              <span class="chrome-domain">jsncreative.studio/dashboard</span>
+            </div>
+          </div>
 
-          <!-- Traveling Energy Particles along paths -->
-          <circle class="pulse-particle p-sg" r="3.5" fill="#60A5FA" />
-          <circle class="pulse-particle p-dl" r="3.5" fill="#3B82F6" />
-          <circle class="pulse-particle p-wm" r="3.5" fill="#34D399" />
-          <circle class="pulse-particle p-nt" r="3.5" fill="#A78BFA" />
-          <circle class="pulse-particle p-ld" r="3.5" fill="#F472B6" />
-          <circle class="pulse-particle p-na" r="3.5" fill="#38BDF8" />
-        </svg>
+          <!-- Dashboard body -->
+          <div class="dash-body">
+            <!-- Left sidebar -->
+            <div class="dash-sidebar">
+              <div class="dsb-logo">JSN &#x2605;</div>
+              <div class="dsb-item active"><span class="dsb-dot"></span> Overview</div>
+              <div class="dsb-item">&#128202; Analytics</div>
+              <div class="dsb-item">&#128736; Projects</div>
+              <div class="dsb-item">&#127758; Ventures</div>
+              <div class="dsb-item">&#129302; AI Tools</div>
+              <div class="dsb-item">&#9881; Settings</div>
+            </div>
 
-        <!-- Central Holographic Core (JSN CREATIVE) -->
-        <div class="holo-core-wrap">
-          <div class="holo-ring outer-ring"></div>
-          <div class="holo-ring inner-ring"></div>
-          <div class="holo-orb">
-            <div class="orb-glow"></div>
-            <div class="orb-brand">
-              <span class="orb-title">JSN</span>
-              <span class="orb-sub">CREATIVE</span>
+            <!-- Main area -->
+            <div class="dash-main">
+              <!-- Stat pills -->
+              <div class="dash-stat-row">
+                <div class="dash-stat">
+                  <div class="dash-stat-label">Projects</div>
+                  <div class="dash-stat-value">120<span>+</span></div>
+                </div>
+                <div class="dash-stat">
+                  <div class="dash-stat-label">Clients</div>
+                  <div class="dash-stat-value">80<span>&#x2191;</span></div>
+                </div>
+                <div class="dash-stat">
+                  <div class="dash-stat-label">Ventures</div>
+                  <div class="dash-stat-value">6<span>live</span></div>
+                </div>
+              </div>
+
+              <!-- Code window -->
+              <div class="dash-code">
+                <div class="code-line"><span class="ln">1</span><span class="cm">// JSN Creative — innovation engine</span></div>
+                <div class="code-line"><span class="ln">2</span><span class="kw">const </span><span class="fn">studio</span><span class="op"> = </span><span class="fn">new</span><span class="nt"> JSNCreative</span><span class="op">()</span><span class="nt">;</span></div>
+                <div class="code-line"><span class="ln">3</span><span class="fn">studio</span><span class="op">.</span><span class="fn">build</span><span class="op">(</span><span class="str">'web'</span><span class="op">, </span><span class="str">'apps'</span><span class="op">, </span><span class="str">'AI'</span><span class="op">)</span><span class="nt">;</span></div>
+                <div class="code-line"><span class="ln">4</span><span class="fn">studio</span><span class="op">.</span><span class="fn">launch</span><span class="op">(</span><span class="nt">{ ventures: </span><span class="str">6</span><span class="nt">, clients: </span><span class="str">80</span><span class="nt"> }</span><span class="op">)</span><span class="nt">;</span></div>
+                <div class="code-line"><span class="ln">5</span><span class="cm">// Delivering results since 2022</span></div>
+                <div class="code-line"><span class="ln">6</span><span class="kw">return </span><span class="str">"Excellence. Always."</span><span class="nt">;</span></div>
+                <div class="code-line"><span class="ln">7</span><span class="nt"><span class="code-cursor"></span></span></div>
+              </div>
+
+              <!-- Progress metrics -->
+              <div class="dash-progress-row">
+                <span class="progress-label">Web</span>
+                <div class="progress-bar-wrap"><div class="progress-fill pf-92" style="--fill-w:92%"></div></div>
+                <span class="progress-pct">92%</span>
+              </div>
+              <div class="dash-progress-row">
+                <span class="progress-label">Mobile</span>
+                <div class="progress-bar-wrap"><div class="progress-fill pf-87" style="--fill-w:87%"></div></div>
+                <span class="progress-pct">87%</span>
+              </div>
+              <div class="dash-progress-row">
+                <span class="progress-label">AI</span>
+                <div class="progress-bar-wrap"><div class="progress-fill pf-95" style="--fill-w:95%"></div></div>
+                <span class="progress-pct">95%</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Editorial Character (Creator/Engineer standing at right) -->
-        <div class="character-wrap">
-          <svg viewBox="0 0 160 260" class="character-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="80" cy="245" rx="45" ry="8" fill="rgba(37,99,235,0.15)" />
-            <path d="M62 170 L58 235 L70 237 L74 175 Z" fill="#1E293B" />
-            <path d="M86 175 L90 237 L102 235 L98 170 Z" fill="#1E293B" />
-            <path d="M52 235 C52 230 68 230 72 237 L52 237 Z" fill="#0F172A" />
-            <path d="M90 235 C90 230 106 230 110 237 L90 237 Z" fill="#0F172A" />
-            <path
-              d="M50 95 C50 85 62 80 80 80 C98 80 110 85 110 95 L106 172 C106 176 96 178 80 178 C64 178 54 176 54 172 Z"
-              fill="#334155" />
-            <path d="M72 80 L80 105 L88 80 Z" fill="#F8FAFC" />
-            <rect x="74" y="66" width="12" height="16" rx="4" fill="#E2E8F0" />
-            <circle cx="80" cy="52" r="18" fill="#E2E8F0" />
-            <path d="M64 48 C64 36 74 34 80 34 C88 34 96 36 96 48 C94 42 86 40 80 40 C74 40 66 42 64 48 Z"
-              fill="#0F172A" />
-            <circle cx="74" cy="52" r="5" stroke="#0F172A" stroke-width="1.8" fill="none" />
-            <circle cx="86" cy="52" r="5" stroke="#0F172A" stroke-width="1.8" fill="none" />
-            <line x1="79" y1="52" x2="81" y2="52" stroke="#0F172A" stroke-width="1.8" />
-            <path d="M50 95 L38 140 C36 148 42 152 46 148 L54 110 Z" fill="#334155" />
-            <path d="M110 95 L135 115 C142 120 148 112 142 106 L118 88 Z" fill="#334155" />
-            <circle cx="140" cy="114" r="5" fill="#E2E8F0" />
-            <path d="M140 114 L120 130" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.8" />
-            <circle cx="142" cy="112" r="2" fill="#60A5FA" />
-          </svg>
+        <!-- Floating achievement badges -->
+        <div class="hero-badge badge-clients">
+          <div class="badge-icon" style="background:rgba(52,211,153,0.15);">&#127881;</div>
+          <div class="badge-text">
+            <span class="badge-title">80+ Happy Clients</span>
+            <span class="badge-sub">Worldwide</span>
+          </div>
         </div>
 
-        <!-- 6 Floating Venture Bubbles -->
-        <!-- 1. Scholars Guide -->
-        <a href="https://scholars-guide.vercel.app/" target="_blank" rel="noopener" class="venture-node node-sg"
-          data-target="path-sg">
-          <div class="node-glass">
-            <div class="node-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                <path d="M6 12v5c3 3 9 3 12 0v-5" />
-              </svg>
-            </div>
-            <div class="node-info">
-              <span class="node-name">Scholars Guide</span>
-              <span class="node-tag">Education</span>
-            </div>
+        <div class="hero-badge badge-rating">
+          <div class="badge-icon" style="background:rgba(251,191,36,0.15);">&#11088;</div>
+          <div class="badge-text">
+            <span class="badge-title">5.0 Star Rating</span>
+            <span class="badge-sub">Avg. client score</span>
           </div>
-        </a>
+        </div>
 
-        <!-- 2. Dexterity Learn -->
-        <a href="https://dexterity-learn.vercel.app/" target="_blank" rel="noopener" class="venture-node node-dl"
-          data-target="path-dl">
-          <div class="node-glass">
-            <div class="node-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
-                <line x1="12" y1="18" x2="12.01" y2="18" />
-                <path d="M8 6h8M8 10h5" />
-              </svg>
-            </div>
-            <div class="node-info">
-              <span class="node-name">Dexterity Learn</span>
-              <span class="node-tag">Publishing</span>
-            </div>
+        <div class="hero-badge badge-projects">
+          <div class="badge-icon" style="background:rgba(138,180,248,0.15);">&#128640;</div>
+          <div class="badge-text">
+            <span class="badge-title">120+ Projects</span>
+            <span class="badge-sub">Delivered on time</span>
           </div>
-        </a>
+        </div>
 
-        <!-- 3. Work Mint -->
-        <a href="https://work-mint-one.vercel.app/" target="_blank" rel="noopener" class="venture-node node-wm"
-          data-target="path-wm">
-          <div class="node-glass">
-            <div class="node-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-              </svg>
-            </div>
-            <div class="node-info">
-              <span class="node-name">Work Mint</span>
-              <span class="node-tag">Workspace</span>
-            </div>
+        <div class="hero-badge badge-live">
+          <div class="badge-icon" style="background:rgba(167,139,250,0.15);">&#9889;</div>
+          <div class="badge-text">
+            <span class="badge-title">6 Live Ventures</span>
+            <span class="badge-sub">Growing daily</span>
           </div>
-        </a>
-
-        <!-- 4. NEXIO TECH -->
-        <a href="https://nexio-tech.vercel.app/" target="_blank" rel="noopener" class="venture-node node-nt"
-          data-target="path-nt">
-          <div class="node-glass">
-            <div class="node-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="4" y="4" width="16" height="12" rx="2" />
-                <line x1="2" y1="20" x2="22" y2="20" />
-              </svg>
-            </div>
-            <div class="node-info">
-              <span class="node-name">NEXIO TECH</span>
-              <span class="node-tag">SaaS & Tech</span>
-            </div>
-          </div>
-        </a>
-
-        <!-- 5. Livio Designs -->
-        <a href="https://livio-designs.vercel.app/" target="_blank" rel="noopener" class="venture-node node-ld"
-          data-target="path-ld">
-          <div class="node-glass">
-            <div class="node-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.92 0 1.7-.68 1.83-1.6.09-.64.44-1.2.98-1.54" />
-                <circle cx="8.5" cy="7.5" r=".5" fill="currentColor" />
-                <circle cx="13.5" cy="6.5" r=".5" fill="currentColor" />
-              </svg>
-            </div>
-            <div class="node-info">
-              <span class="node-name">Livio Designs</span>
-              <span class="node-tag">Design Studio</span>
-            </div>
-          </div>
-        </a>
-
-        <!-- 6. Nexus Agents -->
-        <a href="https://nexus-agents-ai.vercel.app/" target="_blank" rel="noopener" class="venture-node node-na"
-          data-target="path-na">
-          <div class="node-glass">
-            <div class="node-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2a10 10 0 1 0 10 10H12V2z" />
-                <path d="M12 12 2.1 12" />
-                <circle cx="12" cy="12" r="3" />
-              </svg>
-            </div>
-            <div class="node-info">
-              <span class="node-name">Nexus Agents</span>
-              <span class="node-tag">AI Studio</span>
-            </div>
-          </div>
-        </a>
+        </div>
       </div>
     </div>
   </div>
