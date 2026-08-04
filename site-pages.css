@@ -192,10 +192,11 @@ a { color: inherit; }
   position: fixed;
   inset: 0;
   background: rgba(15, 23, 42, 0.46);
+  backdrop-filter: blur(4px);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
-  z-index: 140;
+  z-index: 2000;
 }
 .drawer-backdrop.open { opacity: 1; pointer-events: auto; }
 
@@ -210,10 +211,10 @@ a { color: inherit; }
   flex-direction: column;
   gap: 18px;
   background: var(--page-white);
-  box-shadow: -20px 0 60px rgba(15, 23, 42, 0.18);
+  box-shadow: -20px 0 60px rgba(15, 23, 42, 0.28);
   transform: translateX(102%);
   transition: transform 0.28s ease;
-  z-index: 150;
+  z-index: 2010;
   overflow-y: auto;
 }
 .mobile-drawer.open { transform: translateX(0); }
@@ -560,20 +561,29 @@ input:focus, textarea:focus { outline: 2px solid rgba(26,115,232,0.12); border-c
   display: none;
   justify-content: space-around;
   align-items: center;
-  z-index: 1000;
+  z-index: 900;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24);
   padding: 0 10px;
-  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-.light-mode .bottom-nav {
-  background: rgba(255, 255, 255, 0.85);
-  border-color: rgba(0, 0, 0, 0.06);
-  box-shadow: 0 8px 32px rgba(17, 24, 39, 0.08);
+  transition: opacity 0.25s ease, transform 0.25s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 @media (max-width: 900px) {
   .bottom-nav {
     display: flex;
   }
+}
+
+.light-mode .bottom-nav {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 32px rgba(17, 24, 39, 0.08);
+}
+
+body.sidebar-open .bottom-nav {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translate(-50%, 20px) !important;
 }
 .bottom-nav-item {
   display: flex;
@@ -618,6 +628,21 @@ input:focus, textarea:focus { outline: 2px solid rgba(26,115,232,0.12); border-c
   height: 4px;
   background: var(--page-blue);
   border-radius: 50%;
+}
+
+/* Force hide bottom nav when sidebar is open */
+body.sidebar-open .bottom-nav,
+#mobileSidebar.open ~ .bottom-nav,
+#mobileBackdrop.open ~ .bottom-nav,
+.mobile-sidebar.open ~ .bottom-nav,
+.mobile-backdrop.open ~ .bottom-nav,
+body:has(.mobile-sidebar.open) .bottom-nav,
+body:has(.mobile-backdrop.open) .bottom-nav {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: none !important;
 }
 
 /* Eyebrow SVG sizing constraint & styling */

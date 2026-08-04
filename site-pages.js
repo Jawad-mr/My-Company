@@ -319,6 +319,12 @@
     document.body.classList.toggle('sidebar-open', open);
     toggle.setAttribute('aria-expanded', String(open));
     drawer.setAttribute('aria-hidden', String(!open));
+
+    const bNav = document.querySelector('.bottom-nav');
+    if (bNav) {
+      bNav.style.setProperty('display', open ? 'none' : '', 'important');
+      bNav.style.setProperty('visibility', open ? 'hidden' : '', 'important');
+    }
   };
 
   if (toggle) {
