@@ -489,8 +489,10 @@
       right: 0;
       width: min(86vw, 340px);
       height: 100vh;
-      background: var(--white);
-      box-shadow: -20px 0 60px rgba(0, 0, 0, 0.28);
+      background: #121212 !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      box-shadow: -20px 0 60px rgba(0, 0, 0, 0.4);
       transform: translateX(100%);
       transition: transform 0.28s ease;
       z-index: 2010;
@@ -499,6 +501,14 @@
       flex-direction: column;
       gap: 0;
       overflow-y: auto;
+    }
+
+    .light-mode .mobile-sidebar {
+      background: #ffffff !important;
+    }
+
+    body.sidebar-open nav {
+      border-bottom-color: transparent !important;
     }
 
     .mobile-sidebar.open {

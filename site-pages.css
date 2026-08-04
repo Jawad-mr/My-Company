@@ -210,12 +210,18 @@ a { color: inherit; }
   display: flex;
   flex-direction: column;
   gap: 0;
-  background: var(--page-white);
+  background: var(--page-white) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
   box-shadow: -20px 0 60px rgba(15, 23, 42, 0.28);
   transform: translateX(102%);
   transition: transform 0.28s ease;
   z-index: 2010;
   overflow-y: auto;
+}
+body.sidebar-open nav,
+body.drawer-open nav {
+  border-bottom-color: transparent !important;
 }
 .mobile-drawer.open { transform: translateX(0); }
 .drawer-head {
