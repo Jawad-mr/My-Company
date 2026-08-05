@@ -552,8 +552,11 @@ input:focus, textarea:focus { outline: 2px solid rgba(26,115,232,0.12); border-c
 /* ── ADDED CUSTOM STYLES FOR BUTTONS & NAVIGATION ── */
 @media (max-width: 900px) {
   footer, .footer {
-    padding-bottom: 110px;
+    padding-bottom: 110px !important;
     text-align: center !important;
+  }
+  .page-wrap, main, .hero, .section {
+    padding-bottom: 100px !important;
   }
   .footer-highlight {
     display: block !important;
@@ -585,19 +588,26 @@ input:focus, textarea:focus { outline: 2px solid rgba(26,115,232,0.12); border-c
   width: calc(100% - 32px);
   max-width: 480px;
   height: 64px;
-  background: rgba(30, 30, 30, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(22, 24, 30, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 24px;
   display: none;
   justify-content: space-around;
   align-items: center;
-  z-index: 900;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24);
+  z-index: 990;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.35);
   padding: 0 10px;
-  transition: opacity 0.25s ease, transform 0.25s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
+
+.bottom-nav.nav-hidden {
+  transform: translate(-50%, 120%) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
 @media (max-width: 900px) {
   .bottom-nav {
     display: flex;
@@ -605,9 +615,9 @@ input:focus, textarea:focus { outline: 2px solid rgba(26,115,232,0.12); border-c
 }
 
 .light-mode .bottom-nav {
-  background: rgba(255, 255, 255, 0.85);
-  border-color: rgba(0, 0, 0, 0.06);
-  box-shadow: 0 8px 32px rgba(17, 24, 39, 0.08);
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 32px rgba(17, 24, 39, 0.12);
 }
 
 body.sidebar-open .bottom-nav {
@@ -615,7 +625,7 @@ body.sidebar-open .bottom-nav {
   visibility: hidden !important;
   opacity: 0 !important;
   pointer-events: none !important;
-  transform: translate(-50%, 20px) !important;
+  transform: translate(-50%, 120%) !important;
 }
 .bottom-nav-item {
   display: flex;
@@ -674,7 +684,7 @@ body:has(.mobile-backdrop.open) .bottom-nav {
   visibility: hidden !important;
   opacity: 0 !important;
   pointer-events: none !important;
-  transform: none !important;
+  transform: translate(-50%, 120%) !important;
 }
 
 /* Eyebrow SVG sizing constraint & styling */

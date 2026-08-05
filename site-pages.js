@@ -466,6 +466,39 @@
     });
   }
 
-  window.addEventListener('scroll', updateActiveState);
+  let lastScrollY = window.scrollY;
+  function handleNavVisibilityOnScroll() {
+    const bNav = document.querySelector('.bottom-nav');
+    if (!bNav) return;
+
+    // Do not hide if mobile sidebar is open
+    if (document.body.classList.contains('sidebar-open')) return;
+
+    const currentScrollY = window.scrollY;
+
+    // Show nav if near top of page (less than 60px) or scrolling up
+    if (currentScrollY <= 60 || currentScrollY < lastScrollY - 5) {
+      bNav.classList.remove('nav-hidden');
+    } else if (currentScrollY > lastScrollY + 5 && currentScrollY > 100) {
+      // Hide nav when scrolling down past top threshold
+      bNav.classList.add('nav-hidden');
+    }
+
+    lastScrollY = currentScrollY;
+  }
+
+  // Ensure bottom nav is restored when any nav item is clicked
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('.bottom-nav-item')) {
+      const bNav = document.querySelector('.bottom-nav');
+      if (bNav) bNav.classList.remove('nav-hidden');
+    }
+  });
+
+  window.addEventListener('scroll', () => {
+    updateActiveState();
+    handleNavVisibilityOnScroll();
+  }, { passive: true });
+
   updateActiveState();
 })();
