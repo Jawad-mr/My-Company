@@ -288,7 +288,7 @@ body.drawer-open nav {
 }
 
 .page-wrap { width: min(1200px, calc(100% - 80px)); margin: 0 auto; }
-.hero {
+.page-wrap .hero {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   gap: 32px;
@@ -383,7 +383,7 @@ body.drawer-open nav {
 .btn.primary:hover { background: var(--page-blue-dark); }
 .btn.secondary { background: var(--page-white); color: var(--page-blue); border-color: rgba(26,115,232,0.24); }
 
-.section {
+.page-wrap .section {
   margin-top: 28px;
   padding: 28px;
   border: 1px solid var(--page-border);
@@ -505,10 +505,10 @@ input:focus, textarea:focus { outline: 2px solid rgba(26,115,232,0.12); border-c
   .page-links { display: none; }
   .page-actions, .menu-toggle { display: inline-flex; }
   .page-wrap { width: min(100%, calc(100% - 32px)); }
-  .hero { grid-template-columns: 1fr; padding: 36px 0 20px; }
+  .page-wrap .hero { grid-template-columns: 1fr; padding: 36px 0 20px; }
   .hero-art { min-height: 300px; }
   .grid-3, .grid-2, .field-row { grid-template-columns: 1fr; }
-  .section { padding: 22px; border-radius: 24px; }
+  .page-wrap .section { padding: 22px; border-radius: 24px; }
 }
 
 @media (max-width: 600px) {
@@ -555,7 +555,7 @@ input:focus, textarea:focus { outline: 2px solid rgba(26,115,232,0.12); border-c
     padding-bottom: 110px !important;
     text-align: center !important;
   }
-  .page-wrap, main, .hero, .section {
+  .page-wrap {
     padding-bottom: 100px !important;
   }
   .footer-highlight {
