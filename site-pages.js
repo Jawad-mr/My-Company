@@ -106,7 +106,7 @@
       { '@type': 'Organization', name: 'Scholars Guide', url: 'https://scholars-guide.vercel.app/', description: 'Education & career guidance portal by JSN CREATIVE' },
       { '@type': 'Organization', name: 'Dexterity Learn', url: 'https://dexterity-learn.vercel.app/', description: 'Digital publishing & e-book learning platform by JSN CREATIVE' },
       { '@type': 'Organization', name: 'Work Mint', url: 'https://work-mint-one.vercel.app/', description: 'Freelance & recruitment workspace network by JSN CREATIVE' },
-      { '@type': 'Organization', name: 'NEXIO TECH', url: 'https://nexio-tech.vercel.app/', description: 'SaaS & modern software technology studio by JSN CREATIVE' },
+      { '@type': 'Organization', name: 'Nexio Tech', url: 'https://nexio-tech.vercel.app/', description: 'SaaS & modern software technology studio by JSN CREATIVE' },
       { '@type': 'Organization', name: 'Livio Designs', url: 'https://livio-designs.vercel.app/', description: 'Design & branding studio venture by JSN CREATIVE' },
       { '@type': 'Organization', name: 'Nexus Agents', url: 'https://nexus-agents-ai.vercel.app/', description: 'Autonomous AI agents & intelligent automation studio by JSN CREATIVE' }
     ],
