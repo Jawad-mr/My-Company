@@ -733,7 +733,6 @@
 
     .btn-primary:hover {
       background: var(--blue-dark);
-      box-shadow: 0 2px 8px rgba(26, 115, 232, 0.3);
     }
 
     .btn-outline {
@@ -2569,7 +2568,6 @@
     .buy-btn:hover {
       background: var(--blue-dark);
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(138, 180, 248, 0.3);
     }
 
     .light-mode .buy-btn {
@@ -2579,7 +2577,6 @@
 
     .light-mode .buy-btn:hover {
       background: #1557b0;
-      box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
     }
 
     /* Hire Button (Services) */
@@ -2635,11 +2632,44 @@
 
     .product-card:hover .buy-btn {
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(138, 180, 248, 0.3);
     }
 
-    .light-mode .product-card:hover .buy-btn {
-      box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
+    /* Disable light glowing & tap highlight on button click/tap/focus */
+    button,
+    .btn,
+    .card-btn,
+    .buy-btn,
+    .hire-btn,
+    .tab-link,
+    .nav-btn,
+    .theme-toggle-btn,
+    a.btn-primary,
+    a.btn-outline {
+      -webkit-tap-highlight-color: transparent !important;
+      outline: none !important;
+    }
+
+    button:focus,
+    button:active,
+    button:focus-visible,
+    a:focus,
+    a:active,
+    a:focus-visible,
+    .btn:focus,
+    .btn:active,
+    .btn:focus-visible,
+    .card-btn:focus,
+    .card-btn:active,
+    .card-btn:focus-visible,
+    .buy-btn:focus,
+    .buy-btn:active,
+    .buy-btn:focus-visible,
+    .hire-btn:focus,
+    .hire-btn:active,
+    .hire-btn:focus-visible {
+      outline: none !important;
+      box-shadow: none !important;
+      -webkit-tap-highlight-color: transparent !important;
     }
 
     .service-card {
