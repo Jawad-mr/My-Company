@@ -14,7 +14,7 @@
       description: 'Jsn Creative builds business websites, web apps, mobile apps, custom software, AI solutions, SEO services, and design-led digital products.',
       schemaType: 'WebSite',
       ogImage: `${siteBase}/social-preview.svg`,
-      keywords: 'Web Development, Website Development, Mobile App Development, Software Development, Custom Software, React Development, MERN Stack Development, UI/UX Design, AI Solutions, SEO Services, Business Websites, Digital Solutions, JSN CREATIVE',
+      keywords: 'Web Development, Website Development, Mobile App Development, Software Development, Custom Software, React Development, MERN Stack Development, UI/UX Design, AI Solutions, SEO Services, Business Websites, Digital Solutions, Jsn Creative',
     },
     'bakery-pos.html': { description: 'Bakery POS App with lifetime access, billing, inventory, and sales tracking for bakeries.', schemaType: 'Product', ogImage: `${siteBase}/social-preview.svg` },
     'gym-management.html': { description: 'Gym Management App with memberships, attendance, trainer scheduling, and lifetime access.', schemaType: 'Product', ogImage: `${siteBase}/social-preview.svg` },
@@ -79,19 +79,19 @@
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': `${siteBase}/#organization`,
-    name: 'JSN CREATIVE',
-    alternateName: ['Jsn Creative Studio', 'JSN Digital Innovation Studio'],
+    name: 'Jsn Creative',
+    alternateName: ['Jsn Creative Studio', 'Jsn Digital Innovation Studio'],
     url: siteBase,
     logo: `${siteBase}/favicon.svg`,
     image: `${siteBase}/social-preview.svg`,
-    description: 'JSN CREATIVE is a digital innovation studio founded by Muhammad Jawad M R, building business web applications, mobile apps, custom software, AI solutions, and incubating a portfolio of tech ventures.',
+    description: 'Jsn Creative is a digital innovation studio founded by Muhammad Jawad M R, building business web applications, mobile apps, custom software, AI solutions, and incubating a portfolio of tech ventures.',
     founder: {
       '@type': 'Person',
       '@id': `${siteBase}/#founder`,
       name: 'Muhammad Jawad M R',
       givenName: 'Muhammad Jawad',
       familyName: 'M R',
-      alternateName: ['Muhammad Jawad', 'Jawad M R', 'Jawad JSN Creative', 'Founder of JSN Creative'],
+      alternateName: ['Muhammad Jawad', 'Jawad M R', 'Jawad Jsn Creative', 'Founder of Jsn Creative'],
       jobTitle: 'Founder & CEO',
       worksFor: { '@id': `${siteBase}/#organization` },
       url: 'https://muhammadjawadmr.framer.website/',
@@ -103,12 +103,12 @@
       knowsAbout: ['Web Development', 'Software Engineering', 'AI Automation', 'Product Management', 'SaaS Innovation', 'Digital Ventures']
     },
     subOrganization: [
-      { '@type': 'Organization', name: 'Scholars Guide', url: 'https://scholars-guide.vercel.app/', description: 'Education & career guidance portal by JSN CREATIVE' },
-      { '@type': 'Organization', name: 'Dexterity Learn', url: 'https://dexterity-learn.vercel.app/', description: 'Digital publishing & e-book learning platform by JSN CREATIVE' },
-      { '@type': 'Organization', name: 'Work Mint', url: 'https://work-mint-one.vercel.app/', description: 'Freelance & recruitment workspace network by JSN CREATIVE' },
-      { '@type': 'Organization', name: 'Nexio Tech', url: 'https://nexio-tech.vercel.app/', description: 'SaaS & modern software technology studio by JSN CREATIVE' },
-      { '@type': 'Organization', name: 'Livio Designs', url: 'https://livio-designs.vercel.app/', description: 'Design & branding studio venture by JSN CREATIVE' },
-      { '@type': 'Organization', name: 'Nexus Agents', url: 'https://nexus-agents-ai.vercel.app/', description: 'Autonomous AI agents & intelligent automation studio by JSN CREATIVE' }
+      { '@type': 'Organization', name: 'Scholars Guide', url: 'https://scholars-guide.vercel.app/', description: 'Education & career guidance portal by Jsn Creative' },
+      { '@type': 'Organization', name: 'Dexterity Learn', url: 'https://dexterity-learn.vercel.app/', description: 'Digital publishing & e-book learning platform by Jsn Creative' },
+      { '@type': 'Organization', name: 'Work Mint', url: 'https://work-mint-one.vercel.app/', description: 'Freelance & recruitment workspace network by Jsn Creative' },
+      { '@type': 'Organization', name: 'Nexio Tech', url: 'https://nexio-tech.vercel.app/', description: 'SaaS & modern software technology studio by Jsn Creative' },
+      { '@type': 'Organization', name: 'Livio Designs', url: 'https://livio-designs.vercel.app/', description: 'Design & branding studio venture by Jsn Creative' },
+      { '@type': 'Organization', name: 'Nexus Agents', url: 'https://nexus-agents-ai.vercel.app/', description: 'Autonomous AI agents & intelligent automation studio by Jsn Creative' }
     ],
     sameAs: ['https://instagram.com/jsn_creative', 'https://www.linkedin.com/company/jsncreative', 'https://muhammadjawadmr.framer.website/'],
     contactPoint: [{ '@type': 'ContactPoint', telephone: '+91-72043-51696', contactType: 'sales', availableLanguage: ['English'] }],
@@ -121,7 +121,7 @@
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       '@id': `${siteBase}/#website`,
-      name: 'JSN CREATIVE',
+      name: 'Jsn Creative',
       url: siteBase,
       description: pageConfig.description,
       publisher: { '@id': `${siteBase}/#organization` },
@@ -191,7 +191,7 @@
       name: document.title.replace(' | Jsn Creative', '').replace(' | JSN CREATIVE', ''),
       description: pageConfig.description,
       image: `${siteBase}/social-preview.svg`,
-      brand: { '@type': 'Brand', name: 'JSN CREATIVE' },
+      brand: { '@type': 'Brand', name: 'Jsn Creative' },
       offers: {
         '@type': 'Offer',
         priceCurrency: 'INR',
@@ -199,7 +199,7 @@
         priceValidUntil: '2027-12-31',
         availability: 'https://schema.org/InStock',
         url: currentUrl,
-        seller: { '@type': 'Organization', name: 'JSN CREATIVE' }
+        seller: { '@type': 'Organization', name: 'Jsn Creative' }
       }
     });
   } else if (pageConfig.schemaType === 'Service') {
