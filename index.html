@@ -2619,8 +2619,16 @@
       height: 100%;
     }
 
+    .product-card.featured>div:last-child {
+      justify-content: center;
+    }
+
     .product-card .card-btn {
       margin-top: auto;
+    }
+
+    .product-card.featured .card-btn {
+      margin-top: 16px;
     }
 
     .product-card:hover .buy-btn {
@@ -3160,7 +3168,7 @@
           </div>
         </a>
 
-        <a class="product-card" style="background:#e6f4ea; border-color:#b7dfbf;" href="ai-chatbot.html">
+        <a class="product-card featured" style="background:#e6f4ea; border-color:#b7dfbf;" href="ai-chatbot.html">
           <div class="product-icon"><img
               src="https://images.unsplash.com/photo-1535303311164-664fc9ec6532?auto=format&fit=crop&w=600&q=80"
               alt="AI Chatbot conversational interface for websites by Jsn Creative" width="600" height="400"
