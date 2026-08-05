@@ -14,7 +14,7 @@
       description: 'Jsn Creative builds business websites, web apps, mobile apps, custom software, AI solutions, SEO services, and design-led digital products.',
       schemaType: 'WebSite',
       ogImage: `${siteBase}/social-preview.svg`,
-      keywords: 'Web Development, Website Development, Mobile App Development, Software Development, Custom Software, React Development, MERN Stack Development, UI/UX Design, AI Solutions, SEO Services, Business Websites, Digital Solutions, Jsn Creative',
+      keywords: 'JSN, Jsn, JSN Creative, Jsn Creative, JSN Studio, JSN Tech, JSN Ventures, Web Development, Website Development, Mobile App Development, Software Development, Custom Software, React Development, MERN Stack Development, UI/UX Design, AI Solutions, SEO Services',
     },
     'bakery-pos.html': { description: 'Bakery POS App with lifetime access, billing, inventory, and sales tracking for bakeries.', schemaType: 'Product', ogImage: `${siteBase}/social-preview.svg` },
     'gym-management.html': { description: 'Gym Management App with memberships, attendance, trainer scheduling, and lifetime access.', schemaType: 'Product', ogImage: `${siteBase}/social-preview.svg` },
@@ -61,7 +61,9 @@
   upsertMeta('meta[name="description"]', { name: 'description', content: pageConfig.description });
   upsertMeta('meta[name="robots"]', { name: 'robots', content: 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1' });
   upsertMeta('meta[name="theme-color"]', { name: 'theme-color', content: '#1a73e8' });
+  upsertMeta('meta[name="application-name"]', { name: 'application-name', content: 'JSN' });
   upsertMeta('meta[property="og:type"]', { property: 'og:type', content: pageConfig.schemaType === 'Product' ? 'product' : pageConfig.schemaType === 'Service' ? 'article' : 'website' });
+  upsertMeta('meta[property="og:site_name"]', { property: 'og:site_name', content: 'JSN | Jsn Creative' });
   upsertMeta('meta[property="og:title"]', { property: 'og:title', content: document.title });
   upsertMeta('meta[property="og:description"]', { property: 'og:description', content: pageConfig.description });
   upsertMeta('meta[property="og:url"]', { property: 'og:url', content: currentUrl });
@@ -80,11 +82,11 @@
     '@type': 'Organization',
     '@id': `${siteBase}/#organization`,
     name: 'Jsn Creative',
-    alternateName: ['Jsn Creative Studio', 'Jsn Digital Innovation Studio'],
+    alternateName: ['JSN', 'JSN Creative', 'JSN Studio', 'JSN Tech', 'JSN Ventures', 'Jsn Creative Studio'],
     url: siteBase,
     logo: `${siteBase}/favicon.svg`,
     image: `${siteBase}/social-preview.svg`,
-    description: 'Jsn Creative is a digital innovation studio founded by Muhammad Jawad M R, building business web applications, mobile apps, custom software, AI solutions, and incubating a portfolio of tech ventures.',
+    description: 'JSN (Jsn Creative) is a digital innovation studio founded by Muhammad Jawad M R, building business web applications, mobile apps, custom software, AI solutions, and incubating a portfolio of tech ventures.',
     founder: {
       '@type': 'Person',
       '@id': `${siteBase}/#founder`,
