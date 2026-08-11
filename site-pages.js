@@ -225,15 +225,7 @@
       name: 'Jsn Creative',
       url: siteBase,
       description: pageConfig.description,
-      publisher: { '@id': `${siteBase}/#organization` },
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: {
-          '@type': 'EntryPoint',
-          urlTemplate: `${siteBase}/contact.html?query={search_term_string}`
-        },
-        'query-input': 'required name=search_term_string'
-      }
+      publisher: { '@id': `${siteBase}/#organization` }
     });
 
     // Dynamic FAQ Page Schema for GEO optimization
@@ -279,20 +271,28 @@
     schemaGraphs.push({
       '@context': 'https://schema.org',
       '@type': 'ContactPage',
-      '@id': `${currentUrl}/#webpage`,
+      '@id': `${currentUrl}#webpage`,
       name: document.title,
       url: currentUrl,
       description: pageConfig.description,
       mainEntity: { '@id': `${siteBase}/#organization` }
     });
   } else if (pageConfig.schemaType === 'Product') {
+    const isSoftware = pageKey.includes('-pos') || pageKey.includes('management') || pageKey.includes('chatbot');
     schemaGraphs.push({
       '@context': 'https://schema.org',
-      '@type': 'Product',
-      name: document.title.replace(' | Jsn Creative', '').replace(' | JSN CREATIVE', ''),
+      '@type': isSoftware ? ['SoftwareApplication', 'Product'] : 'Product',
+      '@id': `${currentUrl}#product`,
+      name: document.title.replace(' | Jsn Creative', '').replace(' | JSN CREATIVE', '').replace(' | JSN (Jsn Creative)', ''),
       description: pageConfig.description,
+      url: currentUrl,
       image: `${siteBase}/social-preview.svg`,
       brand: { '@type': 'Brand', name: 'Jsn Creative' },
+      publisher: { '@id': `${siteBase}/#organization` },
+      ...(isSoftware ? {
+        applicationCategory: 'BusinessApplication',
+        operatingSystem: 'Web Browser, Windows, macOS, Android, iOS'
+      } : {}),
       offers: {
         '@type': 'Offer',
         priceCurrency: 'INR',
@@ -300,19 +300,21 @@
         priceValidUntil: '2027-12-31',
         availability: 'https://schema.org/InStock',
         url: currentUrl,
-        seller: { '@type': 'Organization', name: 'Jsn Creative' }
+        seller: { '@id': `${siteBase}/#organization` }
       }
     });
   } else if (pageConfig.schemaType === 'Service') {
     schemaGraphs.push({
       '@context': 'https://schema.org',
       '@type': 'Service',
-      name: document.title.replace(' | Jsn Creative', '').replace(' | JSN CREATIVE', ''),
+      '@id': `${currentUrl}#service`,
+      name: document.title.replace(' | Jsn Creative', '').replace(' | JSN CREATIVE', '').replace(' | JSN (Jsn Creative)', ''),
       description: pageConfig.description,
+      url: currentUrl,
       provider: { '@id': `${siteBase}/#organization` },
       areaServed: {
         '@type': 'Country',
-        name: 'India'
+        name: 'Worldwide'
       }
     });
   }
