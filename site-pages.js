@@ -11,30 +11,125 @@
   const pageKey = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
   const pageConfigs = {
     'index.html': {
-      description: 'Jsn Creative builds business websites, web apps, mobile apps, custom software, AI solutions, SEO services, and design-led digital products.',
+      description: 'JSN (Jsn Creative) is a full-service digital innovation studio founded by Muhammad Jawad M R. We build web applications, iOS & Android mobile apps, custom software, AI solutions, SEO services, UI/UX design, and operate 6 active tech ventures.',
       schemaType: 'WebSite',
       ogImage: `${siteBase}/social-preview.svg`,
-      keywords: 'JSN, Jsn, JSN Creative, Jsn Creative, JSN Studio, JSN Tech, JSN Ventures, Web Development, Website Development, Mobile App Development, Software Development, Custom Software, React Development, MERN Stack Development, UI/UX Design, AI Solutions, SEO Services',
+      keywords: 'JSN, Jsn, JSN Creative, Jsn Creative, JSN Studio, JSN Tech, JSN Ventures, JSN Apps, Muhammad Jawad M R, Founder Jsn Creative, CEO Muhammad Jawad M R, Jawad JSN, Scholars Guide, Dexterity Learn, Work Mint, Nexio Tech, Livio Designs, Nexus Agents AI, Web Development, Website Development Agency, Mobile App Development, iOS App Development, Android App Development, Custom Software Development, Custom SaaS Engineering, AI Chatbot Solutions, AI Automation, UI/UX Design Studio, Technical SEO Services, Search Engine Optimization, Digital Marketing Agency, Video Editing Studio, Educational Consultancy, Bakery POS System, Restaurant POS Software, Hotel Management System, Gym Management Software',
     },
-    'bakery-pos.html': { description: 'Bakery POS App with lifetime access, billing, inventory, and sales tracking for bakeries.', schemaType: 'Product', ogImage: `${siteBase}/social-preview.svg` },
-    'gym-management.html': { description: 'Gym Management App with memberships, attendance, trainer scheduling, and lifetime access.', schemaType: 'Product', ogImage: `${siteBase}/social-preview.svg` },
-    'restaurant-pos.html': { description: 'Restaurant POS App for billing, kitchen flow, table management, and lifetime access.', schemaType: 'Product', ogImage: `${siteBase}/social-preview.svg` },
-    'hotel-management.html': { description: 'Hotel Management App for bookings, housekeeping, and front desk coordination.', schemaType: 'Product', ogImage: `${siteBase}/social-preview.svg` },
-    'ebooks.html': { description: 'E-Books digital product page with lifetime access and clear digital content delivery.', schemaType: 'Product', ogImage: `${siteBase}/social-preview.svg` },
-    'ai-chatbot.html': { description: 'AI Chatbot product page with lead capture, automation, and lifetime access.', schemaType: 'Product', ogImage: `${siteBase}/social-preview.svg` },
-    'web-development.html': { description: 'Web Development service page for responsive business websites and modern web applications.', schemaType: 'Service', ogImage: `${siteBase}/social-preview.svg` },
-    'app-development.html': { description: 'App Development service page for mobile apps built for iOS and Android.', schemaType: 'Service', ogImage: `${siteBase}/social-preview.svg` },
-    'custom-software.html': { description: 'Custom Software service page for tailored business workflows and automation.', schemaType: 'Service', ogImage: `${siteBase}/social-preview.svg` },
-    'graphic-designing.html': { description: 'Graphic Designing service page for branding, social creatives, and visual identity.', schemaType: 'Service', ogImage: `${siteBase}/social-preview.svg` },
-    'video-editing.html': { description: 'Video Editing service page for reels, ads, and polished brand content.', schemaType: 'Service', ogImage: `${siteBase}/social-preview.svg` },
-    'ui-ux-design.html': { description: 'UI/UX Design service page for clear, accessible, and user-centred interfaces.', schemaType: 'Service', ogImage: `${siteBase}/social-preview.svg` },
-    'seo-services.html': { description: 'SEO Services page for technical SEO, content optimization, and search visibility.', schemaType: 'Service', ogImage: `${siteBase}/social-preview.svg` },
-    'ai-solutions.html': { description: 'AI Solutions page for automation, chatbots, and intelligent business integrations.', schemaType: 'Service', ogImage: `${siteBase}/social-preview.svg` },
-    'digital-marketing.html': { description: 'Digital Marketing service page for campaigns, content, and audience growth.', schemaType: 'Service', ogImage: `${siteBase}/social-preview.svg` },
-    'educational-consultancy.html': { description: 'Educational Consultancy page for guidance, planning, and academic support.', schemaType: 'Service', ogImage: `${siteBase}/social-preview.svg` },
-    'contact.html': { description: 'Contact Jsn Creative by form, email, WhatsApp, or call for project and product enquiries.', schemaType: 'ContactPage', ogImage: `${siteBase}/social-preview.svg` },
-    'privacy.html': { description: 'Privacy policy for Jsn Creative website visitors and form submissions.', schemaType: 'WebPage', ogImage: `${siteBase}/social-preview.svg` },
-    'terms.html': { description: 'Terms and conditions for using Jsn Creative website, products, and services.', schemaType: 'WebPage', ogImage: `${siteBase}/social-preview.svg` },
+    'bakery-pos.html': {
+      description: 'Bakery POS App by Jsn Creative — Complete point-of-sale software for bakeries with lifetime access, fast billing, inventory control, and daily sales tracking.',
+      schemaType: 'Product',
+      ogImage: `${siteBase}/social-preview.svg`,
+      keywords: 'Bakery POS, Bakery POS App, Bakery POS System, Bakery Point of Sale Software, Bakery Billing App, Bakery Inventory Management, Jsn Creative Products, Muhammad Jawad M R, Bakery Software Lifetime Access',
+    },
+    'gym-management.html': {
+      description: 'Gym Management App by Jsn Creative — Gym membership tracking, attendance logging, trainer scheduling, and payment renewal software with lifetime access.',
+      schemaType: 'Product',
+      ogImage: `${siteBase}/social-preview.svg`,
+      keywords: 'Gym Management App, Gym Management System, Fitness Center Software, Member Attendance Tracking, Gym Membership Renewal App, Trainer Scheduling System, Jsn Creative, Muhammad Jawad M R',
+    },
+    'restaurant-pos.html': {
+      description: 'Restaurant POS App by Jsn Creative — Comprehensive restaurant billing, table management, kitchen order tickets (KOT), and sales reporting software with lifetime access.',
+      schemaType: 'Product',
+      ogImage: `${siteBase}/social-preview.svg`,
+      keywords: 'Restaurant POS, Restaurant POS App, Restaurant Billing System, KOT Management System, Kitchen Display Software, Table Management App, Restaurant Software Lifetime Access, Jsn Creative, Muhammad Jawad M R',
+    },
+    'hotel-management.html': {
+      description: 'Hotel Management App by Jsn Creative — Unified hotel management software for guest bookings, front desk check-in, housekeeping status, and invoice generation with lifetime access.',
+      schemaType: 'Product',
+      ogImage: `${siteBase}/social-preview.svg`,
+      keywords: 'Hotel Management App, Hotel Management System, Guest Booking Software, Front Desk Hotel Software, Housekeeping Tracker, Hotel Billing App, Jsn Creative, Muhammad Jawad M R',
+    },
+    'ebooks.html': {
+      description: 'E-Books & Digital Content Platform by Jsn Creative — Curated digital publications, educational resources, and tech e-books with lifetime access.',
+      schemaType: 'Product',
+      ogImage: `${siteBase}/social-preview.svg`,
+      keywords: 'E-Books Platform, Digital Content Delivery, Tech E-Books, Business Guides, Educational Books, Dexterity Learn, Jsn Creative, Muhammad Jawad M R',
+    },
+    'ai-chatbot.html': {
+      description: 'AI Chatbot & Conversational AI Platform by Jsn Creative — Intelligent AI chatbot integration for website lead capture, 24/7 customer support, and business automation.',
+      schemaType: 'Product',
+      ogImage: `${siteBase}/social-preview.svg`,
+      keywords: 'AI Chatbot, Website AI Chatbot, Conversational AI Platform, Lead Capture Chatbot, Customer Support Automation, Nexus Agents AI, Jsn Creative, Muhammad Jawad M R',
+    },
+    'web-development.html': {
+      description: 'Web Development Services by Jsn Creative — Custom responsive websites, full-stack web applications, React/MERN stack solutions, and e-commerce platforms engineered for speed and conversion.',
+      schemaType: 'Service',
+      ogImage: `${siteBase}/social-preview.svg`,
+      keywords: 'Web Development, Web Development Services, Full-Stack Web Development, Custom Website Development, Web Application Development, React Development Agency, MERN Stack Agency, SaaS Development, Jsn Creative, Muhammad Jawad M R',
+    },
+    'app-development.html': {
+      description: 'Mobile App Development Services by Jsn Creative — Native iOS, Android, and cross-platform Flutter/React Native mobile applications built for seamless performance and scalability.',
+      schemaType: 'Service',
+      ogImage: `${siteBase}/social-preview.svg`,
+      keywords: 'App Development, Mobile App Development, iOS App Development, Android App Development, Cross-Platform App Development, React Native Apps, Flutter Development, Jsn Creative, Muhammad Jawad M R',
+    },
+    'custom-software.html': {
+      description: 'Custom Software Engineering Services by Jsn Creative — Enterprise software development, automated business workflows, cloud systems, and bespoke SaaS platforms.',
+      schemaType: 'Service',
+      ogImage: `${siteBase}/social-preview.svg`,
+      keywords: 'Custom Software, Custom Software Development, Enterprise Software Engineering, SaaS Software Architecture, Business Workflow Automation, Bespoke Software Solutions, Jsn Creative, Muhammad Jawad M R',
+    },
+    'graphic-designing.html': {
+      description: 'Graphic Design & Visual Identity Services by Jsn Creative — Premium logo design, brand guidelines, social media creative design, marketing banners, and visual assets.',
+      schemaType: 'Service',
+      ogImage: `${siteBase}/social-preview.svg`,
+      keywords: 'Graphic Design, Graphic Design Services, Logo Design Studio, Brand Identity Design, Marketing Creative Design, Visual Branding Agency, Livio Designs, Jsn Creative, Muhammad Jawad M R',
+    },
+    'video-editing.html': {
+      description: 'Professional Video Editing Services by Jsn Creative — High-converting promo videos, social media reels, YouTube editing, motion graphics, and corporate brand videos.',
+      schemaType: 'Service',
+      ogImage: `${siteBase}/social-preview.svg`,
+      keywords: 'Video Editing, Video Editing Services, Commercial Video Editing, YouTube Video Editing, Reels & Shorts Editing, Motion Graphics Studio, Brand Video Production, Jsn Creative, Muhammad Jawad M R',
+    },
+    'ui-ux-design.html': {
+      description: 'UI/UX Design Studio Services by Jsn Creative — User-centred interface design, interactive prototyping, wireframing, mobile UI design, and user experience optimization.',
+      schemaType: 'Service',
+      ogImage: `${siteBase}/social-preview.svg`,
+      keywords: 'UI UX Design, UI UX Design Agency, User Interface Design, User Experience Studio, Mobile App UI Design, Web UI UX Prototyping, Wireframing Agency, Livio Designs, Jsn Creative, Muhammad Jawad M R',
+    },
+    'seo-services.html': {
+      description: 'Search Engine Optimization (SEO) Services by Jsn Creative — Technical SEO audits, keyword research, on-page optimization, content strategy, and high-authority rank building.',
+      schemaType: 'Service',
+      ogImage: `${siteBase}/social-preview.svg`,
+      keywords: 'SEO Services, Search Engine Optimization, Technical SEO Agency, On-Page SEO Optimization, Keyword Ranking Growth, Organic Traffic Strategy, Local SEO Services, Jsn Creative, Muhammad Jawad M R',
+    },
+    'ai-solutions.html': {
+      description: 'AI Solutions & Machine Learning Integration by Jsn Creative — Custom AI models, intelligent process automation, workflow AI agents, LLM integrations, and predictive analytics.',
+      schemaType: 'Service',
+      ogImage: `${siteBase}/social-preview.svg`,
+      keywords: 'AI Solutions, Artificial Intelligence Integration, Business AI Automation, AI Agents Studio, Machine Learning Solutions, Nexus Agents AI, LLM Integration, Jsn Creative, Muhammad Jawad M R',
+    },
+    'digital-marketing.html': {
+      description: 'Digital Marketing & Growth Agency Services by Jsn Creative — Data-driven social media marketing, PPC ad campaigns, content marketing, lead generation, and brand growth.',
+      schemaType: 'Service',
+      ogImage: `${siteBase}/social-preview.svg`,
+      keywords: 'Digital Marketing, Digital Marketing Agency, Social Media Marketing, Performance Marketing, Paid Ads Management, Content Marketing Strategy, Brand Growth Agency, Jsn Creative, Muhammad Jawad M R',
+    },
+    'educational-consultancy.html': {
+      description: 'Educational Consultancy & Career Guidance by Jsn Creative — Strategic academic advising, career planning, institution consulting, and student guidance portals.',
+      schemaType: 'Service',
+      ogImage: `${siteBase}/social-preview.svg`,
+      keywords: 'Educational Consultancy, Academic Career Guidance, Educational Consulting Agency, Student Mentorship, Scholars Guide, Career Advisory, Jsn Creative, Muhammad Jawad M R',
+    },
+    'contact.html': {
+      description: 'Contact Jsn Creative & Founder Muhammad Jawad M R — Enquire about custom software development, mobile apps, AI solutions, SEO services, or product licensing via form, WhatsApp, or email.',
+      schemaType: 'ContactPage',
+      ogImage: `${siteBase}/social-preview.svg`,
+      keywords: 'Contact Jsn Creative, Hire Jsn Creative, Contact Muhammad Jawad M R, Jsn Creative WhatsApp, Digital Studio Contact',
+    },
+    'privacy.html': {
+      description: 'Privacy Policy — Learn how Jsn Creative protects user data, privacy standards, and website security.',
+      schemaType: 'WebPage',
+      ogImage: `${siteBase}/social-preview.svg`,
+      keywords: 'Jsn Creative Privacy Policy, Data Protection, User Privacy Terms',
+    },
+    'terms.html': {
+      description: 'Terms & Conditions — Terms of service for Jsn Creative website, software products, and consulting services.',
+      schemaType: 'WebPage',
+      ogImage: `${siteBase}/social-preview.svg`,
+      keywords: 'Jsn Creative Terms of Service, Software Terms, Product Licensing Terms',
+    },
   };
 
   const pageConfig = pageConfigs[pageKey] || pageConfigs['index.html'];
@@ -59,6 +154,10 @@
   };
 
   upsertMeta('meta[name="description"]', { name: 'description', content: pageConfig.description });
+  if (pageConfig.keywords) {
+    upsertMeta('meta[name="keywords"]', { name: 'keywords', content: pageConfig.keywords });
+  }
+  upsertMeta('meta[name="author"]', { name: 'author', content: 'Muhammad Jawad M R' });
   upsertMeta('meta[name="robots"]', { name: 'robots', content: 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1' });
   upsertMeta('meta[name="theme-color"]', { name: 'theme-color', content: '#1a73e8' });
   upsertMeta('meta[name="application-name"]', { name: 'application-name', content: 'JSN' });
@@ -495,10 +594,98 @@
     }
   });
 
-  window.addEventListener('scroll', () => {
-    updateActiveState();
-    handleNavVisibilityOnScroll();
-  }, { passive: true });
+  // Auto-scroll controller with touch & mouse drag support for .icon-scroll
+  const initIconScroll = () => {
+    const scrollContainer = document.querySelector('.icon-scroll');
+    const scrollTrack = document.querySelector('.icon-track');
+    if (!scrollContainer || !scrollTrack) return;
+
+    let isInteracting = false;
+    let resumeTimeout = null;
+    let isMouseDown = false;
+    let startX = 0;
+    let scrollLeftStart = 0;
+    const speed = 0.8; // Smooth pixel speed per frame
+
+    const autoScroll = () => {
+      if (!isInteracting && !isMouseDown) {
+        scrollContainer.scrollLeft += speed;
+        // Seamless loop wrap when scroll reaches half of track scrollWidth
+        const halfWidth = scrollTrack.scrollWidth / 2;
+        if (halfWidth > 0 && scrollContainer.scrollLeft >= halfWidth) {
+          scrollContainer.scrollLeft -= halfWidth;
+        }
+      }
+      requestAnimationFrame(autoScroll);
+    };
+
+    const pauseScroll = () => {
+      isInteracting = true;
+      if (resumeTimeout) clearTimeout(resumeTimeout);
+    };
+
+    const resumeScrollWithDelay = (delay = 2000) => {
+      if (resumeTimeout) clearTimeout(resumeTimeout);
+      resumeTimeout = setTimeout(() => {
+        isInteracting = false;
+      }, delay);
+    };
+
+    // Touch events for mobile swiping
+    scrollContainer.addEventListener('touchstart', () => pauseScroll(), { passive: true });
+    scrollContainer.addEventListener('touchend', () => resumeScrollWithDelay(1500), { passive: true });
+    scrollContainer.addEventListener('touchcancel', () => resumeScrollWithDelay(1500), { passive: true });
+
+    // Mouse drag support for desktop
+    scrollContainer.addEventListener('mousedown', (e) => {
+      isMouseDown = true;
+      pauseScroll();
+      startX = e.pageX - scrollContainer.offsetLeft;
+      scrollLeftStart = scrollContainer.scrollLeft;
+    });
+
+    scrollContainer.addEventListener('mousemove', (e) => {
+      if (!isMouseDown) return;
+      e.preventDefault();
+      const x = e.pageX - scrollContainer.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      scrollContainer.scrollLeft = scrollLeftStart - walk;
+    });
+
+    scrollContainer.addEventListener('mouseup', () => {
+      if (isMouseDown) {
+        isMouseDown = false;
+        resumeScrollWithDelay(1500);
+      }
+    });
+
+    scrollContainer.addEventListener('mouseleave', () => {
+      if (isMouseDown) {
+        isMouseDown = false;
+        resumeScrollWithDelay(1500);
+      } else {
+        resumeScrollWithDelay(1000);
+      }
+    });
+
+    // Mouse hover pause
+    scrollContainer.addEventListener('mouseenter', () => pauseScroll());
+
+    // Wheel event (horizontal trackpad/mouse wheel scroll)
+    scrollContainer.addEventListener('wheel', () => {
+      pauseScroll();
+      resumeScrollWithDelay(2000);
+    }, { passive: true });
+
+    // Start loop
+    requestAnimationFrame(autoScroll);
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initIconScroll);
+  } else {
+    initIconScroll();
+  }
 
   updateActiveState();
 })();
