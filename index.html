@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JSN | Jsn Creative — Web, App &amp; AI Studio | Mangalore, KA</title>
+  <title>Web Development Company in Mangalore | App, POS & AI Studio — JSN Creative</title>
   <meta name="description"
-    content="JSN (Jsn Creative) is a top digital innovation studio in Mangalore, Karnataka by Muhammad Jawad M R. Custom web apps, mobile apps, software POS, &amp; AI solutions.">
+    content="JSN Creative is a top-rated software studio in Mangalore, Karnataka. We build custom websites, iOS & Android apps, Bakery/Restaurant POS billing software, and AI automation. Founded by Muhammad Jawad M R.">
   <meta name="keywords"
-    content="JSN, Jsn, JSN Creative, Jsn Creative, JSN Studio, JSN Tech, JSN Ventures, Muhammad Jawad M R, Founder Jsn Creative, CEO Jsn Creative, Jawad JSN, Mangalore, Mangaluru, Dakshina Kannada, Karnataka, Web Development Mangalore, App Development Mangalore, Software Company Mangalore, POS Software Mangalore, AI Solutions Mangalore, SEO Services Mangalore">
+    content="Web Development Company in Mangalore, Website Design Mangalore, App Development Mangalore, Mobile App Developers Mangalore Karnataka, Bakery POS Billing Software, Restaurant POS System Mangalore, Hotel Management Software Karnataka, Gym Management App, AI Automation Agency Mangalore, AI Chatbot for Business, Custom Software Development Mangalore, Software Company Mangalore, SEO Services Mangalore, Digital Marketing Agency Mangalore, Jsn Creative, JSN, Muhammad Jawad M R, Founder Jsn Creative, Mangaluru, Dakshina Kannada, Udupi, Coastal Karnataka">
   <meta name="author" content="Muhammad Jawad M R">
   <meta name="application-name" content="JSN">
   <meta name="apple-mobile-web-app-title" content="JSN">
@@ -36,17 +36,17 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_IN">
   <meta property="og:site_name" content="JSN | Jsn Creative">
-  <meta property="og:title" content="JSN | Jsn Creative — Web, App &amp; AI Studio | Mangalore, KA">
+  <meta property="og:title" content="Web Development Company in Mangalore | App, POS &amp; AI Studio — JSN Creative">
   <meta property="og:description"
-    content="JSN (Jsn Creative) is a top digital innovation studio in Mangalore, Karnataka by Muhammad Jawad M R. Custom web apps, mobile apps, software POS, &amp; AI solutions.">
+    content="JSN Creative is a top-rated software studio in Mangalore, Karnataka. We build custom websites, iOS &amp; Android apps, Bakery/Restaurant POS billing software, and AI automation. Founded by Muhammad Jawad M R.">
   <meta property="og:url" content="https://www.jsncreative.studio/">
   <meta property="og:image" content="https://www.jsncreative.studio/founder-jawad.jpg">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="JSN | Jsn Creative — Web, App &amp; AI Studio | Mangalore, KA">
+  <meta name="twitter:title" content="Web Development Company in Mangalore | App, POS &amp; AI Studio — JSN Creative">
   <meta name="twitter:description"
-    content="JSN (Jsn Creative) is a top digital innovation studio in Mangalore, Karnataka by Muhammad Jawad M R. Custom web apps, mobile apps, software POS, &amp; AI solutions.">
+    content="JSN Creative is a top-rated software studio in Mangalore, Karnataka. Custom web apps, mobile apps, Bakery/Restaurant POS billing, and AI automation. Founded by Muhammad Jawad M R.">
   <meta name="twitter:image" content="https://www.jsncreative.studio/founder-jawad.jpg">
 
   <!-- Schema.org Rich Structured Data Graph (Organization + Founder + LocalBusiness + FAQPage + Breadcrumbs) -->
@@ -1281,7 +1281,7 @@
       100% { opacity: 1;   transform: translate(-50%,-50%) scale(1.1); }
     }
 
-    /* Responsive: show compact stats on mobile, hide full card */
+    /* Responsive: show service showcase on mobile too */
     @media (max-width: 900px) {
       .hero {
         grid-template-columns: 1fr !important;
@@ -1292,13 +1292,9 @@
       .hero-buttons {
         justify-content: center !important;
       }
-      .hero-visual { display: none !important; }
+      .hero-visual { display: flex !important; }
       .hero-mobile-stats {
-        display: grid !important;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        margin-top: 28px;
-        margin-bottom: 24px;
+        display: none !important;
       }
     }
 
@@ -1359,6 +1355,284 @@
       color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.4px;
+    }
+
+    /* ── INTERACTIVE SERVICE SHOWCASE ── */
+    .svc-showcase {
+      width: 100%;
+      max-width: 500px;
+      background: rgba(22, 24, 30, 0.88);
+      border: 1px solid rgba(138, 180, 248, 0.18);
+      border-radius: 24px;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.04);
+      overflow: hidden;
+      animation: svcFloat 7s ease-in-out infinite alternate;
+    }
+
+    .light-mode .svc-showcase {
+      background: rgba(248, 250, 255, 0.96);
+      border-color: rgba(26, 115, 232, 0.16);
+      box-shadow: 0 32px 80px rgba(17, 24, 39, 0.1);
+    }
+
+    @keyframes svcFloat {
+      0%   { transform: translateY(0px); }
+      100% { transform: translateY(-10px); }
+    }
+
+    .svc-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .light-mode .svc-header {
+      border-bottom-color: rgba(0,0,0,0.06);
+    }
+
+    .svc-label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--blue);
+    }
+
+    .svc-location {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .svc-tabs {
+      display: flex;
+      gap: 4px;
+      padding: 12px 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .light-mode .svc-tabs {
+      border-bottom-color: rgba(0,0,0,0.06);
+    }
+
+    .svc-tabs::-webkit-scrollbar { display: none; }
+
+    .svc-tab {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 10px 10px 0 0;
+      border: none;
+      cursor: pointer;
+      color: var(--text-muted);
+      background: transparent;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+      position: relative;
+      bottom: -1px;
+    }
+
+    .svc-tab.active {
+      background: var(--card-bg);
+      color: var(--blue);
+      border: 1px solid rgba(138, 180, 248, 0.15);
+      border-bottom-color: var(--card-bg);
+    }
+
+    .light-mode .svc-tab.active {
+      background: rgba(248, 250, 255, 0.96);
+      border-color: rgba(26, 115, 232, 0.13);
+      border-bottom-color: rgba(248, 250, 255, 0.96);
+    }
+
+    .svc-tab:hover:not(.active) {
+      background: rgba(138, 180, 248, 0.08);
+      color: var(--text-primary);
+    }
+
+    .svc-panels {
+      padding: 18px 20px 0;
+    }
+
+    .svc-panel {
+      display: none;
+      animation: panelIn 0.25s ease;
+    }
+
+    .svc-panel.active {
+      display: block;
+    }
+
+    @keyframes panelIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .svc-panel-title {
+      font-family: 'Google Sans Display', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .svc-panel-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .svc-features {
+      list-style: none;
+      margin: 0 0 14px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .svc-features li {
+      font-size: 13px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .svc-tick {
+      font-size: 11px;
+      font-weight: 700;
+      color: #34d399;
+      background: rgba(52, 211, 153, 0.1);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .svc-meta {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+    }
+
+    .light-mode .svc-meta {
+      background: rgba(0,0,0,0.03);
+      border-color: rgba(0,0,0,0.06);
+    }
+
+    .svc-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .svc-meta-key {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: var(--text-muted);
+    }
+
+    .svc-meta-val {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .svc-cta {
+      display: block;
+      text-align: center;
+      padding: 11px;
+      background: var(--blue);
+      color: #ffffff !important;
+      text-decoration: none;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: 12px;
+      transition: background 0.2s, transform 0.2s;
+      margin-bottom: 18px;
+    }
+
+    .svc-cta:hover {
+      background: var(--blue-dark);
+      transform: translateY(-1px);
+    }
+
+    .svc-trust {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 14px 16px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      gap: 8px;
+    }
+
+    .light-mode .svc-trust {
+      border-top-color: rgba(0,0,0,0.06);
+    }
+
+    .svc-trust-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .svc-trust-num {
+      font-family: 'Google Sans Display', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .svc-trust-label {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .svc-trust-divider {
+      width: 1px;
+      height: 28px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .light-mode .svc-trust-divider {
+      background: rgba(0,0,0,0.08);
+    }
+
+    /* On mobile, show svc-showcase instead of hiding hero-visual */
+    @media (max-width: 900px) {
+      .hero-visual {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+      }
+      .svc-showcase {
+        max-width: 100%;
+        animation: none;
+      }
     }
 
     .connection-svg {
@@ -3184,9 +3458,9 @@
   <!-- HERO -->
   <div class="hero" id="hero">
     <div class="hero-content">
-      <p class="hero-eyebrow"><i data-lucide="sparkles" style="width:14px; height:14px; margin-right:4px; vertical-align:-2px; color:var(--blue);"></i> Digital Innovation Studio • Mangalore, KA</p>
-      <h1>Crafting Web, App &amp; <span class="accent">AI Solutions</span></h1>
-      <p class="hero-sub">We build high-performance web applications, mobile apps, custom POS software, and AI automation for growing businesses.</p>
+      <p class="hero-eyebrow"><i data-lucide="sparkles" style="width:14px; height:14px; margin-right:4px; vertical-align:-2px; color:var(--blue);"></i> #1 Software Studio in Mangalore, Karnataka</p>
+      <h1>Web, App &amp; <span class="accent">AI Solutions</span> — Mangalore</h1>
+      <p class="hero-sub">Custom websites, iOS &amp; Android apps, POS billing software, and AI automation — built for businesses in Mangalore, Udupi, Karnataka &amp; beyond.</p>
       <div class="hero-buttons">
         <a href="#services" class="btn-primary">Explore services</a>
         <a href="contact.html" class="btn-outline">Talk to us</a>
@@ -3218,142 +3492,115 @@
       </div>
     </div>
     <div class="hero-visual" id="heroVisual">
-      <div class="dashboard-stage">
-        <!-- Background ambient glow -->
-        <div class="dash-glow"></div>
+      <!-- Interactive Service Showcase Card -->
+      <div class="svc-showcase">
+        <div class="svc-header">
+          <div class="svc-label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            What we build for you
+          </div>
+          <div class="svc-location">📍 Mangalore, India</div>
+        </div>
 
-        <!-- Main dashboard card -->
-        <div class="dash-card">
-          <!-- Browser chrome -->
-          <div class="dash-chrome">
-            <span class="chrome-dot" style="background:#ff5f57;"></span>
-            <span class="chrome-dot" style="background:#febc2e;"></span>
-            <span class="chrome-dot" style="background:#28c840;"></span>
-            <div class="chrome-url">
-              <svg class="chrome-lock" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              <span class="chrome-domain">jsncreative.studio/dashboard</span>
+        <!-- Service Tabs -->
+        <div class="svc-tabs" id="svcTabs">
+          <button class="svc-tab active" data-svc="web">🌐 Web Apps</button>
+          <button class="svc-tab" data-svc="mobile">📱 Mobile</button>
+          <button class="svc-tab" data-svc="pos">💳 POS</button>
+          <button class="svc-tab" data-svc="ai">🤖 AI</button>
+        </div>
+
+        <!-- Service Panels -->
+        <div class="svc-panels">
+          <!-- Web Apps Panel -->
+          <div class="svc-panel active" data-panel="web">
+            <div class="svc-panel-title">Custom Web Applications</div>
+            <div class="svc-panel-sub">Full-stack, responsive websites &amp; web apps built to convert visitors into customers.</div>
+            <ul class="svc-features">
+              <li><span class="svc-tick">✓</span> E-Commerce &amp; Business Portals</li>
+              <li><span class="svc-tick">✓</span> React / MERN / Next.js Stacks</li>
+              <li><span class="svc-tick">✓</span> SEO-optimised &amp; Mobile-first</li>
+              <li><span class="svc-tick">✓</span> Admin Panels &amp; Dashboards</li>
+            </ul>
+            <div class="svc-meta">
+              <div class="svc-meta-item"><span class="svc-meta-key">Timeline</span><span class="svc-meta-val">2–6 weeks</span></div>
+              <div class="svc-meta-item"><span class="svc-meta-key">Served</span><span class="svc-meta-val">Mangalore &amp; Global</span></div>
             </div>
+            <a href="web-development.html" class="svc-cta">Get a Free Quote →</a>
           </div>
 
-          <!-- Dashboard body -->
-          <div class="dash-body">
-            <!-- Left sidebar -->
-            <div class="dash-sidebar">
-              <div class="dsb-logo">JSN
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="var(--blue)" style="margin-left:3px;vertical-align:middle;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              </div>
-              <div class="dsb-item active">
-                <span class="dsb-dot"></span> Overview
-              </div>
-              <div class="dsb-item">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="18" y="3" width="4" height="18"/><rect x="10" y="8" width="4" height="13"/><rect x="2" y="13" width="4" height="8"/></svg>
-                Analytics
-              </div>
-              <div class="dsb-item">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
-                Projects
-              </div>
-              <div class="dsb-item">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                Ventures
-              </div>
-              <div class="dsb-item">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10H12V2z"/><path d="M12 12 2.1 12"/><circle cx="12" cy="12" r="3"/></svg>
-                AI Tools
-              </div>
-              <div class="dsb-item">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>
-                Settings
-              </div>
+          <!-- Mobile Panel -->
+          <div class="svc-panel" data-panel="mobile">
+            <div class="svc-panel-title">iOS &amp; Android App Development</div>
+            <div class="svc-panel-sub">Native and cross-platform mobile apps built for speed, scalability, and great UX.</div>
+            <ul class="svc-features">
+              <li><span class="svc-tick">✓</span> iOS &amp; Android Native Apps</li>
+              <li><span class="svc-tick">✓</span> Flutter &amp; React Native</li>
+              <li><span class="svc-tick">✓</span> Play Store / App Store Publish</li>
+              <li><span class="svc-tick">✓</span> Offline-ready &amp; Push Alerts</li>
+            </ul>
+            <div class="svc-meta">
+              <div class="svc-meta-item"><span class="svc-meta-key">Timeline</span><span class="svc-meta-val">4–10 weeks</span></div>
+              <div class="svc-meta-item"><span class="svc-meta-key">Served</span><span class="svc-meta-val">Karnataka &amp; Global</span></div>
             </div>
+            <a href="app-development.html" class="svc-cta">Get a Free Quote →</a>
+          </div>
 
-            <!-- Main area -->
-            <div class="dash-main">
-              <!-- Stat pills -->
-              <div class="dash-stat-row">
-                <div class="dash-stat">
-                  <div class="dash-stat-label">Projects</div>
-                  <div class="dash-stat-value">120<span>+</span></div>
-                </div>
-                <div class="dash-stat">
-                  <div class="dash-stat-label">Clients</div>
-                  <div class="dash-stat-value">80<span>&#x2191;</span></div>
-                </div>
-                <div class="dash-stat">
-                  <div class="dash-stat-label">Ventures</div>
-                  <div class="dash-stat-value">6<span>live</span></div>
-                </div>
-              </div>
-
-              <!-- Code window -->
-              <div class="dash-code">
-                <div class="code-line"><span class="ln">1</span><span class="cm">// JSN Creative — innovation engine</span></div>
-                <div class="code-line"><span class="ln">2</span><span class="kw">const </span><span class="fn">studio</span><span class="op"> = </span><span class="fn">new</span><span class="nt"> JSNCreative</span><span class="op">()</span><span class="nt">;</span></div>
-                <div class="code-line"><span class="ln">3</span><span class="fn">studio</span><span class="op">.</span><span class="fn">build</span><span class="op">(</span><span class="str">'web'</span><span class="op">, </span><span class="str">'apps'</span><span class="op">, </span><span class="str">'AI'</span><span class="op">)</span><span class="nt">;</span></div>
-                <div class="code-line"><span class="ln">4</span><span class="fn">studio</span><span class="op">.</span><span class="fn">launch</span><span class="op">(</span><span class="nt">{ ventures: </span><span class="str">6</span><span class="nt">, clients: </span><span class="str">80</span><span class="nt"> }</span><span class="op">)</span><span class="nt">;</span></div>
-                <div class="code-line"><span class="ln">5</span><span class="cm">// Delivering results since 2022</span></div>
-                <div class="code-line"><span class="ln">6</span><span class="kw">return </span><span class="str">"Excellence. Always."</span><span class="nt">;</span></div>
-                <div class="code-line"><span class="ln">7</span><span class="nt"><span class="code-cursor"></span></span></div>
-              </div>
-
-              <!-- Progress metrics -->
-              <div class="dash-progress-row">
-                <span class="progress-label">Web</span>
-                <div class="progress-bar-wrap"><div class="progress-fill pf-92" style="--fill-w:92%"></div></div>
-                <span class="progress-pct">92%</span>
-              </div>
-              <div class="dash-progress-row">
-                <span class="progress-label">Mobile</span>
-                <div class="progress-bar-wrap"><div class="progress-fill pf-87" style="--fill-w:87%"></div></div>
-                <span class="progress-pct">87%</span>
-              </div>
-              <div class="dash-progress-row">
-                <span class="progress-label">AI</span>
-                <div class="progress-bar-wrap"><div class="progress-fill pf-95" style="--fill-w:95%"></div></div>
-                <span class="progress-pct">95%</span>
-              </div>
+          <!-- POS Panel -->
+          <div class="svc-panel" data-panel="pos">
+            <div class="svc-panel-title">POS &amp; Billing Software</div>
+            <div class="svc-panel-sub">Ready-to-use POS apps for bakeries, restaurants &amp; hotels — one-time, lifetime access.</div>
+            <ul class="svc-features">
+              <li><span class="svc-tick">✓</span> Bakery &amp; Restaurant Billing</li>
+              <li><span class="svc-tick">✓</span> Hotel &amp; Gym Management</li>
+              <li><span class="svc-tick">✓</span> Inventory &amp; Sales Reports</li>
+              <li><span class="svc-tick">✓</span> One-time Lifetime Purchase</li>
+            </ul>
+            <div class="svc-meta">
+              <div class="svc-meta-item"><span class="svc-meta-key">Access</span><span class="svc-meta-val">Lifetime, No Monthly</span></div>
+              <div class="svc-meta-item"><span class="svc-meta-key">Served</span><span class="svc-meta-val">Mangalore, Udupi &amp; KA</span></div>
             </div>
+            <a href="#products" class="svc-cta">See POS Products →</a>
+          </div>
+
+          <!-- AI Panel -->
+          <div class="svc-panel" data-panel="ai">
+            <div class="svc-panel-title">AI Automation &amp; Chatbots</div>
+            <div class="svc-panel-sub">Intelligent AI agents, chatbots, and workflow automation tailored to your business.</div>
+            <ul class="svc-features">
+              <li><span class="svc-tick">✓</span> AI Chatbot for Websites</li>
+              <li><span class="svc-tick">✓</span> Automated Lead Capture 24/7</li>
+              <li><span class="svc-tick">✓</span> Business Workflow AI Agents</li>
+              <li><span class="svc-tick">✓</span> LLM &amp; Custom AI Integration</li>
+            </ul>
+            <div class="svc-meta">
+              <div class="svc-meta-item"><span class="svc-meta-key">Timeline</span><span class="svc-meta-val">1–3 weeks</span></div>
+              <div class="svc-meta-item"><span class="svc-meta-key">Served</span><span class="svc-meta-val">Mangalore &amp; Global</span></div>
+            </div>
+            <a href="ai-solutions.html" class="svc-cta">Explore AI Solutions →</a>
           </div>
         </div>
 
-        <!-- Floating achievement badges -->
-        <div class="hero-badge badge-clients">
-          <div class="badge-icon" style="background:rgba(52,211,153,0.15);">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <!-- Trust Badges Strip -->
+        <div class="svc-trust">
+          <div class="svc-trust-item">
+            <span class="svc-trust-num">120+</span>
+            <span class="svc-trust-label">Projects</span>
           </div>
-          <div class="badge-text">
-            <span class="badge-title">80+ Happy Clients</span>
-            <span class="badge-sub">Worldwide</span>
+          <div class="svc-trust-divider"></div>
+          <div class="svc-trust-item">
+            <span class="svc-trust-num">80+</span>
+            <span class="svc-trust-label">Clients</span>
           </div>
-        </div>
-
-        <div class="hero-badge badge-rating">
-          <div class="badge-icon" style="background:rgba(251,191,36,0.15);">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="#fbbc04" stroke="#fbbc04" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <div class="svc-trust-divider"></div>
+          <div class="svc-trust-item">
+            <span class="svc-trust-num">5.0 ★</span>
+            <span class="svc-trust-label">Rating</span>
           </div>
-          <div class="badge-text">
-            <span class="badge-title">5.0 Star Rating</span>
-            <span class="badge-sub">Avg. client score</span>
-          </div>
-        </div>
-
-        <div class="hero-badge badge-projects">
-          <div class="badge-icon" style="background:rgba(138,180,248,0.15);">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          </div>
-          <div class="badge-text">
-            <span class="badge-title">120+ Projects</span>
-            <span class="badge-sub">Delivered on time</span>
-          </div>
-        </div>
-
-        <div class="hero-badge badge-live">
-          <div class="badge-icon" style="background:rgba(167,139,250,0.15);">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          </div>
-          <div class="badge-text">
-            <span class="badge-title">6 Live Ventures</span>
-            <span class="badge-sub">Growing daily</span>
+          <div class="svc-trust-divider"></div>
+          <div class="svc-trust-item">
+            <span class="svc-trust-num">6</span>
+            <span class="svc-trust-label">Ventures Live</span>
           </div>
         </div>
       </div>
@@ -3945,22 +4192,30 @@
         });
         sidebarObserver.observe(sidebar, { attributes: true, attributeFilter: ['class'] });
       }
-      // Parallax Mouse Interaction for Hero Visual Dashboard Card
-      const heroVis = document.getElementById('heroVisual');
-      const dashStage = document.querySelector('.dashboard-stage');
-      if (heroVis && dashStage) {
-        heroVis.addEventListener('mousemove', (e) => {
-          if (window.innerWidth <= 900) return;
-          const rect = heroVis.getBoundingClientRect();
-          const x = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2);
-          const y = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
-          dashStage.style.transform = `rotateY(${x * 6}deg) rotateX(${-y * 6}deg) translateY(-5px)`;
-        });
+      // ── Service Showcase Tab Interaction ──
+      const svcTabs = document.querySelectorAll('.svc-tab');
+      const svcPanels = document.querySelectorAll('.svc-panel');
 
-        heroVis.addEventListener('mouseleave', () => {
-          dashStage.style.transform = `rotateY(0deg) rotateX(0deg) translateY(0px)`;
-        });
+      function activateTab(svcKey) {
+        svcTabs.forEach(t => t.classList.toggle('active', t.dataset.svc === svcKey));
+        svcPanels.forEach(p => p.classList.toggle('active', p.dataset.panel === svcKey));
       }
+
+      svcTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          activateTab(tab.dataset.svc);
+          clearInterval(autoTabInterval);
+          autoTabInterval = setInterval(rotateTabs, 5000);
+        });
+      });
+
+      const tabOrder = ['web', 'mobile', 'pos', 'ai'];
+      let tabIndex = 0;
+      function rotateTabs() {
+        tabIndex = (tabIndex + 1) % tabOrder.length;
+        activateTab(tabOrder[tabIndex]);
+      }
+      let autoTabInterval = setInterval(rotateTabs, 5000);
     </script>
 
 </body>

@@ -135,7 +135,8 @@
       <li><a href="contact.html" class="nav-cta">Get in touch</a></li>
     </ul>
     <div class="nav-actions">
-      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileSidebar">
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"
+        data-menu-toggle>
         <span></span>
         <span></span>
         <span></span>
@@ -143,20 +144,20 @@
     </div>
   </nav>
 
-  <div class="mobile-backdrop" id="mobileBackdrop"></div>
-  <aside class="mobile-sidebar" id="mobileSidebar" aria-hidden="true">
-    <div class="sidebar-head">
-      <div class="sidebar-title">JSN <span>CREATIVE</span></div>
-      <button class="sidebar-close" type="button" aria-label="Close menu">×</button>
+  <div class="drawer-backdrop" data-drawer-backdrop></div>
+  <aside class="mobile-drawer" data-mobile-drawer aria-hidden="true">
+    <div class="drawer-head">
+      <div class="drawer-title">JSN <span>CREATIVE</span></div>
+      <button class="drawer-close" type="button" aria-label="Close menu" data-menu-close>×</button>
     </div>
-    <nav class="sidebar-nav" aria-label="Mobile navigation">
+    <nav class="drawer-nav" aria-label="Mobile navigation">
       <a href="index.html">Home</a>
       <a href="index.html#products">Products</a>
       <a href="index.html#services">Services</a>
       <a href="index.html#ventures">Ventures</a>
       <a href="leadership.html" class="active">Leadership &amp; Vision</a>
       <a href="contact.html">Contact</a>
-      <div class="sidebar-label">Ventures</div>
+      <div class="drawer-label">Ventures</div>
       <a href="https://scholars-guide.vercel.app/" target="_blank" rel="noopener">Scholars Guide</a>
       <a href="https://dexterity-learn.vercel.app/" target="_blank" rel="noopener">Dexterity Learn</a>
       <a href="https://work-mint-one.vercel.app/" target="_blank" rel="noopener">Work Mint</a>
