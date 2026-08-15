@@ -7,6 +7,8 @@ const siteBase = 'https://www.jsncreative.studio';
 const htmlFiles = [
   'index.html',
   '404.html',
+  'leadership.html',
+  'play-forge.html',
   'bakery-pos.html',
   'gym-management.html',
   'restaurant-pos.html',
