@@ -1376,7 +1376,122 @@ nav,
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
+/* ── FOOTER SOCIALS ── */
+.footer-socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.footer-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--page-border, rgba(255,255,255,0.08));
+  color: var(--page-muted, #9aa0a6);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.footer-socials a:hover {
+  background: var(--page-blue, #8ab4f8);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.footer-socials svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+
+/* ── FOOTER HIGHLIGHT / FOUNDER CREDIT ── */
+.footer-highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(138, 180, 248, 0.1);
+  border: 1px solid rgba(138, 180, 248, 0.2);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--page-blue, #8ab4f8);
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+.footer-highlight a {
+  color: var(--page-blue, #8ab4f8) !important;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.footer-highlight a:hover {
+  text-decoration: underline;
+}
+
+/* ── FOOTER LOCATIONS ── */
+.footer-locations {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--page-border, rgba(255,255,255,0.08));
+}
+
+.footer-loc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.footer-loc-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--page-surface, #202124);
+  border: 1px solid var(--page-border, rgba(255,255,255,0.1));
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--page-muted, #9aa0a6);
+  white-space: nowrap;
+}
+
+.footer-loc-tag svg {
+  width: 11px;
+  height: 11px;
+  flex-shrink: 0;
+  stroke: currentColor;
+}
+
+.footer-loc-tag--highlight {
+  background: rgba(26, 115, 232, 0.12) !important;
+  color: var(--page-blue, #8ab4f8) !important;
+  border-color: rgba(26, 115, 232, 0.28) !important;
+  font-weight: 600;
+}
+
+.footer-loc-heading {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--page-blue, #8ab4f8);
+  margin-bottom: 12px;
+}
+
 /* ── MOBILE FOOTER CENTERING ── */
+
 @media (max-width: 900px) {
 
   nav,
