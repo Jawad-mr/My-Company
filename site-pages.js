@@ -596,23 +596,27 @@
     }
   });
 
-  // Auto-scroll controller with touch & mouse drag support for .icon-scroll
+  // Auto-scroll controller with hover-pause & touch-pause for .icon-scroll
   const initIconScroll = () => {
     const scrollContainer = document.querySelector('.icon-scroll');
     const scrollTrack = document.querySelector('.icon-track');
     if (!scrollContainer || !scrollTrack) return;
 
-    let isInteracting = false;
-    let resumeTimeout = null;
+    // Clone chips once to guarantee seamless infinite loop
+    if (!scrollTrack.dataset.cloned) {
+      scrollTrack.innerHTML += scrollTrack.innerHTML;
+      scrollTrack.dataset.cloned = 'true';
+    }
+
+    let isPaused = false;
     let isMouseDown = false;
     let startX = 0;
     let scrollLeftStart = 0;
-    const speed = 0.8; // Smooth pixel speed per frame
+    const speed = 1.0; // Smooth 60fps velocity
 
     const autoScroll = () => {
-      if (!isInteracting && !isMouseDown) {
+      if (!isPaused && !isMouseDown) {
         scrollContainer.scrollLeft += speed;
-        // Seamless loop wrap when scroll reaches half of track scrollWidth
         const halfWidth = scrollTrack.scrollWidth / 2;
         if (halfWidth > 0 && scrollContainer.scrollLeft >= halfWidth) {
           scrollContainer.scrollLeft -= halfWidth;
@@ -621,65 +625,52 @@
       requestAnimationFrame(autoScroll);
     };
 
-    const pauseScroll = () => {
-      isInteracting = true;
-      if (resumeTimeout) clearTimeout(resumeTimeout);
-    };
+    // Desktop hover: pause ONLY while mouse is inside, resume immediately on leave
+    scrollContainer.addEventListener('mouseenter', () => {
+      isPaused = true;
+    });
 
-    const resumeScrollWithDelay = (delay = 2000) => {
-      if (resumeTimeout) clearTimeout(resumeTimeout);
-      resumeTimeout = setTimeout(() => {
-        isInteracting = false;
-      }, delay);
-    };
+    scrollContainer.addEventListener('mouseleave', () => {
+      isPaused = false;
+      isMouseDown = false;
+    });
 
-    // Touch events for mobile swiping
-    scrollContainer.addEventListener('touchstart', () => pauseScroll(), { passive: true });
-    scrollContainer.addEventListener('touchend', () => resumeScrollWithDelay(1500), { passive: true });
-    scrollContainer.addEventListener('touchcancel', () => resumeScrollWithDelay(1500), { passive: true });
+    // Mobile touch: pause ONLY while finger touches screen, resume immediately on release
+    scrollContainer.addEventListener('touchstart', () => {
+      isPaused = true;
+    }, { passive: true });
 
-    // Mouse drag support for desktop
+    scrollContainer.addEventListener('touchend', () => {
+      isPaused = false;
+    }, { passive: true });
+
+    scrollContainer.addEventListener('touchcancel', () => {
+      isPaused = false;
+    }, { passive: true });
+
+    // Desktop mouse drag support
     scrollContainer.addEventListener('mousedown', (e) => {
       isMouseDown = true;
-      pauseScroll();
+      isPaused = true;
       startX = e.pageX - scrollContainer.offsetLeft;
       scrollLeftStart = scrollContainer.scrollLeft;
     });
 
-    scrollContainer.addEventListener('mousemove', (e) => {
+    window.addEventListener('mousemove', (e) => {
       if (!isMouseDown) return;
-      e.preventDefault();
       const x = e.pageX - scrollContainer.offsetLeft;
       const walk = (x - startX) * 1.5;
       scrollContainer.scrollLeft = scrollLeftStart - walk;
     });
 
-    scrollContainer.addEventListener('mouseup', () => {
+    window.addEventListener('mouseup', () => {
       if (isMouseDown) {
         isMouseDown = false;
-        resumeScrollWithDelay(1500);
+        isPaused = false;
       }
     });
 
-    scrollContainer.addEventListener('mouseleave', () => {
-      if (isMouseDown) {
-        isMouseDown = false;
-        resumeScrollWithDelay(1500);
-      } else {
-        resumeScrollWithDelay(1000);
-      }
-    });
-
-    // Mouse hover pause
-    scrollContainer.addEventListener('mouseenter', () => pauseScroll());
-
-    // Wheel event (horizontal trackpad/mouse wheel scroll)
-    scrollContainer.addEventListener('wheel', () => {
-      pauseScroll();
-      resumeScrollWithDelay(2000);
-    }, { passive: true });
-
-    // Start loop
+    // Start continuous movement
     requestAnimationFrame(autoScroll);
   };
 
