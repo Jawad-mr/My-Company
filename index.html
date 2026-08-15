@@ -875,40 +875,51 @@
       background: var(--pill-bg);
     }
 
-    /* ── HERO AI LOOKUP LAUNCHPAD (TASK 2) ── */
-    .hero-ai-box {
-      margin-top: 28px;
-      padding: 16px 20px;
-      background: rgba(255, 255, 255, 0.03);
+    /* ── STANDALONE AI LOOKUP SECTION ── */
+    .ai-lookup-section {
+      padding: 0 40px 48px;
+      max-width: 1200px;
+      margin: -20px auto 0;
+      position: relative;
+      z-index: 10;
+    }
+
+    .ai-lookup-container {
+      background: linear-gradient(135deg, rgba(26, 115, 232, 0.08) 0%, rgba(22, 24, 30, 0.95) 100%);
       border: 1px solid rgba(138, 180, 248, 0.2);
-      border-radius: 20px;
+      border-radius: 24px;
+      padding: 28px 36px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+      position: relative;
+      overflow: hidden;
       backdrop-filter: blur(12px);
+    }
+
+    .light-mode .ai-lookup-container {
+      background: linear-gradient(135deg, rgba(26, 115, 232, 0.06) 0%, rgba(255, 255, 255, 0.96) 100%);
+      border-color: rgba(26, 115, 232, 0.18);
+      box-shadow: 0 18px 50px rgba(17, 24, 39, 0.06);
+    }
+
+    .ai-lookup-content {
+      display: grid;
+      grid-template-columns: 1.1fr 1.5fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .ai-lookup-header {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      max-width: 540px;
-      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+      gap: 8px;
       text-align: left;
     }
 
-    .light-mode .hero-ai-box {
-      background: rgba(255, 255, 255, 0.9);
-      border-color: rgba(26, 115, 232, 0.16);
-      box-shadow: 0 12px 36px rgba(17, 24, 39, 0.06);
-    }
-
-    .hero-ai-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .hero-ai-badge {
+    .ai-lookup-badge {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      padding: 4px 10px;
+      gap: 6px;
+      padding: 4px 12px;
       border-radius: 99px;
       background: rgba(138, 180, 248, 0.14);
       border: 1px solid rgba(138, 180, 248, 0.28);
@@ -916,110 +927,152 @@
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.6px;
+      width: fit-content;
     }
 
-    .hero-ai-title {
-      font-size: 13px;
+    .ai-lookup-title {
+      font-family: 'Google Sans Display', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0;
+      line-height: 1.25;
+      letter-spacing: -0.3px;
+    }
+
+    .ai-lookup-sub {
+      font-size: 13.5px;
       color: var(--text-secondary);
-      font-weight: 500;
+      line-height: 1.5;
       margin: 0;
     }
 
-    .hero-ai-buttons {
+    .ai-lookup-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
+      gap: 14px;
     }
 
-    .hero-ai-btn {
+    .ai-lookup-card {
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.05);
+      gap: 12px;
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--border);
+      border-radius: 16px;
       text-decoration: none;
-      transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .light-mode .hero-ai-btn {
+    .light-mode .ai-lookup-card {
       background: #ffffff;
       border-color: #e2e8f0;
     }
 
-    .hero-ai-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+    .ai-lookup-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
     }
 
-    .ai-gemini:hover {
+    .ai-card-gemini:hover {
       border-color: #8ab4f8;
-      background: rgba(138, 180, 248, 0.12);
+      background: rgba(138, 180, 248, 0.1);
     }
 
-    .ai-chatgpt:hover {
+    .ai-card-chatgpt:hover {
       border-color: #10a37f;
-      background: rgba(16, 163, 127, 0.12);
+      background: rgba(16, 163, 127, 0.1);
     }
 
-    .ai-google:hover {
+    .ai-card-google:hover {
       border-color: #4285f4;
-      background: rgba(66, 133, 244, 0.12);
+      background: rgba(66, 133, 244, 0.1);
     }
 
-    .ai-btn-icon {
-      width: 22px;
-      height: 22px;
+    .ai-card-icon {
+      width: 28px;
+      height: 28px;
       flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .ai-gemini .ai-btn-icon {
+    .ai-card-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .ai-card-gemini .ai-card-icon {
       color: #8ab4f8;
     }
 
-    .ai-chatgpt .ai-btn-icon {
+    .ai-card-chatgpt .ai-card-icon {
       color: #10a37f;
     }
 
-    .ai-btn-text {
+    .ai-card-info {
       display: flex;
       flex-direction: column;
-      line-height: 1.15;
+      gap: 2px;
       min-width: 0;
       flex: 1;
     }
 
-    .ai-btn-text strong {
-      font-size: 12px;
+    .ai-card-name {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 13.5px;
       font-weight: 700;
       color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4px;
+    }
+
+    .ai-card-name svg {
+      stroke: var(--text-muted);
+      opacity: 0.7;
+      transition: transform 0.2s, opacity 0.2s, stroke 0.2s;
+    }
+
+    .ai-lookup-card:hover .ai-card-name svg {
+      opacity: 1;
+      transform: translate(2px, -2px);
+      stroke: var(--blue);
+    }
+
+    .ai-card-desc {
+      font-size: 11px;
+      color: var(--text-muted);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
-    .ai-btn-text small {
-      font-size: 9.5px;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-    }
-
-    .ai-btn-arrow {
-      stroke: var(--text-muted);
-      opacity: 0.6;
-      transition: transform 0.2s, opacity 0.2s;
-      flex-shrink: 0;
-    }
-
-    .hero-ai-btn:hover .ai-btn-arrow {
-      opacity: 1;
-      transform: translate(2px, -2px);
-      stroke: var(--blue);
+    @media (max-width: 900px) {
+      .ai-lookup-section {
+        padding: 0 16px 36px;
+        margin-top: 0;
+      }
+      .ai-lookup-container {
+        padding: 24px 20px;
+      }
+      .ai-lookup-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+      }
+      .ai-lookup-header {
+        align-items: center;
+        text-align: center;
+      }
+      .ai-lookup-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
     }
 
     /* ── PREMIUM HERO DASHBOARD VISUAL ── */
@@ -3907,54 +3960,6 @@
         <a href="contact.html" class="btn-outline">Talk to us</a>
       </div>
 
-      <!-- Instant AI Lookup Launchpad (Task 2) -->
-      <div class="hero-ai-box">
-        <div class="hero-ai-header">
-          <div class="hero-ai-badge">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-            <span>Ask AI About Us</span>
-          </div>
-          <p class="hero-ai-title">Want unbiased info? Query top AI engines directly:</p>
-        </div>
-        <div class="hero-ai-buttons">
-          <a href="https://gemini.google.com/app?q=Who+is+Muhammad+Jawad+M+R+and+what+is+JSN+Creative+studio+in+Mangalore%3F+Provide+an+overview+of+their+services+and+ventures." target="_blank" rel="noopener" class="hero-ai-btn ai-gemini" title="Ask Google Gemini about JSN Creative">
-            <svg class="ai-btn-icon" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24Z"/>
-            </svg>
-            <span class="ai-btn-text">
-              <strong>Ask Gemini</strong>
-              <small>Google AI</small>
-            </span>
-            <svg class="ai-btn-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-          </a>
-
-          <a href="https://chatgpt.com/?q=Who+is+Muhammad+Jawad+M+R+and+what+is+JSN+Creative+studio+in+Mangalore%3F+Provide+an+overview+of+their+services+and+ventures." target="_blank" rel="noopener" class="hero-ai-btn ai-chatgpt" title="Ask ChatGPT about JSN Creative">
-            <svg class="ai-btn-icon" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.6667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/>
-            </svg>
-            <span class="ai-btn-text">
-              <strong>Ask ChatGPT</strong>
-              <small>OpenAI</small>
-            </span>
-            <svg class="ai-btn-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-          </a>
-
-          <a href="https://www.google.com/search?q=Jsn+Creative+Mangalore+Muhammad+Jawad+M+R" target="_blank" rel="noopener" class="hero-ai-btn ai-google" title="Search Google for JSN Creative & Muhammad Jawad M R">
-            <svg class="ai-btn-icon" viewBox="0 0 24 24">
-              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
-              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.35 24 12 24z"/>
-              <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
-              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
-            </svg>
-            <span class="ai-btn-text">
-              <strong>Google Search</strong>
-              <small>Live Web</small>
-            </span>
-            <svg class="ai-btn-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-          </a>
-        </div>
-      </div>
-
       <!-- Mobile-only stats strip (visible <900px) -->
       <div class="hero-mobile-stats">
         <div class="hms-card">
@@ -4083,7 +4088,61 @@
     </div>
   </div>
 
+  <!-- ══ DIRECT AI LOOKUP SECTION ══ -->
+  <section class="ai-lookup-section">
+    <div class="ai-lookup-container">
+      <div class="ai-lookup-content">
+        <div class="ai-lookup-header">
+          <div class="ai-lookup-badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            <span>Ask AI About Us</span>
+          </div>
+          <h2 class="ai-lookup-title">Want unbiased info about JSN Creative?</h2>
+          <p class="ai-lookup-sub">Click any AI engine below to query our background, track record, and founder directly:</p>
+        </div>
+        <div class="ai-lookup-grid">
+          <a href="https://gemini.google.com/app?q=Who+is+Muhammad+Jawad+M+R+and+what+is+JSN+Creative+studio+in+Mangalore%3F+Provide+an+overview+of+their+services+and+ventures." target="_blank" rel="noopener" class="ai-lookup-card ai-card-gemini" title="Ask Google Gemini about JSN Creative">
+            <div class="ai-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24Z"/>
+              </svg>
+            </div>
+            <div class="ai-card-info">
+              <div class="ai-card-name">Ask Gemini <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div>
+              <div class="ai-card-desc">Google AI Assistant</div>
+            </div>
+          </a>
 
+          <a href="https://chatgpt.com/?q=Who+is+Muhammad+Jawad+M+R+and+what+is+JSN+Creative+studio+in+Mangalore%3F+Provide+an+overview+of+their+services+and+ventures." target="_blank" rel="noopener" class="ai-lookup-card ai-card-chatgpt" title="Ask ChatGPT about JSN Creative">
+            <div class="ai-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.6667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/>
+              </svg>
+            </div>
+            <div class="ai-card-info">
+              <div class="ai-card-name">Ask ChatGPT <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div>
+              <div class="ai-card-desc">OpenAI Assistant</div>
+            </div>
+          </a>
+
+          <a href="https://www.google.com/search?q=Jsn+Creative+Mangalore+Muhammad+Jawad+M+R" target="_blank" rel="noopener" class="ai-lookup-card ai-card-google" title="Search Google for JSN Creative & Muhammad Jawad M R">
+            <div class="ai-card-icon">
+              <svg viewBox="0 0 24 24">
+                <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+                <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.35 24 12 24z"/>
+                <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+              </svg>
+            </div>
+            <div class="ai-card-info">
+              <div class="ai-card-name">Google Search <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div>
+              <div class="ai-card-desc">Live Web Results</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- NAV TABS -->
   <div class="section-tabs" id="tabs">
