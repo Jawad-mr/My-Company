@@ -875,7 +875,7 @@
       background: var(--pill-bg);
     }
 
-    /* ── STANDALONE AI LOOKUP SECTION ── */
+    /* ── STANDALONE AI LOOKUP SECTION (YELLOW THEME - TASK 1) ── */
     .ai-lookup-section {
       padding: 0 40px 48px;
       max-width: 1200px;
@@ -885,20 +885,20 @@
     }
 
     .ai-lookup-container {
-      background: linear-gradient(135deg, rgba(26, 115, 232, 0.08) 0%, rgba(22, 24, 30, 0.95) 100%);
-      border: 1px solid rgba(138, 180, 248, 0.2);
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(22, 24, 30, 0.96) 100%);
+      border: 1px solid rgba(245, 158, 11, 0.22);
       border-radius: 24px;
       padding: 28px 36px;
-      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 16px 44px rgba(0, 0, 0, 0.3);
       position: relative;
       overflow: hidden;
       backdrop-filter: blur(12px);
     }
 
     .light-mode .ai-lookup-container {
-      background: linear-gradient(135deg, rgba(26, 115, 232, 0.06) 0%, rgba(255, 255, 255, 0.96) 100%);
-      border-color: rgba(26, 115, 232, 0.18);
-      box-shadow: 0 18px 50px rgba(17, 24, 39, 0.06);
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.06) 0%, rgba(255, 255, 255, 0.96) 100%);
+      border-color: rgba(245, 158, 11, 0.25);
+      box-shadow: 0 16px 44px rgba(17, 24, 39, 0.05);
     }
 
     .ai-lookup-content {
@@ -921,9 +921,9 @@
       gap: 6px;
       padding: 4px 12px;
       border-radius: 99px;
-      background: rgba(138, 180, 248, 0.14);
-      border: 1px solid rgba(138, 180, 248, 0.28);
-      color: var(--blue);
+      background: rgba(245, 158, 11, 0.14);
+      border: 1px solid rgba(245, 158, 11, 0.32);
+      color: #f59e0b;
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
@@ -977,18 +977,18 @@
     }
 
     .ai-card-gemini:hover {
-      border-color: #8ab4f8;
-      background: rgba(138, 180, 248, 0.1);
+      border-color: #f59e0b;
+      background: rgba(245, 158, 11, 0.08);
     }
 
     .ai-card-chatgpt:hover {
       border-color: #10a37f;
-      background: rgba(16, 163, 127, 0.1);
+      background: rgba(16, 163, 127, 0.08);
     }
 
     .ai-card-google:hover {
       border-color: #4285f4;
-      background: rgba(66, 133, 244, 0.1);
+      background: rgba(66, 133, 244, 0.08);
     }
 
     .ai-card-icon {
@@ -1006,7 +1006,7 @@
     }
 
     .ai-card-gemini .ai-card-icon {
-      color: #8ab4f8;
+      color: #fbbf24;
     }
 
     .ai-card-chatgpt .ai-card-icon {
@@ -1041,7 +1041,7 @@
     .ai-lookup-card:hover .ai-card-name svg {
       opacity: 1;
       transform: translate(2px, -2px);
-      stroke: var(--blue);
+      stroke: #f59e0b;
     }
 
     .ai-card-desc {
@@ -2726,8 +2726,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 20px 60px rgba(26, 115, 232, 0.25);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       position: relative;
       overflow: hidden;
     }
@@ -2792,7 +2792,7 @@
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 1fr;
       gap: 40px;
-      margin-bottom: 40px;
+      margin-bottom: 32px;
     }
 
     .footer-brand {
@@ -2845,9 +2845,82 @@
       transform: translateX(2px);
     }
 
+    /* ── FOOTER AI QUERY ROW (Task 6 - Simple & Clean) ── */
+    .footer-ai-row {
+      margin-top: 28px;
+      padding: 14px 20px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .light-mode .footer-ai-row {
+      background: #ffffff;
+      border-color: #e6eaf2;
+    }
+
+    .footer-ai-label {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer-ai-label i,
+    .footer-ai-label svg {
+      color: #f59e0b;
+    }
+
+    .footer-ai-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .footer-ai-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 99px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-family: 'Google Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .light-mode .footer-ai-pill {
+      background: #f7f9fc;
+      border-color: #e6eaf2;
+      color: #5f6368;
+    }
+
+    .footer-ai-pill:hover {
+      color: #f59e0b;
+      border-color: #f59e0b;
+      transform: translateY(-1px);
+    }
+
+    .footer-ai-ico {
+      flex-shrink: 0;
+    }
+
     /* ── FOOTER LOCATIONS ── */
     .footer-locations {
-      margin-top: 36px;
+      margin-top: 28px;
       padding-top: 24px;
       border-top: 1px solid var(--border);
     }
@@ -4088,7 +4161,7 @@
     </div>
   </div>
 
-  <!-- ══ DIRECT AI LOOKUP SECTION ══ -->
+  <!-- ══ DIRECT AI LOOKUP SECTION (YELLOW THEME) ══ -->
   <section class="ai-lookup-section">
     <div class="ai-lookup-container">
       <div class="ai-lookup-content">
@@ -4097,11 +4170,11 @@
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
             <span>Ask AI About Us</span>
           </div>
-          <h2 class="ai-lookup-title">Want unbiased info about JSN Creative?</h2>
-          <p class="ai-lookup-sub">Click any AI engine below to query our background, track record, and founder directly:</p>
+          <h2 class="ai-lookup-title">Want unbiased info about Jsn Creative?</h2>
+          <p class="ai-lookup-sub">Click any AI engine below to query our company overview, software products, services, and founder directly:</p>
         </div>
         <div class="ai-lookup-grid">
-          <a href="https://gemini.google.com/app?q=Who+is+Muhammad+Jawad+M+R+and+what+is+JSN+Creative+studio+in+Mangalore%3F+Provide+an+overview+of+their+services+and+ventures." target="_blank" rel="noopener" class="ai-lookup-card ai-card-gemini" title="Ask Google Gemini about JSN Creative">
+          <a href="https://gemini.google.com/app?q=Tell+me+about+JSN+Creative+digital+studio+in+Mangalore%2C+its+software+products%2C+client+services%2C+and+its+founder+Muhammad+Jawad+M+R." target="_blank" rel="noopener" class="ai-lookup-card ai-card-gemini" title="Ask Google Gemini about Jsn Creative">
             <div class="ai-card-icon">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24Z"/>
@@ -4113,7 +4186,7 @@
             </div>
           </a>
 
-          <a href="https://chatgpt.com/?q=Who+is+Muhammad+Jawad+M+R+and+what+is+JSN+Creative+studio+in+Mangalore%3F+Provide+an+overview+of+their+services+and+ventures." target="_blank" rel="noopener" class="ai-lookup-card ai-card-chatgpt" title="Ask ChatGPT about JSN Creative">
+          <a href="https://chatgpt.com/?q=Tell+me+about+JSN+Creative+digital+studio+in+Mangalore%2C+its+software+products%2C+client+services%2C+and+its+founder+Muhammad+Jawad+M+R." target="_blank" rel="noopener" class="ai-lookup-card ai-card-chatgpt" title="Ask ChatGPT about Jsn Creative">
             <div class="ai-card-icon">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.6667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/>
@@ -4125,7 +4198,7 @@
             </div>
           </a>
 
-          <a href="https://www.google.com/search?q=Jsn+Creative+Mangalore+Muhammad+Jawad+M+R" target="_blank" rel="noopener" class="ai-lookup-card ai-card-google" title="Search Google for JSN Creative & Muhammad Jawad M R">
+          <a href="https://www.google.com/search?q=JSN+Creative+Mangalore+software+products+services+founder+Muhammad+Jawad+M+R" target="_blank" rel="noopener" class="ai-lookup-card ai-card-google" title="Search Google for Jsn Creative">
             <div class="ai-card-icon">
               <svg viewBox="0 0 24 24">
                 <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
@@ -4595,6 +4668,30 @@
             <a href="https://nexio-tech.vercel.app/" target="_blank" rel="noopener">Nexio Tech</a>
             <a href="https://livio-designs.vercel.app/" target="_blank" rel="noopener">Livio Designs</a>
             <a href="https://nexus-agents-ai.vercel.app/" target="_blank" rel="noopener">Nexus Agents</a>
+          </div>
+        </div>
+
+        <!-- Footer AI Query Row (Task 6 - Simple & Clean) -->
+        <div class="footer-ai-row">
+          <span class="footer-ai-label"><i data-lucide="sparkles" style="width:13px; height:13px;"></i> Ask AI about Jsn Creative:</span>
+          <div class="footer-ai-links">
+            <a href="https://gemini.google.com/app?q=Tell+me+about+JSN+Creative+digital+studio+in+Mangalore%2C+its+software+products%2C+client+services%2C+and+its+founder+Muhammad+Jawad+M+R." target="_blank" rel="noopener" class="footer-ai-pill">
+              <svg class="footer-ai-ico" viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24Z"/></svg>
+              <span>Gemini</span>
+            </a>
+            <a href="https://chatgpt.com/?q=Tell+me+about+JSN+Creative+digital+studio+in+Mangalore%2C+its+software+products%2C+client+services%2C+and+its+founder+Muhammad+Jawad+M+R." target="_blank" rel="noopener" class="footer-ai-pill">
+              <svg class="footer-ai-ico" viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.6667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg>
+              <span>ChatGPT</span>
+            </a>
+            <a href="https://www.google.com/search?q=JSN+Creative+Mangalore+software+products+services+founder+Muhammad+Jawad+M+R" target="_blank" rel="noopener" class="footer-ai-pill">
+              <svg class="footer-ai-ico" viewBox="0 0 24 24" width="13" height="13">
+                <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+                <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.35 24 12 24z"/>
+                <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+              </svg>
+              <span>Google Search</span>
+            </a>
           </div>
         </div>
 
