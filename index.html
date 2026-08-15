@@ -1057,18 +1057,22 @@
         padding: 0 16px 36px;
         margin-top: 0;
       }
+
       .ai-lookup-container {
         padding: 24px 20px;
       }
+
       .ai-lookup-content {
         grid-template-columns: 1fr;
         gap: 20px;
         text-align: center;
       }
+
       .ai-lookup-header {
         align-items: center;
         text-align: center;
       }
+
       .ai-lookup-grid {
         grid-template-columns: 1fr;
         gap: 10px;
@@ -1700,70 +1704,22 @@
       letter-spacing: 0.4px;
     }
 
-    /* ── INTERACTIVE SERVICE SHOWCASE (COLOURFUL GRADIENT GLASS) ── */
+    /* ── INTERACTIVE SERVICE SHOWCASE ── */
     .svc-showcase {
       width: 100%;
       max-width: 500px;
-      position: relative;
-      background: linear-gradient(145deg, rgba(30, 36, 52, 0.78) 0%, rgba(18, 20, 28, 0.88) 50%, rgba(38, 22, 52, 0.78) 100%);
-      backdrop-filter: blur(28px) saturate(190%);
-      -webkit-backdrop-filter: blur(28px) saturate(190%);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 28px;
-      box-shadow: 
-        0 24px 70px rgba(0, 0, 0, 0.5),
-        0 0 50px rgba(26, 115, 232, 0.18),
-        0 0 35px rgba(168, 85, 247, 0.14),
-        inset 0 1px 1px rgba(255, 255, 255, 0.25);
+      background: rgba(22, 24, 30, 0.88);
+      border: 1px solid rgba(138, 180, 248, 0.18);
+      border-radius: 24px;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.04);
       overflow: hidden;
       animation: svcFloat 7s ease-in-out infinite alternate;
-      transition: box-shadow 0.3s ease, border-color 0.3s ease;
-    }
-
-    /* Ambient colourful glow orbs inside the card */
-    .svc-showcase::before {
-      content: '';
-      position: absolute;
-      top: -50px;
-      right: -50px;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, rgba(26, 115, 232, 0.15) 50%, transparent 70%);
-      pointer-events: none;
-      filter: blur(30px);
-      z-index: 0;
-    }
-
-    .svc-showcase::after {
-      content: '';
-      position: absolute;
-      bottom: -50px;
-      left: -50px;
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(52, 211, 153, 0.22) 0%, rgba(26, 115, 232, 0.15) 50%, transparent 70%);
-      pointer-events: none;
-      filter: blur(35px);
-      z-index: 0;
     }
 
     .light-mode .svc-showcase {
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.88) 0%, rgba(240, 245, 255, 0.9) 50%, rgba(250, 242, 255, 0.88) 100%);
-      border: 1px solid rgba(26, 115, 232, 0.22);
-      box-shadow: 
-        0 24px 70px rgba(26, 115, 232, 0.14),
-        0 0 40px rgba(168, 85, 247, 0.1),
-        inset 0 1px 2px rgba(255, 255, 255, 0.9);
-    }
-
-    .light-mode .svc-showcase::before {
-      background: radial-gradient(circle, rgba(168, 85, 247, 0.18) 0%, rgba(26, 115, 232, 0.1) 50%, transparent 70%);
-    }
-
-    .light-mode .svc-showcase::after {
-      background: radial-gradient(circle, rgba(52, 211, 153, 0.15) 0%, rgba(26, 115, 232, 0.08) 50%, transparent 70%);
+      background: rgba(248, 250, 255, 0.96);
+      border-color: rgba(26, 115, 232, 0.16);
+      box-shadow: 0 32px 80px rgba(17, 24, 39, 0.1);
     }
 
     @keyframes svcFloat {
@@ -1777,19 +1733,15 @@
     }
 
     .svc-header {
-      position: relative;
-      z-index: 1;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 18px 22px 14px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      background: rgba(255, 255, 255, 0.02);
+      padding: 16px 20px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .light-mode .svc-header {
       border-bottom-color: rgba(0, 0, 0, 0.06);
-      background: rgba(255, 255, 255, 0.35);
     }
 
     .svc-label {
@@ -1800,41 +1752,20 @@
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.8px;
-      background: linear-gradient(135deg, #8ab4f8 0%, #c084fc 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .light-mode .svc-label {
-      background: linear-gradient(135deg, #1a73e8 0%, #9333ea 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      letter-spacing: 0.5px;
+      color: var(--blue);
     }
 
     .svc-location {
-      font-size: 11.5px;
-      font-weight: 500;
+      font-size: 11px;
       color: var(--text-muted);
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 3px 10px;
-      border-radius: 99px;
     }
 
-    .light-mode .svc-location {
-      background: rgba(0, 0, 0, 0.04);
-      border-color: rgba(0, 0, 0, 0.06);
-    }
-
-    /* Tabs with glass pill styling */
     .svc-tabs {
-      position: relative;
-      z-index: 1;
       display: flex;
-      gap: 6px;
-      padding: 12px 18px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      gap: 4px;
+      padding: 12px 16px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       overflow-x: auto;
       scrollbar-width: none;
     }
@@ -1849,41 +1780,40 @@
 
     .svc-tab {
       font-family: 'Google Sans', sans-serif;
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 600;
-      padding: 7px 16px;
-      border-radius: 12px;
-      border: 1px solid transparent;
+      padding: 8px 14px;
+      border-radius: 10px 10px 0 0;
+      border: none;
       cursor: pointer;
       color: var(--text-muted);
-      background: rgba(255, 255, 255, 0.03);
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      background: transparent;
+      transition: background 0.2s, color 0.2s;
       white-space: nowrap;
+      position: relative;
+      bottom: -1px;
     }
 
     .svc-tab.active {
-      background: linear-gradient(135deg, rgba(26, 115, 232, 0.35) 0%, rgba(168, 85, 247, 0.35) 100%);
-      color: #ffffff;
-      border: 1px solid rgba(168, 85, 247, 0.4);
-      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+      background: var(--card-bg);
+      color: var(--blue);
+      border: 1px solid rgba(138, 180, 248, 0.15);
+      border-bottom-color: var(--card-bg);
     }
 
     .light-mode .svc-tab.active {
-      background: linear-gradient(135deg, #1a73e8 0%, #9333ea 100%);
-      color: #ffffff;
-      border-color: transparent;
-      box-shadow: 0 4px 14px rgba(26, 115, 232, 0.25);
+      background: rgba(248, 250, 255, 0.96);
+      border-color: rgba(26, 115, 232, 0.13);
+      border-bottom-color: rgba(248, 250, 255, 0.96);
     }
 
     .svc-tab:hover:not(.active) {
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(138, 180, 248, 0.08);
       color: var(--text-primary);
     }
 
     .svc-panels {
-      position: relative;
-      z-index: 1;
-      padding: 20px 22px 0;
+      padding: 18px 20px 0;
     }
 
     .svc-panel {
@@ -1909,88 +1839,81 @@
 
     .svc-panel-title {
       font-family: 'Google Sans Display', sans-serif;
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 700;
-      letter-spacing: -0.3px;
-      background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 60%, #c084fc 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 12px;
+      color: var(--text-primary);
+      margin-bottom: 6px;
     }
 
-    .light-mode .svc-panel-title {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #7c3aed 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .svc-panel-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 14px;
     }
 
     .svc-features {
       list-style: none;
-      margin: 0 0 16px;
+      margin: 0 0 14px;
       padding: 0;
       display: flex;
       flex-direction: column;
-      gap: 9px;
+      gap: 7px;
     }
 
     .svc-features li {
-      font-size: 13.5px;
+      font-size: 13px;
       color: var(--text-secondary);
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
 
     .svc-tick {
       font-size: 11px;
       font-weight: 700;
       color: #34d399;
-      background: linear-gradient(135deg, rgba(52, 211, 153, 0.2) 0%, rgba(16, 185, 129, 0.3) 100%);
-      border: 1px solid rgba(52, 211, 153, 0.35);
-      width: 22px;
-      height: 22px;
+      background: rgba(52, 211, 153, 0.1);
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      box-shadow: 0 0 10px rgba(52, 211, 153, 0.2);
     }
 
     .svc-meta {
       display: flex;
       gap: 16px;
-      margin-bottom: 16px;
-      padding: 12px 14px;
-      background: rgba(255, 255, 255, 0.035);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 16px;
-      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
     }
 
     .light-mode .svc-meta {
-      background: rgba(255, 255, 255, 0.6);
-      border-color: rgba(26, 115, 232, 0.12);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      background: rgba(0, 0, 0, 0.03);
+      border-color: rgba(0, 0, 0, 0.06);
     }
 
     .svc-meta-item {
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 2px;
     }
 
     .svc-meta-key {
-      font-size: 9.5px;
-      font-weight: 700;
+      font-size: 10px;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.6px;
+      letter-spacing: 0.4px;
       color: var(--text-muted);
     }
 
     .svc-meta-val {
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 600;
       color: var(--text-primary);
     }
@@ -1998,41 +1921,33 @@
     .svc-cta {
       display: block;
       text-align: center;
-      padding: 13px;
-      background: linear-gradient(135deg, #1a73e8 0%, #7c3aed 50%, #d946ef 100%);
+      padding: 11px;
+      background: var(--blue);
       color: #ffffff !important;
       text-decoration: none;
       font-family: 'Google Sans', sans-serif;
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 700;
-      letter-spacing: 0.2px;
-      border-radius: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      box-shadow: 0 8px 24px rgba(124, 58, 237, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.3);
-      transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
-      margin-bottom: 20px;
+      border-radius: 12px;
+      transition: background 0.2s, transform 0.2s;
+      margin-bottom: 18px;
     }
 
     .svc-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(124, 58, 237, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.4);
-      filter: brightness(1.08);
+      background: var(--blue-dark);
+      transform: translateY(-1px);
     }
 
     .svc-trust {
-      position: relative;
-      z-index: 1;
       display: flex;
       align-items: center;
       justify-content: space-around;
-      padding: 15px 18px;
-      background: rgba(0, 0, 0, 0.2);
-      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 14px 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
       gap: 8px;
     }
 
     .light-mode .svc-trust {
-      background: rgba(255, 255, 255, 0.4);
       border-top-color: rgba(0, 0, 0, 0.06);
     }
 
@@ -2045,35 +1960,27 @@
 
     .svc-trust-num {
       font-family: 'Google Sans Display', sans-serif;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
-      background: linear-gradient(135deg, #ffffff 0%, #8ab4f8 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .light-mode .svc-trust-num {
-      background: linear-gradient(135deg, #1a73e8 0%, #7c3aed 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--text-primary);
     }
 
     .svc-trust-label {
-      font-size: 9.5px;
-      font-weight: 600;
+      font-size: 10px;
+      font-weight: 500;
       color: var(--text-muted);
       text-transform: uppercase;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.3px;
     }
 
     .svc-trust-divider {
       width: 1px;
-      height: 26px;
-      background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+      height: 28px;
+      background: rgba(255, 255, 255, 0.08);
     }
 
     .light-mode .svc-trust-divider {
-      background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+      background: rgba(0, 0, 0, 0.08);
     }
 
     /* On mobile, show svc-showcase instead of hiding hero-visual */
@@ -4160,7 +4067,7 @@
               <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
             </svg>
           </div>
-          <div class="hms-val">7<span>live</span></div>
+          <div class="hms-val">6<span>live</span></div>
           <div class="hms-label">Ventures</div>
         </div>
       </div>
@@ -4193,8 +4100,10 @@
               <li><span class="svc-tick"></span>Admin Dashboards &amp; CMS</li>
             </ul>
             <div class="svc-meta">
-              <div class="svc-meta-item"><span class="svc-meta-key">Timeline</span><span class="svc-meta-val">2–6 weeks</span></div>
-              <div class="svc-meta-item"><span class="svc-meta-key">Clients</span><span class="svc-meta-val">Mangalore &amp; Global</span></div>
+              <div class="svc-meta-item"><span class="svc-meta-key">Timeline</span><span class="svc-meta-val">2–6
+                  weeks</span></div>
+              <div class="svc-meta-item"><span class="svc-meta-key">Clients</span><span class="svc-meta-val">Mangalore
+                  &amp; Global</span></div>
             </div>
             <a href="web-development.html" class="svc-cta">Get a Free Quote →</a>
           </div>
@@ -4208,8 +4117,10 @@
               <li><span class="svc-tick"></span>Offline &amp; Push Notification Ready</li>
             </ul>
             <div class="svc-meta">
-              <div class="svc-meta-item"><span class="svc-meta-key">Timeline</span><span class="svc-meta-val">4–10 weeks</span></div>
-              <div class="svc-meta-item"><span class="svc-meta-key">Clients</span><span class="svc-meta-val">Karnataka &amp; Global</span></div>
+              <div class="svc-meta-item"><span class="svc-meta-key">Timeline</span><span class="svc-meta-val">4–10
+                  weeks</span></div>
+              <div class="svc-meta-item"><span class="svc-meta-key">Clients</span><span class="svc-meta-val">Karnataka
+                  &amp; Global</span></div>
             </div>
             <a href="app-development.html" class="svc-cta">Get a Free Quote →</a>
           </div>
@@ -4223,8 +4134,10 @@
               <li><span class="svc-tick"></span>One-time Lifetime Purchase</li>
             </ul>
             <div class="svc-meta">
-              <div class="svc-meta-item"><span class="svc-meta-key">Access</span><span class="svc-meta-val">Lifetime, No Subscription</span></div>
-              <div class="svc-meta-item"><span class="svc-meta-key">Clients</span><span class="svc-meta-val">Mangalore, Udupi, KA</span></div>
+              <div class="svc-meta-item"><span class="svc-meta-key">Access</span><span class="svc-meta-val">Lifetime, No
+                  Subscription</span></div>
+              <div class="svc-meta-item"><span class="svc-meta-key">Clients</span><span class="svc-meta-val">Mangalore,
+                  Udupi, KA</span></div>
             </div>
             <a href="#products" class="svc-cta">See POS Products →</a>
           </div>
@@ -4238,8 +4151,10 @@
               <li><span class="svc-tick"></span>LLM &amp; Custom AI Integration</li>
             </ul>
             <div class="svc-meta">
-              <div class="svc-meta-item"><span class="svc-meta-key">Timeline</span><span class="svc-meta-val">1–3 weeks</span></div>
-              <div class="svc-meta-item"><span class="svc-meta-key">Clients</span><span class="svc-meta-val">Mangalore &amp; Global</span></div>
+              <div class="svc-meta-item"><span class="svc-meta-key">Timeline</span><span class="svc-meta-val">1–3
+                  weeks</span></div>
+              <div class="svc-meta-item"><span class="svc-meta-key">Clients</span><span class="svc-meta-val">Mangalore
+                  &amp; Global</span></div>
             </div>
             <a href="ai-solutions.html" class="svc-cta">Explore AI Solutions →</a>
           </div>
@@ -4247,13 +4162,17 @@
 
         <!-- Compact Trust Strip -->
         <div class="svc-trust">
-          <div class="svc-trust-item"><span class="svc-trust-num">120+</span><span class="svc-trust-label">Projects</span></div>
+          <div class="svc-trust-item"><span class="svc-trust-num">120+</span><span
+              class="svc-trust-label">Projects</span></div>
           <div class="svc-trust-divider"></div>
-          <div class="svc-trust-item"><span class="svc-trust-num">80+</span><span class="svc-trust-label">Clients</span></div>
+          <div class="svc-trust-item"><span class="svc-trust-num">80+</span><span class="svc-trust-label">Clients</span>
+          </div>
           <div class="svc-trust-divider"></div>
-          <div class="svc-trust-item"><span class="svc-trust-num">5.0 ★</span><span class="svc-trust-label">Rating</span></div>
+          <div class="svc-trust-item"><span class="svc-trust-num">5.0 ★</span><span
+              class="svc-trust-label">Rating</span></div>
           <div class="svc-trust-divider"></div>
-          <div class="svc-trust-item"><span class="svc-trust-num">7</span><span class="svc-trust-label">Ventures</span></div>
+          <div class="svc-trust-item"><span class="svc-trust-num">6</span><span class="svc-trust-label">Ventures</span>
+          </div>
         </div>
       </div>
     </div>
@@ -4265,48 +4184,72 @@
       <div class="ai-lookup-content">
         <div class="ai-lookup-header">
           <div class="ai-lookup-badge">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path
+                d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+            </svg>
             <span>Ask AI About Us</span>
           </div>
           <h2 class="ai-lookup-title">Want unbiased info about Jsn Creative?</h2>
-          <p class="ai-lookup-sub">Click any AI engine below to query our company overview, software products, services, and founder directly:</p>
+          <p class="ai-lookup-sub">Click any AI engine below to query our company overview, software products, services,
+            and founder directly:</p>
         </div>
         <div class="ai-lookup-grid">
-          <a href="https://gemini.google.com/app?q=Tell+me+about+JSN+Creative+digital+studio+in+Mangalore%2C+its+software+products%2C+client+services%2C+and+its+founder+Muhammad+Jawad+M+R." target="_blank" rel="noopener" class="ai-lookup-card ai-card-gemini" title="Ask Google Gemini about Jsn Creative">
+          <a href="https://gemini.google.com/app?q=Tell+me+about+JSN+Creative+digital+studio+in+Mangalore%2C+its+software+products%2C+client+services%2C+and+its+founder+Muhammad+Jawad+M+R."
+            target="_blank" rel="noopener" class="ai-lookup-card ai-card-gemini"
+            title="Ask Google Gemini about Jsn Creative">
             <div class="ai-card-icon">
               <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24Z"/>
+                <path
+                  d="M12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24Z" />
               </svg>
             </div>
             <div class="ai-card-info">
-              <div class="ai-card-name">Ask Gemini <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div>
+              <div class="ai-card-name">Ask Gemini <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17" />
+                </svg></div>
               <div class="ai-card-desc">Google AI Assistant</div>
             </div>
           </a>
 
-          <a href="https://chatgpt.com/?q=Tell+me+about+JSN+Creative+digital+studio+in+Mangalore%2C+its+software+products%2C+client+services%2C+and+its+founder+Muhammad+Jawad+M+R." target="_blank" rel="noopener" class="ai-lookup-card ai-card-chatgpt" title="Ask ChatGPT about Jsn Creative">
+          <a href="https://chatgpt.com/?q=Tell+me+about+JSN+Creative+digital+studio+in+Mangalore%2C+its+software+products%2C+client+services%2C+and+its+founder+Muhammad+Jawad+M+R."
+            target="_blank" rel="noopener" class="ai-lookup-card ai-card-chatgpt"
+            title="Ask ChatGPT about Jsn Creative">
             <div class="ai-card-icon">
               <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.6667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/>
+                <path
+                  d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.6667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z" />
               </svg>
             </div>
             <div class="ai-card-info">
-              <div class="ai-card-name">Ask ChatGPT <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div>
+              <div class="ai-card-name">Ask ChatGPT <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17" />
+                </svg></div>
               <div class="ai-card-desc">OpenAI Assistant</div>
             </div>
           </a>
 
-          <a href="https://www.google.com/search?q=JSN+Creative+Mangalore+software+products+services+founder+Muhammad+Jawad+M+R" target="_blank" rel="noopener" class="ai-lookup-card ai-card-google" title="Search Google for Jsn Creative">
+          <a href="https://www.google.com/search?q=JSN+Creative+Mangalore+software+products+services+founder+Muhammad+Jawad+M+R"
+            target="_blank" rel="noopener" class="ai-lookup-card ai-card-google" title="Search Google for Jsn Creative">
             <div class="ai-card-icon">
               <svg viewBox="0 0 24 24">
-                <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
-                <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.35 24 12 24z"/>
-                <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
-                <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                <path fill="#4285F4"
+                  d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z" />
+                <path fill="#34A853"
+                  d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.35 24 12 24z" />
+                <path fill="#FBBC05"
+                  d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z" />
+                <path fill="#EA4335"
+                  d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z" />
               </svg>
             </div>
             <div class="ai-card-info">
-              <div class="ai-card-name">Google Search <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div>
+              <div class="ai-card-name">Google Search <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17" />
+                </svg></div>
               <div class="ai-card-desc">Live Web Results</div>
             </div>
           </a>
@@ -4635,8 +4578,7 @@
         </a>
 
         <a class="venture-card" href="play-forge.html"
-          title="Play Forge — Game Publishing & Development Studio by Jsn Creative"
-          aria-label="Play Forge Game Studio">
+          title="Play Forge — Game Publishing & Development Studio by Jsn Creative" aria-label="Play Forge Game Studio">
           <div class="venture-avatar" style="background: linear-gradient(135deg,#ff5722,#e91e63);">PF</div>
           <div>
             <div class="venture-name">Play Forge</div>
@@ -4791,22 +4733,36 @@
 
         <!-- Footer AI Query Row (Task 6 - Simple & Clean) -->
         <div class="footer-ai-row">
-          <span class="footer-ai-label"><i data-lucide="sparkles" style="width:13px; height:13px;"></i> Ask AI about Jsn Creative:</span>
+          <span class="footer-ai-label"><i data-lucide="sparkles" style="width:13px; height:13px;"></i> Ask AI about Jsn
+            Creative:</span>
           <div class="footer-ai-links">
-            <a href="https://gemini.google.com/app?q=Tell+me+about+JSN+Creative+digital+studio+in+Mangalore%2C+its+software+products%2C+client+services%2C+and+its+founder+Muhammad+Jawad+M+R." target="_blank" rel="noopener" class="footer-ai-pill">
-              <svg class="footer-ai-ico" viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24Z"/></svg>
+            <a href="https://gemini.google.com/app?q=Tell+me+about+JSN+Creative+digital+studio+in+Mangalore%2C+its+software+products%2C+client+services%2C+and+its+founder+Muhammad+Jawad+M+R."
+              target="_blank" rel="noopener" class="footer-ai-pill">
+              <svg class="footer-ai-ico" viewBox="0 0 24 24" fill="currentColor" width="13" height="13">
+                <path
+                  d="M12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24Z" />
+              </svg>
               <span>Gemini</span>
             </a>
-            <a href="https://chatgpt.com/?q=Tell+me+about+JSN+Creative+digital+studio+in+Mangalore%2C+its+software+products%2C+client+services%2C+and+its+founder+Muhammad+Jawad+M+R." target="_blank" rel="noopener" class="footer-ai-pill">
-              <svg class="footer-ai-ico" viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.6667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg>
+            <a href="https://chatgpt.com/?q=Tell+me+about+JSN+Creative+digital+studio+in+Mangalore%2C+its+software+products%2C+client+services%2C+and+its+founder+Muhammad+Jawad+M+R."
+              target="_blank" rel="noopener" class="footer-ai-pill">
+              <svg class="footer-ai-ico" viewBox="0 0 24 24" fill="currentColor" width="13" height="13">
+                <path
+                  d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.6667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z" />
+              </svg>
               <span>ChatGPT</span>
             </a>
-            <a href="https://www.google.com/search?q=JSN+Creative+Mangalore+software+products+services+founder+Muhammad+Jawad+M+R" target="_blank" rel="noopener" class="footer-ai-pill">
+            <a href="https://www.google.com/search?q=JSN+Creative+Mangalore+software+products+services+founder+Muhammad+Jawad+M+R"
+              target="_blank" rel="noopener" class="footer-ai-pill">
               <svg class="footer-ai-ico" viewBox="0 0 24 24" width="13" height="13">
-                <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
-                <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.35 24 12 24z"/>
-                <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
-                <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                <path fill="#4285F4"
+                  d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z" />
+                <path fill="#34A853"
+                  d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.35 24 12 24z" />
+                <path fill="#FBBC05"
+                  d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z" />
+                <path fill="#EA4335"
+                  d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z" />
               </svg>
               <span>Google Search</span>
             </a>
