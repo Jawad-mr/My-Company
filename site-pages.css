@@ -370,6 +370,7 @@ body.drawer-open nav {
 .page-wrap {
   width: min(1200px, calc(100% - 80px));
   margin: 0 auto;
+  padding-bottom: 72px;
 }
 
 .page-wrap .hero {
@@ -1394,6 +1395,7 @@ nav,
 
 /* ── FULL FOOTER LAYOUT (Desktop & Shared) ── */
 footer {
+  margin-top: 56px;
   background: var(--page-surface, #16181d);
   border-top: 1px solid var(--page-border, rgba(255, 255, 255, 0.08));
   padding: 56px 40px 36px;

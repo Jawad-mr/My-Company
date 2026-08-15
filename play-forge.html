@@ -9,7 +9,7 @@
     content="Play Forge is the game publishing and development studio of Jsn Creative. Discover our upcoming debut title in active production and meet our game development team.">
   <meta name="keywords"
     content="Play Forge, Game Studio Mangalore, Game Development Karnataka, Indie Game Studio, Game Publishing, Muhammad Jawad M R, Jawad, Hafeez, Hathib, Ansar, Shahad, Huzaifa, Saleeth, Rafi, Hashir, Unreal Engine, Unity, Jsn Creative Games">
-  <meta name="author" content="Play Forge / Jsn Creative">
+  <meta name="author" content="Muhammad Jawad M R">
   <meta name="application-name" content="JSN">
   <meta name="apple-mobile-web-app-title" content="JSN">
 
@@ -40,14 +40,14 @@
   <meta property="og:description"
     content="Play Forge is the game publishing and development studio of Jsn Creative. Discover our upcoming debut title in active production and meet our game development team.">
   <meta property="og:url" content="https://www.jsncreative.studio/play-forge.html">
-  <meta property="og:image" content="https://www.jsncreative.studio/social-preview.svg">
+  <meta property="og:image" content="https://www.jsncreative.studio/founder-jawad.jpg">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Play Forge — Game Publishing &amp; Development Studio">
   <meta name="twitter:description"
     content="Play Forge is the game publishing and development studio of Jsn Creative. Discover our upcoming debut title in active production and meet our game development team.">
-  <meta name="twitter:image" content="https://www.jsncreative.studio/social-preview.svg">
+  <meta name="twitter:image" content="https://www.jsncreative.studio/founder-jawad.jpg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -57,13 +57,20 @@
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#0d0f14">
 
-  <!-- Fonts & Icons -->
+  <!-- Fonts & Stylesheet -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
   <link
-    href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Display:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Display:wght@500;700&family=Roboto:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="site-pages.css">
+
+  <script>
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.add('light-mode');
+    }
+  </script>
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Schema.org Rich Structured Data Graph -->
@@ -75,8 +82,8 @@
         "@type": "Organization",
         "@id": "https://www.jsncreative.studio/play-forge.html#organization",
         "name": "Play Forge",
-        "alternateName": "Play Forge Studio",
-        "description": "Game publishing and development studio under Jsn Creative, producing immersive titles for PC, console, and interactive platforms.",
+        "alternateName": "Play Forge Game Studio",
+        "description": "Game publishing and interactive development studio under Jsn Creative, producing immersive video games for PC and console.",
         "url": "https://www.jsncreative.studio/play-forge.html",
         "parentOrganization": {
           "@type": "Organization",
@@ -126,59 +133,40 @@
     /* Custom Styling for Play Forge Showcase */
     :root {
       --forge-fire: #ff5722;
+      --forge-fire-dark: #e64a19;
       --forge-amber: #f59e0b;
-      --forge-glow: rgba(255, 87, 34, 0.15);
-      --forge-border: rgba(255, 87, 34, 0.25);
+      --forge-glow: rgba(255, 87, 34, 0.12);
+      --forge-border: rgba(255, 87, 34, 0.22);
     }
 
-    .forge-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 14px;
-      border-radius: 99px;
+    .eyebrow.forge-eyebrow {
       background: var(--forge-glow);
       border: 1px solid var(--forge-border);
       color: #ff7043;
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      margin-bottom: 16px;
     }
 
-    .forge-hero-title {
-      font-family: 'Google Sans Display', sans-serif;
-      font-size: clamp(34px, 5vw, 52px);
-      font-weight: 700;
-      letter-spacing: -1px;
-      line-height: 1.15;
-      margin: 0 0 16px;
-      color: var(--page-ink, #ffffff);
-    }
-
-    .forge-hero-title span {
-      background: linear-gradient(135deg, #ff7043 0%, #ff5722 50%, #f59e0b 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .badge.forge-badge {
+      background: var(--forge-glow);
+      border-color: var(--forge-border);
+      color: #ff7043;
     }
 
     /* Production Status Spotlight Card */
     .production-banner {
-      background: linear-gradient(135deg, rgba(255, 87, 34, 0.1) 0%, rgba(22, 24, 30, 0.95) 100%);
-      border: 1px solid rgba(255, 87, 34, 0.28);
+      background: linear-gradient(135deg, rgba(255, 87, 34, 0.08) 0%, rgba(32, 33, 36, 0.95) 100%);
+      border: 1px solid rgba(255, 87, 34, 0.25);
       border-radius: 24px;
       padding: 36px 32px;
-      margin: 32px 0 48px;
+      margin: 16px 0 48px;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.3);
     }
 
     .light-mode .production-banner {
       background: linear-gradient(135deg, rgba(255, 87, 34, 0.06) 0%, rgba(255, 255, 255, 0.96) 100%);
       border-color: rgba(255, 87, 34, 0.2);
-      box-shadow: 0 16px 40px rgba(17, 24, 39, 0.06);
+      box-shadow: 0 14px 40px rgba(17, 24, 39, 0.05);
     }
 
     .prod-status-tag {
@@ -190,6 +178,7 @@
       background: rgba(239, 68, 68, 0.15);
       border: 1px solid rgba(239, 68, 68, 0.3);
       color: #ef4444;
+      font-family: 'Google Sans', sans-serif;
       font-size: 12px;
       font-weight: 700;
       text-transform: uppercase;
@@ -202,7 +191,7 @@
       height: 8px;
       border-radius: 50%;
       background: #ef4444;
-      box-shadow: 0 0 12px #ef4444;
+      box-shadow: 0 0 10px #ef4444;
       animation: pulse 1.8s infinite;
     }
 
@@ -214,10 +203,11 @@
 
     .prod-title {
       font-family: 'Google Sans Display', sans-serif;
-      font-size: 26px;
+      font-size: clamp(22px, 3.5vw, 30px);
       font-weight: 700;
       margin: 0 0 12px;
       color: var(--page-ink, #ffffff);
+      letter-spacing: -0.5px;
     }
 
     .prod-desc {
@@ -251,8 +241,8 @@
     }
 
     .pillar-icon {
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
       border-radius: 10px;
       background: rgba(255, 87, 34, 0.12);
       color: #ff7043;
@@ -276,10 +266,6 @@
     }
 
     /* ── DEVELOPER TEAM GRID (SEO Optimized) ── */
-    .dev-team-section {
-      margin: 48px 0;
-    }
-
     .dev-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -300,7 +286,7 @@
     }
 
     .dev-card {
-      background: var(--page-surface, #1b1d22);
+      background: var(--page-surface, #202124);
       border: 1px solid var(--page-border, rgba(255, 255, 255, 0.08));
       border-radius: 20px;
       padding: 24px;
@@ -346,7 +332,7 @@
 
     .dev-name {
       font-family: 'Google Sans', sans-serif;
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 700;
       color: var(--page-ink, #ffffff);
       margin: 0 0 2px;
@@ -393,69 +379,88 @@
 </head>
 
 <body>
-  <!-- Global Top Header -->
-  <header class="header">
-    <div class="header-inner">
-      <a href="index.html" class="logo" aria-label="Jsn Creative Home">
-        JSN <span>CREATIVE</span>
-      </a>
-      <nav class="nav" aria-label="Main Navigation">
-        <a href="index.html#services">Services</a>
-        <a href="index.html#products">Products</a>
-        <a href="index.html#ventures" class="active">Ventures</a>
-        <a href="leadership.html">Leadership</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <div class="header-actions">
-        <button id="themeToggle" class="theme-toggle" aria-label="Toggle light/dark theme">
-          <i data-lucide="sun" class="sun-icon"></i>
-          <i data-lucide="moon" class="moon-icon"></i>
-        </button>
-        <a href="contact.html" class="btn-primary">Hire Us</a>
-        <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle mobile menu">
-          <i data-lucide="menu"></i>
-        </button>
-      </div>
+  <!-- Standard Site Navigation -->
+  <nav class="page-nav">
+    <a href="index.html" class="page-logo">JSN <span>CREATIVE</span></a>
+    <div class="page-links">
+      <a href="index.html#products">Products</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#ventures">Ventures</a>
+      <a href="leadership.html">Leadership</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://wa.me/917204351696?text=I%20want%20to%20collaborate%20with%20Play%20Forge" class="cta-link">Hire Us</a>
     </div>
-  </header>
+    <div class="page-actions">
+      <button class="theme-toggle-btn" id="themeToggle" type="button" aria-label="Toggle Theme">
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer" data-menu-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-  <!-- Mobile Sidebar Navigation -->
-  <div class="mobile-sidebar-backdrop" id="mobileBackdrop"></div>
-  <aside class="mobile-sidebar" id="mobileSidebar" aria-label="Mobile Navigation">
-    <div class="sidebar-header">
-      <a href="index.html" class="logo">JSN <span>CREATIVE</span></a>
-      <button class="sidebar-close" id="sidebarClose" aria-label="Close menu"><i data-lucide="x"></i></button>
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop" data-drawer-backdrop></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true" data-mobile-drawer>
+    <div class="drawer-head">
+      <div class="drawer-title">JSN <span>CREATIVE</span></div>
+      <button class="drawer-close" type="button" aria-label="Close menu" data-menu-close>×</button>
     </div>
-    <div class="sidebar-links">
-      <a href="index.html#services"><i data-lucide="layers"></i> Services</a>
-      <a href="index.html#products"><i data-lucide="package"></i> Products</a>
-      <a href="index.html#ventures" class="active"><i data-lucide="rocket"></i> Ventures</a>
-      <a href="leadership.html"><i data-lucide="award"></i> Leadership &amp; Vision</a>
-      <a href="contact.html"><i data-lucide="mail"></i> Contact</a>
-    </div>
+    <nav class="drawer-nav" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#products">Products</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#ventures">Ventures</a>
+      <a href="leadership.html">Leadership &amp; Vision</a>
+      <a href="contact.html">Contact</a>
+      <div class="drawer-label">Game Studio</div>
+      <a href="play-forge.html" style="color: #ff7043; font-weight: 700;">Play Forge (Games)</a>
+    </nav>
   </aside>
 
-  <!-- MAIN PAGE CONTENT -->
-  <main class="page-main">
+  <!-- MAIN PAGE CONTENT WRAPPER -->
+  <main class="page-wrap">
     <!-- Hero Section -->
-    <section class="section" style="padding-top: 32px;">
-      <div class="forge-badge">
-        <i data-lucide="gamepad-2" style="width:14px; height:14px;"></i> Game Publishing &amp; Production Studio
+    <section class="hero">
+      <div>
+        <div class="eyebrow forge-eyebrow"><i data-lucide="gamepad-2"></i> Game Studio Venture</div>
+        <h1>Play Forge</h1>
+        <p>The dedicated game publishing and creative production studio of <strong>Jsn Creative</strong>. We architect, produce, and publish compelling gaming titles built for PC, consoles, and interactive entertainment platforms.</p>
+        <div class="hero-badges">
+          <span class="badge forge-badge">Unreal Engine 5</span>
+          <span class="badge">Unity 3D</span>
+          <span class="badge">PC &amp; Console</span>
+          <span class="badge">Indie Production</span>
+        </div>
+        <div class="button-row">
+          <a class="btn primary" href="https://wa.me/917204351696?text=I%20want%20to%20know%20more%20about%20Play%20Forge%20games">Inquire on WhatsApp</a>
+          <a class="btn secondary" href="#production">View First Game</a>
+          <a class="btn secondary" href="#team">Meet Dev Team</a>
+        </div>
       </div>
-      <h1 class="forge-hero-title">PLAY <span>FORGE</span></h1>
-      <p class="lead" style="max-width: 780px;">
-        The dedicated game publishing and creative development studio of <strong>Jsn Creative</strong>. We architect, produce, and publish compelling gaming titles built for PC, consoles, and immersive next-gen platforms.
-      </p>
+      <figure class="hero-art">
+        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80"
+          alt="Play Forge Game Development Studio Workspace with multi-monitor gaming graphics layout by Jsn Creative"
+          width="1200" height="800" loading="eager" fetchpriority="high" decoding="async">
+        <div class="hero-card">
+          <strong>Debut Game Under Production</strong>
+          <span>High-fidelity combat, dynamic physics, and immersive original worldbuilding.</span>
+        </div>
+      </figure>
+    </section>
 
-      <!-- First Game Under Production Spotlight -->
+    <!-- First Game Under Production Spotlight -->
+    <section class="section" id="production">
       <div class="production-banner">
         <div class="prod-status-tag">
           <div class="pulse-dot"></div>
           Debut Title in Active Production
         </div>
-        <h2 class="prod-title">Our First Flagship Game Is Under Development</h2>
+        <h2 class="prod-title">Our First Flagship Game Is Under Active Development</h2>
         <p class="prod-desc">
-          The Play Forge team is actively engineering our debut action-packed video game title. Built with deep narrative design, high-fidelity physics, original atmospheric soundscapes, and responsive combat mechanics. Closed community alpha testing and our official debut cinematic teaser will be announced soon.
+          The Play Forge team is actively engineering our debut action-adventure gaming title. Built from scratch with deep narrative design, high-fidelity physics, original atmospheric soundscapes, and responsive combat mechanics. Closed community alpha testing and our official debut cinematic teaser will be announced soon.
         </p>
 
         <div class="prod-pillars">
@@ -476,7 +481,7 @@
           </div>
 
           <div class="prod-pillar-item">
-            <div class="pillar-info"><i data-lucide="volume-2"></i></div>
+            <div class="pillar-icon"><i data-lucide="volume-2"></i></div>
             <div class="pillar-info">
               <h4>Spatial 3D Audio</h4>
               <p>Original Studio Soundtracks</p>
@@ -495,7 +500,7 @@
     </section>
 
     <!-- Developers Team Section (All 9 Team Members with Dedicated SEO Roles) -->
-    <section class="section dev-team-section">
+    <section class="section" id="team">
       <div class="section-eyebrow">
         <div class="eyebrow-icon venture-eyebrow"><i data-lucide="users"></i></div>
         <span class="eyebrow-label">Game Developers &amp; Creators</span>
