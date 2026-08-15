@@ -1510,9 +1510,141 @@ footer {
   transform: translateX(2px);
 }
 
+/* ── REFER & EARN (DARK YELLOW / AMBER GLASS CARD) ── */
+.footer-refer-card {
+  margin: 32px 0 20px;
+  padding: 24px 28px;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(217, 119, 6, 0.08) 50%, rgba(30, 24, 15, 0.8) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.28);
+  border-radius: 20px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(251, 191, 36, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.footer-refer-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(245, 158, 11, 0.45);
+  box-shadow: 0 16px 44px rgba(245, 158, 11, 0.15), inset 0 1px 1px rgba(251, 191, 36, 0.3);
+}
+
+.light-mode .footer-refer-card {
+  background: linear-gradient(135deg, rgba(254, 243, 199, 0.9) 0%, rgba(253, 230, 138, 0.8) 100%);
+  border-color: rgba(217, 119, 6, 0.3);
+  box-shadow: 0 12px 36px rgba(217, 119, 6, 0.08), inset 0 1px 2px #ffffff;
+}
+
+.refer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 12px;
+  background: rgba(245, 158, 11, 0.16);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 99px;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fbbf24;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 12px;
+}
+
+.light-mode .refer-badge {
+  background: rgba(217, 119, 6, 0.15);
+  border-color: rgba(217, 119, 6, 0.3);
+  color: #b45309;
+}
+
+.refer-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fbbf24;
+  box-shadow: 0 0 8px #fbbf24;
+}
+
+.light-mode .refer-dot {
+  background: #b45309;
+  box-shadow: 0 0 8px #b45309;
+}
+
+.refer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.refer-text h3 {
+  font-family: 'Google Sans Display', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 6px;
+  letter-spacing: -0.3px;
+}
+
+.light-mode .refer-text h3 {
+  color: #1f2937;
+}
+
+.refer-text p {
+  font-size: 13.5px;
+  color: var(--page-muted, #9aa0a6);
+  margin: 0;
+  max-width: 680px;
+  line-height: 1.5;
+}
+
+.light-mode .refer-text p {
+  color: #4b5563;
+}
+
+.refer-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #111827 !important;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35);
+  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+  white-space: nowrap;
+}
+
+.refer-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
+  filter: brightness(1.08);
+}
+
+.nav-badge-soon {
+  font-size: 9.5px;
+  background: rgba(245, 158, 11, 0.2);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #f59e0b;
+  padding: 1px 6px;
+  border-radius: 8px;
+  margin-left: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
 /* ── FOOTER AI QUERY ROW (Task 6 - Simple & Clean) ── */
 .footer-ai-row {
-  margin-top: 28px;
+  margin-top: 16px;
   padding: 14px 20px;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--page-border, rgba(255, 255, 255, 0.08));
