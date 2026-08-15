@@ -875,6 +875,153 @@
       background: var(--pill-bg);
     }
 
+    /* ── HERO AI LOOKUP LAUNCHPAD (TASK 2) ── */
+    .hero-ai-box {
+      margin-top: 28px;
+      padding: 16px 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(138, 180, 248, 0.2);
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 540px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+      text-align: left;
+    }
+
+    .light-mode .hero-ai-box {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: rgba(26, 115, 232, 0.16);
+      box-shadow: 0 12px 36px rgba(17, 24, 39, 0.06);
+    }
+
+    .hero-ai-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .hero-ai-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 99px;
+      background: rgba(138, 180, 248, 0.14);
+      border: 1px solid rgba(138, 180, 248, 0.28);
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-ai-title {
+      font-size: 13px;
+      color: var(--text-secondary);
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .hero-ai-buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .hero-ai-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      text-decoration: none;
+      transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .light-mode .hero-ai-btn {
+      background: #ffffff;
+      border-color: #e2e8f0;
+    }
+
+    .hero-ai-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+    }
+
+    .ai-gemini:hover {
+      border-color: #8ab4f8;
+      background: rgba(138, 180, 248, 0.12);
+    }
+
+    .ai-chatgpt:hover {
+      border-color: #10a37f;
+      background: rgba(16, 163, 127, 0.12);
+    }
+
+    .ai-google:hover {
+      border-color: #4285f4;
+      background: rgba(66, 133, 244, 0.12);
+    }
+
+    .ai-btn-icon {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+
+    .ai-gemini .ai-btn-icon {
+      color: #8ab4f8;
+    }
+
+    .ai-chatgpt .ai-btn-icon {
+      color: #10a37f;
+    }
+
+    .ai-btn-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .ai-btn-text strong {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .ai-btn-text small {
+      font-size: 9.5px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .ai-btn-arrow {
+      stroke: var(--text-muted);
+      opacity: 0.6;
+      transition: transform 0.2s, opacity 0.2s;
+      flex-shrink: 0;
+    }
+
+    .hero-ai-btn:hover .ai-btn-arrow {
+      opacity: 1;
+      transform: translate(2px, -2px);
+      stroke: var(--blue);
+    }
+
     /* ── PREMIUM HERO DASHBOARD VISUAL ── */
     .hero-visual {
       position: relative;
@@ -2507,57 +2654,85 @@
       margin: 0 auto;
     }
 
-    /* ── STRIP BANNER ── */
+    /* ── STRIP BANNER (CONTAINED CARD) ── */
+    .strip-banner-wrap {
+      width: 100%;
+      max-width: 1200px;
+      margin: 48px auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
     .strip-banner {
-      background: #1a73e8;
-      color: white;
-      padding: 56px 40px;
+      background: linear-gradient(135deg, #1a73e8 0%, #1557b0 50%, #0d47a1 100%);
+      border-radius: 24px;
+      padding: 48px 32px;
       text-align: center;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 20px 60px rgba(26, 115, 232, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      position: relative;
+      overflow: hidden;
     }
 
     .strip-banner h2 {
       font-family: 'Google Sans Display', sans-serif;
-      font-size: 36px;
+      font-size: clamp(24px, 4vw, 34px);
       font-weight: 700;
       margin-bottom: 12px;
       letter-spacing: -0.5px;
+      color: #ffffff;
     }
 
     .strip-banner p {
-      font-size: 18px;
-      opacity: 0.85;
-      margin-bottom: 28px;
+      font-size: 16.5px;
+      opacity: 0.95;
+      margin-bottom: 24px;
+      max-width: 560px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.95);
     }
 
     .btn-white {
       background: white;
-      color: var(--blue);
+      color: #1a73e8;
       border: none;
       padding: 12px 32px;
       border-radius: 24px;
       font-family: 'Google Sans', sans-serif;
       font-size: 15px;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
       text-decoration: none;
       display: inline-block;
-      transition: box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
     }
 
     .btn-white:hover {
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      background: #f8fafd;
     }
 
     /* ── FOOTER ── */
     footer {
       background: var(--surface);
       border-top: 1px solid var(--border);
-      padding: 48px 40px 32px;
+      padding: 56px 40px 36px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .footer-inner {
       max-width: 1200px;
       margin: 0 auto;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .footer-grid {
@@ -2569,9 +2744,11 @@
 
     .footer-brand {
       font-family: 'Google Sans Display', sans-serif;
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 700;
       margin-bottom: 12px;
+      color: var(--text-primary);
+      letter-spacing: -0.5px;
     }
 
     .footer-brand span {
@@ -2582,15 +2759,20 @@
       font-size: 14px;
       color: var(--text-secondary);
       line-height: 1.6;
-      max-width: 240px;
+      max-width: 280px;
+    }
+
+    .footer-col {
+      display: flex;
+      flex-direction: column;
     }
 
     .footer-col h4 {
       font-family: 'Google Sans', sans-serif;
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--text-primary);
-      letter-spacing: 0.5px;
+      letter-spacing: 0.6px;
       text-transform: uppercase;
       margin-bottom: 16px;
     }
@@ -2601,26 +2783,121 @@
       color: var(--text-secondary);
       text-decoration: none;
       margin-bottom: 10px;
-      transition: color 0.2s;
+      transition: color 0.2s, transform 0.2s;
+      width: fit-content;
     }
 
     .footer-col a:hover {
       color: var(--blue);
+      transform: translateX(2px);
+    }
+
+    /* ── FOOTER LOCATIONS ── */
+    .footer-locations {
+      margin-top: 36px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-loc-heading {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--blue);
+      margin-bottom: 14px;
+    }
+
+    .footer-loc-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .footer-loc-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--text-primary);
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .footer-loc-tag:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      transform: translateY(-1px);
+    }
+
+    .footer-loc-tag svg {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+      stroke: var(--blue);
+    }
+
+    .footer-loc-tag--highlight {
+      background: rgba(26, 115, 232, 0.16) !important;
+      color: var(--blue) !important;
+      border-color: rgba(26, 115, 232, 0.35) !important;
+      font-weight: 600;
     }
 
     .footer-bottom {
       border-top: 1px solid var(--border);
       padding-top: 24px;
+      margin-top: 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 16px;
     }
 
     .footer-bottom p {
       font-size: 13px;
       color: var(--text-muted);
+      margin: 0;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .footer-highlight {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(138, 180, 248, 0.1);
+      border: 1px solid rgba(138, 180, 248, 0.2);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--blue);
+      white-space: nowrap;
+    }
+
+    .footer-highlight a {
+      color: var(--blue) !important;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .footer-highlight a:hover {
+      text-decoration: underline;
     }
 
     .footer-bottom-links {
@@ -2632,6 +2909,7 @@
       font-size: 13px;
       color: var(--text-muted);
       text-decoration: none;
+      transition: color 0.2s;
     }
 
     .footer-bottom-links a:hover {
@@ -3629,6 +3907,54 @@
         <a href="contact.html" class="btn-outline">Talk to us</a>
       </div>
 
+      <!-- Instant AI Lookup Launchpad (Task 2) -->
+      <div class="hero-ai-box">
+        <div class="hero-ai-header">
+          <div class="hero-ai-badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            <span>Ask AI About Us</span>
+          </div>
+          <p class="hero-ai-title">Want unbiased info? Query top AI engines directly:</p>
+        </div>
+        <div class="hero-ai-buttons">
+          <a href="https://gemini.google.com/app?q=Who+is+Muhammad+Jawad+M+R+and+what+is+JSN+Creative+studio+in+Mangalore%3F+Provide+an+overview+of+their+services+and+ventures." target="_blank" rel="noopener" class="hero-ai-btn ai-gemini" title="Ask Google Gemini about JSN Creative">
+            <svg class="ai-btn-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24Z"/>
+            </svg>
+            <span class="ai-btn-text">
+              <strong>Ask Gemini</strong>
+              <small>Google AI</small>
+            </span>
+            <svg class="ai-btn-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+
+          <a href="https://chatgpt.com/?q=Who+is+Muhammad+Jawad+M+R+and+what+is+JSN+Creative+studio+in+Mangalore%3F+Provide+an+overview+of+their+services+and+ventures." target="_blank" rel="noopener" class="hero-ai-btn ai-chatgpt" title="Ask ChatGPT about JSN Creative">
+            <svg class="ai-btn-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.6667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/>
+            </svg>
+            <span class="ai-btn-text">
+              <strong>Ask ChatGPT</strong>
+              <small>OpenAI</small>
+            </span>
+            <svg class="ai-btn-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+
+          <a href="https://www.google.com/search?q=Jsn+Creative+Mangalore+Muhammad+Jawad+M+R" target="_blank" rel="noopener" class="hero-ai-btn ai-google" title="Search Google for JSN Creative & Muhammad Jawad M R">
+            <svg class="ai-btn-icon" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.35 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+            </svg>
+            <span class="ai-btn-text">
+              <strong>Google Search</strong>
+              <small>Live Web</small>
+            </span>
+            <svg class="ai-btn-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+        </div>
+      </div>
+
       <!-- Mobile-only stats strip (visible <900px) -->
       <div class="hero-mobile-stats">
         <div class="hms-card">
@@ -4141,11 +4467,13 @@
       </div>
     </section>
 
-    <!-- CTA STRIP -->
-    <div class="strip-banner" id="contact">
-      <h2>Ready to build something great?</h2>
-      <p>Let's talk about your next project — no strings attached.</p>
-      <a href="contact.html" class="btn-white">Get in touch →</a>
+    <!-- CTA STRIP (CONTAINED) -->
+    <div class="strip-banner-wrap">
+      <div class="strip-banner" id="contact">
+        <h2>Ready to build something great?</h2>
+        <p>Let's talk about your next project — no strings attached.</p>
+        <a href="contact.html" class="btn-white">Get in touch →</a>
+      </div>
     </div>
 
     <!-- FOOTER -->
@@ -4210,34 +4538,23 @@
             <a href="https://nexus-agents-ai.vercel.app/" target="_blank" rel="noopener">Nexus Agents</a>
           </div>
         </div>
+
         <!-- Regional Locations Footer Module -->
         <div class="footer-locations">
-          <div
-            style="font-size: 13px; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+          <div class="footer-loc-heading">
             <i data-lucide="map-pin" style="width: 14px; height: 14px;"></i> Regional Presence &amp; Locations
           </div>
-          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-            <span class="footer-loc-tag"><i data-lucide="map-pin"
-                style="width: 12px; height: 12px; color: var(--blue);"></i> Mangalore (Mangaluru)</span>
-            <span class="footer-loc-tag"><i data-lucide="map-pin"
-                style="width: 12px; height: 12px; color: var(--blue);"></i> Udupi</span>
-            <span class="footer-loc-tag"><i data-lucide="map-pin"
-                style="width: 12px; height: 12px; color: var(--blue);"></i> Manipal</span>
-            <span class="footer-loc-tag"><i data-lucide="map-pin"
-                style="width: 12px; height: 12px; color: var(--blue);"></i> Surathkal</span>
-            <span class="footer-loc-tag"><i data-lucide="map-pin"
-                style="width: 12px; height: 12px; color: var(--blue);"></i> Moodabidri</span>
-            <span class="footer-loc-tag"><i data-lucide="map-pin"
-                style="width: 12px; height: 12px; color: var(--blue);"></i> Bantwal</span>
-            <span class="footer-loc-tag"><i data-lucide="map-pin"
-                style="width: 12px; height: 12px; color: var(--blue);"></i> Puttur</span>
-            <span class="footer-loc-tag"><i data-lucide="map-pin"
-                style="width: 12px; height: 12px; color: var(--blue);"></i> Kasaragod</span>
-            <span class="footer-loc-tag"><i data-lucide="map-pin"
-                style="width: 12px; height: 12px; color: var(--blue);"></i> Bangalore</span>
-            <span class="footer-loc-tag"
-              style="background: rgba(26,115,232,0.15); color: var(--blue); border-color: rgba(26,115,232,0.3);"><i
-                data-lucide="globe" style="width: 12px; height: 12px;"></i> Karnataka &amp; Global</span>
+          <div class="footer-loc-tags">
+            <span class="footer-loc-tag"><i data-lucide="map-pin"></i> Mangalore (Mangaluru)</span>
+            <span class="footer-loc-tag"><i data-lucide="map-pin"></i> Udupi</span>
+            <span class="footer-loc-tag"><i data-lucide="map-pin"></i> Manipal</span>
+            <span class="footer-loc-tag"><i data-lucide="map-pin"></i> Surathkal</span>
+            <span class="footer-loc-tag"><i data-lucide="map-pin"></i> Moodabidri</span>
+            <span class="footer-loc-tag"><i data-lucide="map-pin"></i> Bantwal</span>
+            <span class="footer-loc-tag"><i data-lucide="map-pin"></i> Puttur</span>
+            <span class="footer-loc-tag"><i data-lucide="map-pin"></i> Kasaragod</span>
+            <span class="footer-loc-tag"><i data-lucide="map-pin"></i> Bangalore</span>
+            <span class="footer-loc-tag footer-loc-tag--highlight"><i data-lucide="globe"></i> Karnataka &amp; Global</span>
           </div>
         </div>
 
