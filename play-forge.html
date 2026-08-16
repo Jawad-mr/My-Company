@@ -8,7 +8,7 @@
   <meta name="description"
     content="Play Forge is the game publishing and development studio of Jsn Creative. Discover our upcoming debut title in active production and meet our game development team.">
   <meta name="keywords"
-    content="Play Forge, Game Studio Mangalore, Game Development Karnataka, Indie Game Studio, Game Publishing, Muhammad Jawad M R, Jawad, Hafeez, Hathib, Ansar, Shahad, Huzaifa, Saleeth, Rafi, Hashir, Unreal Engine, Unity, Jsn Creative Games">
+    content="Play Forge, Game Studio Mangalore, Game Development Karnataka, Indie Game Studio, Game Publishing, Muhammad Jawad M R, Jawad, Hafeez, Hathib, Ansar, Shahad, Huzaifa, Saleeth, Rafi, Danish, Amith, Hashir, Unreal Engine, Unity, Jsn Creative Games">
   <meta name="author" content="Muhammad Jawad M R">
   <meta name="application-name" content="JSN">
   <meta name="apple-mobile-web-app-title" content="JSN">
@@ -105,6 +105,8 @@
           { "@type": "Person", "name": "Huzaifa", "jobTitle": "UI/UX & Combat Mechanics Developer" },
           { "@type": "Person", "name": "Saleeth", "jobTitle": "Physics & Multiplayer Systems Engineer" },
           { "@type": "Person", "name": "Rafi", "jobTitle": "Concept Artist & World Builder" },
+          { "@type": "Person", "name": "Danish", "jobTitle": "VFX & Technical Artist" },
+          { "@type": "Person", "name": "Amith", "jobTitle": "AI Systems & Combat Logic Programmer" },
           { "@type": "Person", "name": "Hashir", "jobTitle": "QA Lead & Technical Game Tester" }
         ]
       },
@@ -291,12 +293,6 @@
       }
     }
 
-    @media (max-width: 640px) {
-      .dev-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
     .dev-card {
       background: var(--page-surface, #202124);
       border: 1px solid var(--page-border, rgba(255, 255, 255, 0.08));
@@ -386,6 +382,220 @@
       background: #f1f3f6;
       border-color: #e2e8f0;
       color: #4b5563;
+    }
+
+    /* ── COMPACT, SWEET & PROFESSIONAL MOBILE VIEW (<768px) ── */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 24px 16px 20px !important;
+        gap: 20px !important;
+      }
+
+      .hero h1 {
+        font-size: 32px !important;
+        margin-bottom: 8px !important;
+      }
+
+      .hero p {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 14px !important;
+      }
+
+      .hero-badges {
+        gap: 6px !important;
+        margin-bottom: 14px !important;
+      }
+
+      .hero-badges .badge {
+        font-size: 11px !important;
+        padding: 4px 10px !important;
+      }
+
+      .button-row {
+        gap: 8px !important;
+        flex-direction: column !important;
+        width: 100% !important;
+      }
+
+      .button-row .btn {
+        width: 100% !important;
+        text-align: center !important;
+        padding: 10px 16px !important;
+        font-size: 13.5px !important;
+      }
+
+      .hero-art {
+        border-radius: 16px !important;
+        margin-top: 10px !important;
+      }
+
+      .hero-art img {
+        max-height: 190px !important;
+        object-fit: cover !important;
+      }
+
+      .hero-card {
+        padding: 10px 14px !important;
+        bottom: 10px !important;
+        left: 10px !important;
+        right: 10px !important;
+      }
+
+      .hero-card strong {
+        font-size: 12px !important;
+      }
+
+      .hero-card span {
+        font-size: 10.5px !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 1 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+      }
+
+      /* Compact Production Spotlight Banner */
+      .production-banner {
+        padding: 20px 16px !important;
+        margin: 12px 0 28px !important;
+        border-radius: 18px !important;
+      }
+
+      .prod-status-tag {
+        font-size: 10.5px !important;
+        padding: 4px 10px !important;
+        margin-bottom: 10px !important;
+      }
+
+      .prod-title {
+        font-size: 19px !important;
+        margin-bottom: 8px !important;
+      }
+
+      .prod-desc {
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 16px !important;
+      }
+
+      .prod-pillars {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+        margin-top: 12px !important;
+      }
+
+      .prod-pillar-item {
+        padding: 10px 12px !important;
+        border-radius: 12px !important;
+        gap: 8px !important;
+      }
+
+      .pillar-icon {
+        width: 30px !important;
+        height: 30px !important;
+        border-radius: 8px !important;
+      }
+
+      .pillar-icon svg {
+        width: 16px !important;
+        height: 16px !important;
+      }
+
+      .pillar-info h4 {
+        font-size: 12px !important;
+      }
+
+      .pillar-info p {
+        font-size: 10.5px !important;
+      }
+
+      /* Compact 2-Column Mobile Developer Roster */
+      .dev-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        margin-top: 16px !important;
+      }
+
+      .dev-card {
+        padding: 12px 10px !important;
+        border-radius: 14px !important;
+      }
+
+      .dev-header {
+        gap: 8px !important;
+        margin-bottom: 8px !important;
+      }
+
+      .dev-avatar {
+        width: 34px !important;
+        height: 34px !important;
+        font-size: 12.5px !important;
+        border-radius: 10px !important;
+      }
+
+      .dev-name {
+        font-size: 13.5px !important;
+      }
+
+      .dev-role {
+        font-size: 10.5px !important;
+        line-height: 1.25 !important;
+      }
+
+      .dev-bio {
+        font-size: 11px !important;
+        line-height: 1.4 !important;
+        margin-bottom: 8px !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 3 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+      }
+
+      .dev-tags {
+        gap: 4px !important;
+      }
+
+      .dev-tag {
+        font-size: 9.5px !important;
+        padding: 2px 6px !important;
+        border-radius: 6px !important;
+      }
+
+      /* Compact Capabilities Cards */
+      .grid-3 {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+      }
+
+      .info-card {
+        padding: 14px 16px !important;
+        border-radius: 14px !important;
+      }
+
+      .info-card h3 {
+        font-size: 15px !important;
+        margin-bottom: 4px !important;
+      }
+
+      .info-card p {
+        font-size: 12.5px !important;
+        line-height: 1.45 !important;
+      }
+
+      .pricing-band {
+        padding: 20px 16px !important;
+        border-radius: 16px !important;
+        gap: 14px !important;
+      }
+
+      .pricing-band strong {
+        font-size: 17px !important;
+      }
+
+      .pricing-band span {
+        font-size: 12.5px !important;
+      }
     }
   </style>
 </head>
@@ -679,7 +889,41 @@
           </div>
         </div>
 
-        <!-- 9. Hashir -->
+        <!-- 9. Danish -->
+        <div class="dev-card">
+          <div class="dev-header">
+            <div class="dev-avatar">DN</div>
+            <div>
+              <h3 class="dev-name">Danish</h3>
+              <div class="dev-role">VFX &amp; Technical Artist</div>
+            </div>
+          </div>
+          <p class="dev-bio">Engineers cinematic visual effects, Niagara particle systems, volumetric lighting shaders, and post-processing graphics pipelines.</p>
+          <div class="dev-tags">
+            <span class="dev-tag">Niagara VFX</span>
+            <span class="dev-tag">Shaders</span>
+            <span class="dev-tag">Post-Processing</span>
+          </div>
+        </div>
+
+        <!-- 10. Amith -->
+        <div class="dev-card">
+          <div class="dev-header">
+            <div class="dev-avatar">AM</div>
+            <div>
+              <h3 class="dev-name">Amith</h3>
+              <div class="dev-role">AI Systems &amp; Combat Logic Programmer</div>
+            </div>
+          </div>
+          <p class="dev-bio">Programs responsive enemy behavior trees, dynamic combat AI, squad coordination tactics, and navigation mesh pathfinding.</p>
+          <div class="dev-tags">
+            <span class="dev-tag">Behavior Trees</span>
+            <span class="dev-tag">Enemy AI</span>
+            <span class="dev-tag">Combat Logic</span>
+          </div>
+        </div>
+
+        <!-- 11. Hashir -->
         <div class="dev-card">
           <div class="dev-header">
             <div class="dev-avatar">HS</div>
