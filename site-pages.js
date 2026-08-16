@@ -465,7 +465,6 @@
       { name: 'Home', href: isIndex ? '#hero' : 'index.html', icon: 'home', key: 'home' },
       { name: 'Products', href: isIndex ? '#products' : 'index.html#products', icon: 'package', key: 'products' },
       { name: 'Services', href: isIndex ? '#services' : 'index.html#services', icon: 'briefcase', key: 'services' },
-      { name: 'Ventures', href: isIndex ? '#ventures' : 'index.html#ventures', icon: 'rocket', key: 'ventures' },
       { name: 'Contact', href: 'contact.html', icon: 'phone', key: 'contact' }
     ];
 
@@ -493,6 +492,86 @@
   };
 
   injectBottomNav();
+
+  // Global Toast Notification function
+  const showToast = (message, icon = '✓') => {
+    let toast = document.querySelector('.site-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.className = 'site-toast';
+      document.body.appendChild(toast);
+    }
+    toast.innerHTML = `<span class="site-toast-icon">${icon}</span> <span>${message}</span>`;
+    toast.classList.add('show');
+    clearTimeout(toast._timeout);
+    toast._timeout = setTimeout(() => {
+      toast.classList.remove('show');
+    }, 4500);
+  };
+
+  // Handle Ask Gemini click -> Auto-copy prompt to clipboard + notification
+  document.addEventListener('click', (e) => {
+    const geminiLink = e.target.closest('a[href*="gemini.google.com"], .ai-card-gemini, .footer-ai-pill[href*="gemini"]');
+    if (geminiLink) {
+      const promptText = "Tell me about JSN Creative digital studio in Mangalore, its software products, client services, and its founder Muhammad Jawad M R.";
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(promptText).catch(() => {});
+      }
+      showToast('Prompt copied to clipboard! Paste (Ctrl+V) in Gemini.', '✨');
+    }
+  });
+
+  // Earn Coming Soon Popup Modal
+  const showEarnModal = () => {
+    let modal = document.querySelector('.earn-modal-backdrop');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.className = 'earn-modal-backdrop';
+      modal.innerHTML = `
+        <div class="earn-modal-card" role="dialog" aria-modal="true" aria-labelledby="earnModalTitle">
+          <button class="earn-modal-close" aria-label="Close modal">×</button>
+          <div class="earn-modal-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <span>Coming Soon</span>
+          </div>
+          <h3 id="earnModalTitle" class="earn-modal-title">Earn with JSN Creative</h3>
+          <p class="earn-modal-desc">
+            Our Referral &amp; Partner Program is launching soon! Earn lucrative rewards and commissions by referring clients, software projects, and businesses to Jsn Creative.
+          </p>
+          <div class="earn-modal-features">
+            <div class="earn-feat-item"><span>💰</span> High Referral Commissions</div>
+            <div class="earn-feat-item"><span>🚀</span> Direct Payouts per Client</div>
+            <div class="earn-feat-item"><span>🤝</span> Official Partner Network</div>
+          </div>
+          <button class="earn-modal-btn">Got it</button>
+        </div>
+      `;
+      document.body.appendChild(modal);
+
+      const closeModal = () => modal.classList.remove('open');
+      modal.querySelector('.earn-modal-close').addEventListener('click', closeModal);
+      modal.querySelector('.earn-modal-btn').addEventListener('click', closeModal);
+      modal.addEventListener('click', (ev) => {
+        if (ev.target === modal) closeModal();
+      });
+      document.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Escape' && modal.classList.contains('open')) closeModal();
+      });
+    }
+
+    requestAnimationFrame(() => {
+      modal.classList.add('open');
+    });
+  };
+
+  // Intercept Earn link clicks across site
+  document.addEventListener('click', (e) => {
+    const earnLink = e.target.closest('a[href="#earn"], a[href="index.html#earn"], a[href$="#earn"]');
+    if (earnLink) {
+      e.preventDefault();
+      showEarnModal();
+    }
+  });
 
   // Initialize Lucide Icons with robust SVG fallback map
   const svgMap = {
