@@ -60,6 +60,36 @@
       "source": "/nexus-agents/(.*)",
       "destination": "https://nexus-agents-ai.vercel.app/$1",
       "statusCode": 301
+    },
+    {
+      "source": "/refer",
+      "destination": "https://refer-jsn.vercel.app/",
+      "statusCode": 301
+    },
+    {
+      "source": "/refer/(.*)",
+      "destination": "https://refer-jsn.vercel.app/$1",
+      "statusCode": 301
+    },
+    {
+      "source": "/earn",
+      "destination": "https://refer-jsn.vercel.app/",
+      "statusCode": 301
+    },
+    {
+      "source": "/earn/(.*)",
+      "destination": "https://refer-jsn.vercel.app/$1",
+      "statusCode": 301
+    },
+    {
+      "source": "/refer-jsn",
+      "destination": "https://refer-jsn.vercel.app/",
+      "statusCode": 301
+    },
+    {
+      "source": "/refer-jsn/(.*)",
+      "destination": "https://refer-jsn.vercel.app/$1",
+      "statusCode": 301
     }
   ],
   "headers": [
